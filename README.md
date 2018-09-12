@@ -9,7 +9,7 @@ This repository contains files from Third Year **Integrated Computer Science**, 
 * CS3016 - Intro to Functional Programming
 * CS3021 - Computer Architecture (https://www.scss.tcd.ie/jeremy.jones/CS3021/CS3021.htm)
 * CS3041 - Information Management
-* CS3071 - Compiler Design
+* CS3071 - Compiler Design (https://www.scss.tcd.ie/John.Waldron/3071/3071.html)
 
 ### Hilary Term (HT):
 
