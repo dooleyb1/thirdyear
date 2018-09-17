@@ -36,7 +36,7 @@ fib_IA32a0: mov     eax, 1          ; eax = 1
             jle     fib_IA32a1      ;
             mov     eax, [ebp-4]    ; eax = fi
             mov     ecx, [ebp-8]    ; ecx = fj
-            add     eax, ecx        ; ebx = fi + fj
+            add     eax, ecx        ; eax = fi + fj
             mov     [ebp-4], ecx    ; fi = fj
             mov     [ebp-8], eax    ; fj = eax
             dec     DWORD PTR[ebp+8]; n--
