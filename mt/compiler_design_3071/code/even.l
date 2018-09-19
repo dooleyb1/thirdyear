@@ -7,22 +7,25 @@
 
 /* fb1-1 just like unix wc */
 %{
-int chars = 0;
-int words = 0;
-int lines = 0;
+int count = 0;
+int intval = 0;
 %}
 
 %%
 
-[a-zA-Z]+	{ words++; chars += strlen(yytext); }
-\n		{ chars++; lines++; }
-.		{ chars++; }
+[0-9]+ {
+     intval = atoi(yytext);
+     if(intval%2 == 0)
+      count++;
+   }
+\n		{ }
+.		{  }
 
 %%
 
 int main()
 {
   yylex();
-  printf("%8d%8d%8d\n", lines, words, chars);
-  return 0;
+  printf("%d\n", count);
+	return 0;
 }
