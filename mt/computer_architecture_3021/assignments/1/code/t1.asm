@@ -90,7 +90,7 @@ gcd:	   	push  ebp              ; push frame pointer
 gcd_retA:	mov eax, [ebp+8]		   ; eax = a
 
 gcd_done:	mov     esp, ebp       ; restore esp
-            pop     ebp          ; restore ebp
-            ret     0            ; return
+          pop     ebp          ; restore ebp
+          ret     0            ; return
 
 end
