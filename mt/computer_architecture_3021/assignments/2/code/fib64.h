@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 
 //
 // fib64.h
@@ -14,4 +15,4 @@
 
 extern "C" _int64 fibX64(_int64);			// fib_x64
 
-// eof
+											// eof

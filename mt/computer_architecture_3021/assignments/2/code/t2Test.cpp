@@ -14,9 +14,9 @@
 
 using namespace std;		// cout
 
-//
-// fib: C++
-//
+							//
+							// fib: C++
+							//
 _int64 fib(_int64 n) {
 	_int64 fi, fj, t;
 	if (n <= 1)
@@ -55,7 +55,6 @@ int _tmain(int argc, _TCHAR* argv[]) {
 
 	//
 	// tutorial 2
-	//
 	check("g", g, 4);
 	g++;
 	check("g", g, 5);
@@ -83,7 +82,7 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	check("q(1, 2, 3, 4, 5)", q(1, 2, 3, 4, 5), 15);
 	check("q(-1, 2, -3, 4, -5)", q(-1, 2, -3, 4, -5), -3);
 
-	//check("qns()", qns(), 0);
+	check("qns()", qns(), 0);
 
 	cout << endl;
 
@@ -103,8 +102,6 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	cout << endl;
 
 	_getch();
-
-	return 0;
 
 }
 
