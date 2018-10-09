@@ -4,15 +4,17 @@
  * See the README file for license conditions and contact info.
  * $Header: /home/johnl/flnb/code/RCS/fb3-1.h,v 2.1 2009/11/08 02:53:18 johnl Exp $
  */
-/*
- * Declarations for a calculator fb3-1
- */
 
-/* interface to the lexer */
-extern int yylineno; /* from lexer */
-void yyerror(char *s, ...);
-int yyparse();
-int yylex();
+ /* HEADER FILE (.h) */
+ /* HEADER */
+ /* ------------------------------------------------------- */
+ /* Declarations for file fb3-1.l */
+
+/* Interface to the lexer */
+extern int yylineno;                                                          /* Line number from lexer */
+void yyerror(char *s, ...);                                                   /* yyerror function */
+int yyparse();                                                                /* PARSER - yyparse function */
+int yylex();                                                                  /* SCANNER - yylex function */
 
 /* nodes in the Abstract Syntax Tree */
 struct ast {

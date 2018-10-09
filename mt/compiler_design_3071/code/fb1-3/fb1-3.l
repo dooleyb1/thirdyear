@@ -8,13 +8,20 @@
 /* recognize tokens for the calculator and print them out */
 
 %%
+/* Regex to catch operation symbols */
 "+"	{ printf("PLUS\n"); }
 "-"	{ printf("MINUS\n"); }
 "*"	{ printf("TIMES\n"); }
 "/"	{ printf("DIVIDE\n"); }
 "|"     { printf("ABS\n"); }
+
+/* Regex to catch one or more occurances of the digits 0-9 */
 [0-9]+	{ printf("NUMBER %s\n", yytext); }
+
+/* Regex to catch new line character or space/tab */
 \n      { printf("NEWLINE\n"); }
 [ \t] { }
+
+/* Regex to catch anything not caught above */
 .	{ printf("Mystery character %s\n", yytext); }
 %%

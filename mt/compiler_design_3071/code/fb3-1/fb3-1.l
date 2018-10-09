@@ -4,18 +4,28 @@
  * See the README file for license conditions and contact info.
  * $Header: /home/johnl/flnb/code/RCS/fb3-1.l,v 2.1 2009/11/08 02:53:18 johnl Exp $
  */
-/* recognize tokens for the calculator */
 
+/* FLEX FILE (.l) */
+/* SCANNER */
+/* ------------------------------------------------------- */
+/* Recognize tokens for the calculator */
+
+/* noyywrap - no default main routine */
+/* nodefault - no default rule */
+/* yylineno - record current line number */
 %option noyywrap nodefault yylineno
+
 %{
-# include "fb3-1.h"
-# include "fb3-1.tab.h"
+/* Include custom header and auto-generated header */
+#include "fb3-1.h"
+#include "fb3-1.tab.h"
 %}
 
-/* float exponent */
+/* Float exponent */
 EXP	([Ee][-+]?[0-9]+)
 
 %%
+/* Catch operator symbols and return yytext[0] */
 "+" |
 "-" |
 "*" |
@@ -23,11 +33,16 @@ EXP	([Ee][-+]?[0-9]+)
 "|" |
 "(" |
 ")"     { return yytext[0]; }
+
+/* Catch decimal & float numbers */
 [0-9]+"."[0-9]*{EXP}? |
 "."?[0-9]+{EXP}? { yylval.d = atof(yytext); return NUMBER; }
 
+/* Catch newline, comments and whitespace */
 \n      { return EOL; }
 "//".*
-[\t\n]+   { /* ignore white space */ }
+[\t\n]+   {}
+
+/* Catch mystery characters */
 .	{ yyerror("Mystery character %c\n", *yytext); }
 %%

@@ -7,6 +7,7 @@
 
 /* fb1-1 just like unix wc */
 %{
+/* Define variables here */
 int chars = 0;
 int words = 0;
 int lines = 0;
@@ -14,14 +15,18 @@ int lines = 0;
 
 %%
 
+/* Regex to catch a sequence of ONE OR MORE upper/lowercase letters */
 [a-zA-Z]+	{ words++; chars += strlen(yytext); }
+/* Regex to catch a new line character */
 \n		{ chars++; lines++; }
+/* Regex to catch anything else not caught by the above*/
 .		{ chars++; }
 
 %%
 
 int main()
 {
+  /* Yylex processes the entire user input / file defined */
   yylex();
   printf("%8d%8d%8d\n", lines, words, chars);
   return 0;
