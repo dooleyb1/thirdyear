@@ -1,0 +1,116 @@
+
+<html>
+<h4>Summary of Flex Regular Expressions</h4>
+
+<p>The characters and literals may be described by:
+
+<dl>
+<dt><code><var>x</var></code>
+<dd>the character <var>x</var>.
+
+<br><dt><code>.</code>
+<dd>any character except newline.
+
+<br><dt><code>[xyz]</code>
+<dd>Any characters amongst <code>x</code>, <code>y</code> or <code>z</code>.  You may use a
+dash for character intervals: <code>[a-z]</code> denotes any letter from
+<code>a</code> through <code>z</code>.  You may use a leading hat to negate the
+class: <code>[0-9]</code> stands for any character which is not a decimal
+digit, including new-line.
+
+<br><dt><code>\<var>x</var></code>
+<dd>if <var>x</var> is an <code>a</code>, <code>b</code>, <code>f</code>, <code>n</code>, <code>r</code>,
+<code>t</code>, or <code>v</code>, then the ANSI-C interpretation of
+<code>\<var>x</var></code>.  Otherwise, a literal <code><var>x</var></code> (used to escape
+operators such as <code>*</code>).
+
+<br><dt><code>\0</code>
+<dd>a NUL character.
+
+<br><dt><code>\<var>num</var></code>
+<dd>the character with octal value <var>num</var>.
+
+<br><dt><code>\x<var>num</var></code>
+<dd>the character with hexadecimal value <var>num</var>.
+
+<br><dt><code>"<var>string</var>"</code>
+<dd>Match the literal <var>string</var>.  For instance <code>"/*"</code> denotes the
+character <code>/</code> and then the character <code>*</code>, as opposed to
+<code>/*</code> denoting any number of slashes.
+
+<br><dt><code>&lt;&lt;EOF&gt;&gt;</code>
+<dd>Match the end-of-file.
+</dl>
+
+<br><p>
+<p>The basic operators to make more complex regular expressions are, with
+<var>r</var> and <var>s</var> being two regular expressions:
+
+<dl>
+<dt><code>(<var>r</var>)</code>
+<dd>Match an <var>r</var>; parentheses are used to override precedence.
+
+<br><dt><code><var>r</var><var>s</var></code>
+<dd>Match the regular expression <var>r</var> followed by the regular expression
+<var>s</var>.  This is called <dfn>concatenation</dfn>.
+
+<br><dt><code><var>r</var>|<var>s</var></code>
+<dd>Match either an <var>r</var> or an <var>s</var>.  This is called
+<dfn>alternation</dfn>.
+
+<br><dt><code>{<var>abbreviation</var>}</code>
+<dd>Match the expansion of the <var>abbreviation</var> definition.  Instead of
+writing
+
+<pre>%%
+[a-zA-Z_][a-zA-Z0-9_]*   return IDENTIFIER;
+%%
+</pre>
+
+<p>you may write
+
+<pre>id  [a-zA-Z_][a-zA-Z0-9_]*
+%%
+{id}   return IDENTIFIER;
+%%
+</pre>
+</dl>
+
+<br><p>
+<p>The <dfn>quantifiers</dfn> allow to specify the number of times a pattern
+must be repeated:
+
+<dl>
+<dt><code><var>r</var>*</code>
+<dd>zero or more <var>r</var>'s.
+
+<br><dt><code><var>r</var>+</code>
+<dd>one or more <var>r</var>'s.
+
+<br><dt><code><var>r</var>?</code>
+<dd>zero or one <var>r</var>'s.
+
+<br><dt><code><var>r</var>{[<var>num</var>]}</code>
+<dd><var>num</var> times <var>r</var>
+
+<br><dt><code><var>r</var>{<var>min</var>,[<var>max</var>]}</code>
+<dd>anywhere from <var>min</var> to <var>max</var> (defaulting to no bound) <var>r</var>'s.
+</dl>
+
+<p>For instance <code>-?([0-9]+|[0-9]*\.[0-9]+([eE][-+]?[0-9]+)?)</code> matches
+C integer and floating point numbers.
+
+<br><p>
+<p>One may also depend upon the context:
+
+<dl>
+<dt><code><var>r</var>/<var>s</var></code>
+<dd>Match an <var>r</var> but only if it is followed by an <var>s</var>.
+
+<br><dt><code>^<var>r</var></code>
+<dd>Match an <var>r</var> at the beginning of a line.
+
+<br><dt><code><var>r</var>$</code>
+<dd>Match an <var>r</var> at the end of a line.
+</dl>
+</html>
