@@ -23,4 +23,7 @@ SELECT flight_no FROM Booking WHERE customer_id = (SELECT customer_id FROM Custo
 SELECT flight_no FROM Flight WHERE departure_airport = 'a1' AND arrival_airport = 'a3'
 
 -- Select the fare of flight from Dublin -> Heathrow
-SELECT fare FROM Fare WHERE flight_no = (SELECT flight_no FROM Flight WHERE departure_airport = 'a1' AND arrival_airport = 'a3')
+SELECT fare FROM Fare WHERE flight_no = (SELECT flight_no FROM Flight WHERE departure_airport = 'a1' AND arrival_airport = 'a3') AND seat_class = 'b'
+
+-- Select departure time of flight EI124
+SELECT departure_time FROM Flight where flight_no = 'EI124'
