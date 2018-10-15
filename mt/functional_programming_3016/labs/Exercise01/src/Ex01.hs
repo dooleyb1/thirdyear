@@ -115,11 +115,13 @@ simpMul d e1 e2 =
     (_, _) -> Mul e1 e2                                --  _ * _ = Mul _ _
 
 simpDvd :: EDict -> Expr -> Expr -> Expr
-simpDvd d e1 e2 = case (eval d e1, eval d e2) of        -- switch((find e1 in d), (find e2 in d))
-    (Just x, Just 1.0) -> Val x                         --  _ / 1 = e1
-    (_, Just 0.0) -> Dvd e1 (Val 0.0)                   --  _ / 0 = _ / 0
-    (Just 0.0, _) -> Val 0.0                            --  0 / _ = 0
-    (Just x, Just y) -> Val(x/y)                        --  x / y = x/y
+simpDvd d e1 e2 =
+  let x = simp d e1; y = simp d e2                      -- simplify both expressions first then
+  in case (x,y) of                                      -- switch(x, y)
+    (a, Val 1.0) ->  a                                  --  _ / 1 = e1
+    (_, Val 0.0) -> Dvd e1 (Val 0.0)                    --  _ / 0 = _ / 0
+    (Val 0.0, _) -> Val 0.0                             --  0 / _ = 0
+    (Val x, Val y) -> Val(x/y)                          --  x / y = x/y
     (_, _) -> Dvd e1 e2                                 -- _ / _ = _/_
 
 simpDef :: EDict -> Id -> Expr -> Expr -> Expr

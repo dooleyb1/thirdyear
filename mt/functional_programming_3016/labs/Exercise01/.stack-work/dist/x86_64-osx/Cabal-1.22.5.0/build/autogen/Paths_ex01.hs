@@ -16,11 +16,11 @@ version :: Version
 version = Version [0,1,0,0] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
-bindir     = "/Users/xsellco/github/college/functional-gitlab/Exercise01/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/bin"
-libdir     = "/Users/xsellco/github/college/functional-gitlab/Exercise01/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/lib/x86_64-osx-ghc-7.10.3/ex01-0.1.0.0-CmkBIqRQqyCJ0gZevCCGZy"
-datadir    = "/Users/xsellco/github/college/functional-gitlab/Exercise01/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/share/x86_64-osx-ghc-7.10.3/ex01-0.1.0.0"
-libexecdir = "/Users/xsellco/github/college/functional-gitlab/Exercise01/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/libexec"
-sysconfdir = "/Users/xsellco/github/college/functional-gitlab/Exercise01/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/etc"
+bindir     = "/Users/xsellco/github/college/thirdyear/mt/functional_programming_3016/labs/Exercise01/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/bin"
+libdir     = "/Users/xsellco/github/college/thirdyear/mt/functional_programming_3016/labs/Exercise01/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/lib/x86_64-osx-ghc-7.10.3/ex01-0.1.0.0-CmkBIqRQqyCJ0gZevCCGZy"
+datadir    = "/Users/xsellco/github/college/thirdyear/mt/functional_programming_3016/labs/Exercise01/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/share/x86_64-osx-ghc-7.10.3/ex01-0.1.0.0"
+libexecdir = "/Users/xsellco/github/college/thirdyear/mt/functional_programming_3016/labs/Exercise01/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/libexec"
+sysconfdir = "/Users/xsellco/github/college/thirdyear/mt/functional_programming_3016/labs/Exercise01/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/etc"
 
 getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir :: IO FilePath
 getBinDir = catchIO (getEnv "ex01_bindir") (\_ -> return bindir)
