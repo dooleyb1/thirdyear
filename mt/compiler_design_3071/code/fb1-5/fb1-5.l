@@ -9,10 +9,11 @@
 /* SCANNER */
 /* ------------------------------------------------------- */
 /* recognize tokens for the calculator and print them out */
+%option noyywrap nodefault yylineno
 
 %{
 /* Include header file fb1-5.tab.h (AUTO CREATED BY BISON)*/
-/* Auto-defines token numbers and yyval definition*/
+/* Auto-defines token numbers and yylval definition*/
 #include "fb1-5.tab.h"
 
 /* Define yyerror to take a char pointer*/
@@ -21,22 +22,19 @@ void yyerror(char *s);
 
 %%
 
-/* Catch operator symbol tokens and return associated token number as defined in yytokentype */
-"+"	{ return ADD; }
+
+"+"	{ return ADD; /* Catch operator symbol tokens and return associated token number as defined in yytokentype */}
 "-"	{ return SUB; }
 "*"	{ return MUL; }
 "/"	{ return DIV; }
 "|"     { return ABS; }
 
-/* Catch number and return number */
-[0-9]+	{ yylval = atoi(yytext); return NUMBER; }
+[0-9]+	{ yylval = atoi(yytext); return NUMBER; /* Catch number and return number */}
 
-/* Catch new line and tab/space */
-\n      { return EOL; }
+\n      { return EOL; /* Catch new line and tab/space */}
 [ \t]   { }
 
-/* Catch everything else not caught and print character */
-.	{ yyerror("Mystery character\n");}
+.	{ yyerror("Mystery character\n"); /* Catch everything else not caught and print character */}
 %%
 
 /* Mainline deleted since parser(fb1-5.y) calls scanner(THIS FILE)*/
