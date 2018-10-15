@@ -1,14 +1,8 @@
-/* Companion source code for "flex & bison", published by O'Reilly
- * Media, ISBN 978-0-596-15597-1
- * Copyright (c) 2009, Taughannock Networks. All rights reserved.
- * See the README file for license conditions and contact info.
- * $Header: /home/johnl/flnb/code/RCS/fb1-5.y,v 2.1 2009/11/08 02:53:18 johnl Exp $
- */
-
 /* BISON FILE (.y) */
 /* PARSER - CALLS SCANNER */
 /* ------------------------------------------------------- */
-/* Simplest version of calculator */
+/* Roman numeral parser */
+/* Code inspired/sampled using https://github.com/ChristophBerg/postgresql-numeral */
 
 %{
 #include <stdio.h>
@@ -16,50 +10,66 @@ int yylex();
 void yyerror(char *s);
 %}
 
-/* Declare tokens to be caught */
-%token M
-%token CM
-%token D
-%token CD
-%token C
-%token XC
-%token L
-%token XL
-%token X
-%token IX
+%token I
 %token V
-%token IV
-
-
-%%
-/* Switch(calclist)... default -> null  */
-calclist: /* Nothing */
- | calclist exp EOL { printf("= %d\n> ", $2); }   /* Prints exp ($2 since second element) */
- ;
-
-/* Switch(exp)... default -> factor() */
-exp: factor
- | exp ADD factor { $$ = $1 + $3; }               /* Applies exp ($1) + factor ($3) */
- | exp SUB factor { $$ = $1 - $3; }               /* Applies exp ($1) - factor ($3) */
- ;
-
-/* Switch(factor)... default -> term() */
-factor: term
- | factor MUL term { $$ = $1 * $3; }             /* Applies factor ($1) * term ($3) */
- | factor DIV term { $$ = $1 / $3; }             /* Applies factor ($1) / term ($3) */
- ;
-
-/* Switch(term)... default -> NUMBER  */
-term: NUMBER
- | ABS term { $$ = $2 >= 0? $2 : - $2; }         /* Finds the ABS of a term if required */
- ;
+%token X
+%token L
+%token C
+%token D
+%token M
+%token EOL
 %%
 
-/* Mainline for parser */
-int main()
+romanparse: /* parser entry */
+ | romanparse expr EOL {printf("%d\n", $2);}  /* Prints expr ($2 since second element) */
+;
+
+expr:
+  max_c M max_m { $$ = $2 - $1 + $3; }
+| max_c D max_c { $$ = $2 - $1 + $3; }
+| max_x C max_c { $$ = $2 - $1 + $3; }
+| max_x L max_x { $$ = $2 - $1 + $3; }
+| max_i X max_x { $$ = $2 - $1 + $3; }
+| max_i V max_i { $$ = $2 - $1 + $3; }
+|       I max_i { $$ = $1 + $2; }
+;
+
+max_m:
+  %empty { $$ = 0; }
+| max_c M max_m { $$ = $2 - $1 + $3; }
+| max_c D max_c { $$ = $2 - $1 + $3; }
+| max_x C max_c { $$ = $2 - $1 + $3; }
+| max_x L max_x { $$ = $2 - $1 + $3; }
+| max_i X max_x { $$ = $2 - $1 + $3; }
+| max_i V max_i { $$ = $2 - $1 + $3; }
+|       I max_i { $$ = $1 + $2; }
+;
+
+max_c:
+  %empty { $$ = 0; }
+| max_x C max_c { $$ = $2 - $1 + $3; }
+| max_x L max_x { $$ = $2 - $1 + $3; }
+| max_i X max_x { $$ = $2 - $1 + $3; }
+| max_i V max_i { $$ = $2 - $1 + $3; }
+|       I max_i { $$ = $1 + $2; }
+;
+
+max_x:
+  %empty { $$ = 0; }
+| max_i X max_x { $$ = $2 - $1 + $3; }
+| max_i V max_i { $$ = $2 - $1 + $3; }
+|       I max_i { $$ = $1 + $2; }
+;
+
+max_i:
+  %empty { $$ = 0; }
+|       I max_i { $$ = $1 + $2; }
+;
+
+%%
+/* parse a given string and return the result via the second argument */
+int main ()
 {
-  printf("> ");
-
   /* Parse user input, call scanner */
   yyparse();
   return 0;

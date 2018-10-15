@@ -1,50 +1,30 @@
-/* Companion source code for "flex & bison", published by O'Reilly
- * Media, ISBN 978-0-596-15597-1
- * Copyright (c) 2009, Taughannock Networks. All rights reserved.
- * See the README file for license conditions and contact info.
- * $Header: /home/johnl/flnb/code/RCS/fb1-5.l,v 2.1 2009/11/08 02:53:18 johnl Exp $
- */
-
 /* FLEX FILE (.l) */
 /* SCANNER */
 /* ------------------------------------------------------- */
-/* recognize tokens for the calculator and print them out */
+/* Recognize tokens for the roman parser */
+/* Code inspired/sampled using https://github.com/ChristophBerg/postgresql-numeral */
+
+%option noyywrap nodefault yylineno
 
 %{
-/* Include header file roman.tab.h (AUTO CREATED BY BISON)*/
-/* Auto-defines token numbers and yyval definition*/
 #include "roman.tab.h"
-
-/* Define yyerror to take a char pointer*/
 void yyerror(char *s);
 %}
 
 %%
 
-/* Catch operator symbol tokens and return associated token number as defined in yytokentype */
-"M"	  { return M; }
-"CM"	{ return CM; }
-"D"	  { return D; }
-"CD"	{ return CD; }
-"C"   { return C; }
-"XC"	{ return XC; }
-"L"	  { return L; }
-"XL"	{ return XL; }
-"X"	  { return X; }
-"IX"  { return IX; }
-"V"	  { return V; }
-"IV"	{ return IV; }
-"I"	  { return I; }
+[I]  { yylval = 1; return I; }
+[V]  { yylval = 5; return V; }
+[X]  { yylval = 10; return X; }
+[L]  { yylval = 50; return L; }
+[C]  { yylval = 100; return C; }
+[D]  { yylval = 500; return D; }
+[M]  { yylval = 1000; return M; }
 
-/* Catch number and return number */
-[0-9]+	{ yylval = atoi(yytext); return NUMBER; }
-
-/* Catch new line and tab/space */
-\n      { return EOL; }
+\n      { return EOL; /* Catch new line and tab/space */}
 [ \t]   { }
 
-/* Catch everything else not caught and print character */
-.	{ yyerror("Mystery character\n");}
+.	{ printf("syntax error\n"); /* Catch everything else not caught and print character */}
 %%
 
-/* Mainline deleted since parser(fb1-5.y) calls scanner(THIS FILE)*/
+/* Mainline deleted since parser(roman.y) calls scanner(THIS FILE)*/
