@@ -44,9 +44,7 @@ int main(int argc, char **argv) {
   int i;
 
   // Run Ackermann(3,6)
-  for(i = 0; i < 1; i++){
-    BS += ackermann(3, 6);
-  }
+  BS += ackermann(3, 6);
 
   // Stop clock
   endTime = clock();
