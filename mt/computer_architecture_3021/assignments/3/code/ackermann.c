@@ -59,8 +59,7 @@ int main(int argc, char **argv) {
   printf("\nOverflow occurred %d times.\n", overflowCount);
   printf("\nUnderflow occurred %d times.\n", underflowCount);
   printf("\nMax depth %d\n", maxDepth);
-	printf("\nTime elapsed in ms: %f\n", elapsed);
-
+	printf("\nTime elapsed in ms: %lf\n", elapsed);
 
   return 0;
 }
