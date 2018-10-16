@@ -454,7 +454,7 @@ static const flex_int16_t yy_chk[23] =
 /* Table of booleans, true if rule could match eol. */
 static const flex_int32_t yy_rule_can_match_eol[12] =
     {   0,
-0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,     };
+0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,     };
 
 static yy_state_type yy_last_accepting_state;
 static char *yy_last_accepting_cpos;
@@ -809,6 +809,7 @@ YY_RULE_SETUP
 { return EOL; /* Catch new line and tab/space */}
 	YY_BREAK
 case 9:
+/* rule 9 can match eol */
 YY_RULE_SETUP
 #line 25 "roman.l"
 { }
@@ -823,7 +824,7 @@ YY_RULE_SETUP
 #line 28 "roman.l"
 YY_FATAL_ERROR( "flex scanner jammed" );
 	YY_BREAK
-#line 826 "lex.yy.c"
+#line 827 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 

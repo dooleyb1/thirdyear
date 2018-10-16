@@ -86,10 +86,7 @@ void yyerror(char *s);
 # define YYERROR_VERBOSE 0
 #endif
 
-/* In a future release of Bison, this section will be replaced
-   by #include "roman.tab.h".  */
-#ifndef YY_YY_ROMAN_TAB_H_INCLUDED
-# define YY_YY_ROMAN_TAB_H_INCLUDED
+
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -126,11 +123,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_ROMAN_TAB_H_INCLUDED  */
+
 
 /* Copy the second part of user declarations.  */
 
-#line 134 "roman.tab.c" /* yacc.c:358  */
+#line 131 "roman.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1244,173 +1241,173 @@ yyreduce:
         case 3:
 #line 24 "roman.y" /* yacc.c:1666  */
     {printf("%d\n", (yyvsp[-1]));}
-#line 1248 "roman.tab.c" /* yacc.c:1666  */
+#line 1245 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 4:
 #line 28 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1254 "roman.tab.c" /* yacc.c:1666  */
+#line 1251 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 5:
 #line 29 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1260 "roman.tab.c" /* yacc.c:1666  */
+#line 1257 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 6:
 #line 30 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1266 "roman.tab.c" /* yacc.c:1666  */
+#line 1263 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 7:
 #line 31 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1272 "roman.tab.c" /* yacc.c:1666  */
+#line 1269 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 8:
 #line 32 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1278 "roman.tab.c" /* yacc.c:1666  */
+#line 1275 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 9:
 #line 33 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1284 "roman.tab.c" /* yacc.c:1666  */
+#line 1281 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 10:
 #line 34 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1290 "roman.tab.c" /* yacc.c:1666  */
+#line 1287 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 11:
 #line 38 "roman.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1296 "roman.tab.c" /* yacc.c:1666  */
+#line 1293 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 12:
 #line 39 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1302 "roman.tab.c" /* yacc.c:1666  */
+#line 1299 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 13:
 #line 40 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1308 "roman.tab.c" /* yacc.c:1666  */
+#line 1305 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 14:
 #line 41 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1314 "roman.tab.c" /* yacc.c:1666  */
+#line 1311 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 15:
 #line 42 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1320 "roman.tab.c" /* yacc.c:1666  */
+#line 1317 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 16:
 #line 43 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1326 "roman.tab.c" /* yacc.c:1666  */
+#line 1323 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 17:
 #line 44 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1332 "roman.tab.c" /* yacc.c:1666  */
+#line 1329 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 18:
 #line 45 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1338 "roman.tab.c" /* yacc.c:1666  */
+#line 1335 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 19:
 #line 49 "roman.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1344 "roman.tab.c" /* yacc.c:1666  */
+#line 1341 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 20:
 #line 50 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1350 "roman.tab.c" /* yacc.c:1666  */
+#line 1347 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 21:
 #line 51 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1356 "roman.tab.c" /* yacc.c:1666  */
+#line 1353 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 22:
 #line 52 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1362 "roman.tab.c" /* yacc.c:1666  */
+#line 1359 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 23:
 #line 53 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1368 "roman.tab.c" /* yacc.c:1666  */
+#line 1365 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 24:
 #line 54 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1374 "roman.tab.c" /* yacc.c:1666  */
+#line 1371 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 25:
 #line 58 "roman.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1380 "roman.tab.c" /* yacc.c:1666  */
+#line 1377 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 26:
 #line 59 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1386 "roman.tab.c" /* yacc.c:1666  */
+#line 1383 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 27:
 #line 60 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1392 "roman.tab.c" /* yacc.c:1666  */
+#line 1389 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 28:
 #line 61 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1398 "roman.tab.c" /* yacc.c:1666  */
+#line 1395 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 29:
 #line 65 "roman.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1404 "roman.tab.c" /* yacc.c:1666  */
+#line 1401 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 30:
 #line 66 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1410 "roman.tab.c" /* yacc.c:1666  */
+#line 1407 "roman.tab.c" /* yacc.c:1666  */
     break;
 
 
-#line 1414 "roman.tab.c" /* yacc.c:1666  */
+#line 1411 "roman.tab.c" /* yacc.c:1666  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

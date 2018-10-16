@@ -22,7 +22,7 @@ void yyerror(char *s);
 [M]  { yylval = 1000; return M; }
 
 \n      { return EOL; /* Catch new line and tab/space */}
-[ \t]   { }
+[ \t\n]  { }
 
 .	{ printf("syntax error\n"); /* Catch everything else not caught and print character */}
 %%
