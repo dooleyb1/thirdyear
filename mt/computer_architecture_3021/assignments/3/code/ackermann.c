@@ -1,6 +1,8 @@
 // Ackermann's Function - Full Recursive
 // Sampled from https://gist.github.com/justjkk/407739
 
+// Copyright (c) 2018 Brandon Dooley - dooleyb1@tcd.ie
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
@@ -40,11 +42,9 @@ int main(int argc, char **argv) {
   // Start clock
   startTime = clock();
 
-  int BS = 0;
-  int i;
-
   // Run Ackermann(3,6)
-  BS += ackermann(3, 6);
+	int res = 0;
+  res += ackermann(3, 6);
 
   // Stop clock
   endTime = clock();
@@ -52,7 +52,7 @@ int main(int argc, char **argv) {
   // Calculate elapsed time
 	double elapsed = (double)(endTime - startTime) * 1000.0 / CLOCKS_PER_SEC;
 
-	printf("\nAckermann Function with inputs (%d,%d) and maxWindows (%d) is %d\n", x, y, maxWindows, BS);
+	printf("\nAckermann Function with inputs (%d,%d) and maxWindows (%d) is %d\n", x, y, maxWindows, res);
 	printf("\nFunction called %d times.\n", callCount);
   printf("\nOverflow occurred %d times.\n", overflowCount);
   printf("\nUnderflow occurred %d times.\n", underflowCount);
