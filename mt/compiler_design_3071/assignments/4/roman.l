@@ -24,7 +24,7 @@ void yyerror(char *s);
 \n      { return EOL; /* Catch new line and tab/space */}
 [ \t\n]  { }
 
-.	{ printf("syntax error\n"); /* Catch everything else not caught and print character */}
+.	{ printf("syntax error\n"); exit(0);/* Catch everything else not caught and print character */}
 %%
 
 /* Mainline deleted since parser(roman.y) calls scanner(THIS FILE)*/

@@ -817,7 +817,7 @@ YY_RULE_SETUP
 case 10:
 YY_RULE_SETUP
 #line 27 "roman.l"
-{ printf("syntax error\n"); /* Catch everything else not caught and print character */}
+{ printf("syntax error\n"); exit(0);/* Catch everything else not caught and print character */}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP

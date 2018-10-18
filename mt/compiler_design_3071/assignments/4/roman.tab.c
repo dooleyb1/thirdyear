@@ -67,8 +67,10 @@
 #include <stdio.h>
 int yylex();
 void yyerror(char *s);
+int results[50];
+int current_index = 0;
 
-#line 72 "roman.tab.c" /* yacc.c:339  */
+#line 74 "roman.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -107,7 +109,8 @@ extern int yydebug;
     C = 262,
     D = 263,
     M = 264,
-    EOL = 265
+    EOL = 265,
+    ERR = 266
   };
 #endif
 
@@ -127,7 +130,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 131 "roman.tab.c" /* yacc.c:358  */
+#line 134 "roman.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -372,7 +375,7 @@ union yyalloc
 #define YYLAST   116
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  11
+#define YYNTOKENS  12
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  7
 /* YYNRULES -- Number of rules.  */
@@ -383,7 +386,7 @@ union yyalloc
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   265
+#define YYMAXUTOK   266
 
 #define YYTRANSLATE(YYX)                                                \
   ((unsigned) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
@@ -418,17 +421,17 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
-       5,     6,     7,     8,     9,    10
+       5,     6,     7,     8,     9,    10,    11
 };
 
 #if YYDEBUG
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    23,    23,    24,    28,    29,    30,    31,    32,    33,
-      34,    38,    39,    40,    41,    42,    43,    44,    45,    49,
-      50,    51,    52,    53,    54,    58,    59,    60,    61,    65,
-      66
+       0,    26,    26,    27,    36,    37,    38,    39,    40,    41,
+      42,    46,    47,    48,    49,    50,    51,    52,    53,    57,
+      58,    59,    60,    61,    62,    66,    67,    68,    69,    73,
+      74
 };
 #endif
 
@@ -438,7 +441,8 @@ static const yytype_uint8 yyrline[] =
 static const char *const yytname[] =
 {
   "$end", "error", "$undefined", "I", "V", "X", "L", "C", "D", "M", "EOL",
-  "$accept", "romanparse", "expr", "max_m", "max_c", "max_x", "max_i", YY_NULLPTR
+  "ERR", "$accept", "romanparse", "expr", "max_m", "max_c", "max_x",
+  "max_i", YY_NULLPTR
 };
 #endif
 
@@ -448,7 +452,7 @@ static const char *const yytname[] =
 static const yytype_uint16 yytoknum[] =
 {
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
-     265
+     265,   266
 };
 # endif
 
@@ -538,21 +542,21 @@ static const yytype_int8 yycheck[] =
      symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,    12,     0,     3,    13,    15,    16,    17,     3,    17,
-      10,     8,     9,     6,     7,     4,     5,    17,     3,    15,
-      16,    17,     3,    14,    15,    16,    17,     3,    16,    17,
-      15,    17,    16,    17,     6,     7,     4,     5,    17,     8,
-       9,     6,     7,     4,     5,    17,     4,     5,    16,    15,
-      17,    16,    15,    14,    16,    15,    17,    16,    17,    16
+       0,    13,     0,     3,    14,    16,    17,    18,     3,    18,
+      10,     8,     9,     6,     7,     4,     5,    18,     3,    16,
+      17,    18,     3,    15,    16,    17,    18,     3,    17,    18,
+      16,    18,    17,    18,     6,     7,     4,     5,    18,     8,
+       9,     6,     7,     4,     5,    18,     4,     5,    17,    16,
+      18,    17,    16,    15,    17,    16,    18,    17,    18,    17
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    11,    12,    12,    13,    13,    13,    13,    13,    13,
-      13,    14,    14,    14,    14,    14,    14,    14,    14,    15,
-      15,    15,    15,    15,    15,    16,    16,    16,    16,    17,
-      17
+       0,    12,    13,    13,    14,    14,    14,    14,    14,    14,
+      14,    15,    15,    15,    15,    15,    15,    15,    15,    16,
+      16,    16,    16,    16,    16,    17,    17,    17,    17,    18,
+      18
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
@@ -1239,175 +1243,180 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 24 "roman.y" /* yacc.c:1666  */
-    {printf("%d\n", (yyvsp[-1]));}
-#line 1245 "roman.tab.c" /* yacc.c:1666  */
+#line 27 "roman.y" /* yacc.c:1666  */
+    {
+
+   results[current_index] = (yyvsp[-1]);
+   current_index++;
+
+ }
+#line 1254 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 4:
-#line 28 "roman.y" /* yacc.c:1666  */
+#line 36 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1251 "roman.tab.c" /* yacc.c:1666  */
+#line 1260 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 5:
-#line 29 "roman.y" /* yacc.c:1666  */
+#line 37 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1257 "roman.tab.c" /* yacc.c:1666  */
+#line 1266 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 6:
-#line 30 "roman.y" /* yacc.c:1666  */
+#line 38 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1263 "roman.tab.c" /* yacc.c:1666  */
+#line 1272 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 7:
-#line 31 "roman.y" /* yacc.c:1666  */
+#line 39 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1269 "roman.tab.c" /* yacc.c:1666  */
+#line 1278 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 8:
-#line 32 "roman.y" /* yacc.c:1666  */
+#line 40 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1275 "roman.tab.c" /* yacc.c:1666  */
+#line 1284 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 9:
-#line 33 "roman.y" /* yacc.c:1666  */
+#line 41 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1281 "roman.tab.c" /* yacc.c:1666  */
+#line 1290 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 10:
-#line 34 "roman.y" /* yacc.c:1666  */
+#line 42 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1287 "roman.tab.c" /* yacc.c:1666  */
+#line 1296 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 11:
-#line 38 "roman.y" /* yacc.c:1666  */
+#line 46 "roman.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1293 "roman.tab.c" /* yacc.c:1666  */
+#line 1302 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 12:
-#line 39 "roman.y" /* yacc.c:1666  */
+#line 47 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1299 "roman.tab.c" /* yacc.c:1666  */
+#line 1308 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 13:
-#line 40 "roman.y" /* yacc.c:1666  */
+#line 48 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1305 "roman.tab.c" /* yacc.c:1666  */
+#line 1314 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 14:
-#line 41 "roman.y" /* yacc.c:1666  */
+#line 49 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1311 "roman.tab.c" /* yacc.c:1666  */
+#line 1320 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 15:
-#line 42 "roman.y" /* yacc.c:1666  */
+#line 50 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1317 "roman.tab.c" /* yacc.c:1666  */
+#line 1326 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 16:
-#line 43 "roman.y" /* yacc.c:1666  */
+#line 51 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1323 "roman.tab.c" /* yacc.c:1666  */
+#line 1332 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 17:
-#line 44 "roman.y" /* yacc.c:1666  */
+#line 52 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1329 "roman.tab.c" /* yacc.c:1666  */
+#line 1338 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 18:
-#line 45 "roman.y" /* yacc.c:1666  */
+#line 53 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1335 "roman.tab.c" /* yacc.c:1666  */
+#line 1344 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 19:
-#line 49 "roman.y" /* yacc.c:1666  */
+#line 57 "roman.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1341 "roman.tab.c" /* yacc.c:1666  */
+#line 1350 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 20:
-#line 50 "roman.y" /* yacc.c:1666  */
+#line 58 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1347 "roman.tab.c" /* yacc.c:1666  */
+#line 1356 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 21:
-#line 51 "roman.y" /* yacc.c:1666  */
+#line 59 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1353 "roman.tab.c" /* yacc.c:1666  */
+#line 1362 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 22:
-#line 52 "roman.y" /* yacc.c:1666  */
+#line 60 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1359 "roman.tab.c" /* yacc.c:1666  */
+#line 1368 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 23:
-#line 53 "roman.y" /* yacc.c:1666  */
+#line 61 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1365 "roman.tab.c" /* yacc.c:1666  */
+#line 1374 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 24:
-#line 54 "roman.y" /* yacc.c:1666  */
+#line 62 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1371 "roman.tab.c" /* yacc.c:1666  */
+#line 1380 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 25:
-#line 58 "roman.y" /* yacc.c:1666  */
+#line 66 "roman.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1377 "roman.tab.c" /* yacc.c:1666  */
+#line 1386 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 26:
-#line 59 "roman.y" /* yacc.c:1666  */
+#line 67 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1383 "roman.tab.c" /* yacc.c:1666  */
+#line 1392 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 27:
-#line 60 "roman.y" /* yacc.c:1666  */
+#line 68 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1389 "roman.tab.c" /* yacc.c:1666  */
+#line 1398 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 28:
-#line 61 "roman.y" /* yacc.c:1666  */
+#line 69 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1395 "roman.tab.c" /* yacc.c:1666  */
+#line 1404 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 29:
-#line 65 "roman.y" /* yacc.c:1666  */
+#line 73 "roman.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1401 "roman.tab.c" /* yacc.c:1666  */
+#line 1410 "roman.tab.c" /* yacc.c:1666  */
     break;
 
   case 30:
-#line 66 "roman.y" /* yacc.c:1666  */
+#line 74 "roman.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1407 "roman.tab.c" /* yacc.c:1666  */
+#line 1416 "roman.tab.c" /* yacc.c:1666  */
     break;
 
 
-#line 1411 "roman.tab.c" /* yacc.c:1666  */
+#line 1420 "roman.tab.c" /* yacc.c:1666  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1635,17 +1644,26 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 69 "roman.y" /* yacc.c:1910  */
+#line 77 "roman.y" /* yacc.c:1910  */
 
 /* parse a given string and return the result via the second argument */
 int main ()
 {
+
   /* Parse user input, call scanner */
   yyparse();
+
+  int i;
+
+  // Print the result integers
+  for(i = 0; i < current_index; i++){
+    printf("%d\n", results[i]);
+  }
+
   return 0;
 }
 
 void yyerror(char *s)
 {
-  fprintf(stderr, "error: %s\n", s);
+  fprintf(stdout, "%s\n", s);
 }

@@ -8,6 +8,8 @@
 #include <stdio.h>
 int yylex();
 void yyerror(char *s);
+int results[50];
+int current_index = 0;
 %}
 
 %token I
@@ -18,10 +20,16 @@ void yyerror(char *s);
 %token D
 %token M
 %token EOL
+%token ERR
 %%
 
 romanparse: /* parser entry */
- | romanparse expr EOL {printf("%d\n", $2);}  /* Prints expr ($2 since second element) */
+ | romanparse expr EOL {
+
+   results[current_index] = $2;
+   current_index++;
+
+ }  /* Prints expr ($2 since second element) */
 ;
 
 expr:
@@ -70,12 +78,21 @@ max_i:
 /* parse a given string and return the result via the second argument */
 int main ()
 {
+
   /* Parse user input, call scanner */
   yyparse();
+
+  int i;
+
+  // Print the result integers
+  for(i = 0; i < current_index; i++){
+    printf("%d\n", results[i]);
+  }
+
   return 0;
 }
 
 void yyerror(char *s)
 {
-  fprintf(stderr, "error: %s\n", s);
+  fprintf(stdout, "%s\n", s);
 }
