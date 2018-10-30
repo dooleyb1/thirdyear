@@ -57,8 +57,10 @@ extern int yydebug;
     MUL = 267,
     DIV = 268,
     ABS = 269,
-    EOL = 270,
-    ERR = 271
+    L_BRACKET = 270,
+    R_BRACKET = 271,
+    EOL = 272,
+    ERR = 273
   };
 #endif
 

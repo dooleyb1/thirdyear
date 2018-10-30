@@ -20,6 +20,7 @@ int current_index = 0;
 %token D
 %token M
 %token ADD SUB MUL DIV ABS
+%token L_BRACKET R_BRACKET
 %token EOL
 %token ERR
 %%
@@ -38,7 +39,9 @@ expr: factor
 factor: term
 | factor MUL term { $$ = $1 * $3; }             /* Applies factor ($1) * term ($3) */
 | factor DIV term { $$ = $1 / $3; }             /* Applies factor ($1) / term ($3) */
+| L_BRACKET expr R_BRACKET { $$ = $2; }
 ;
+
 
 term:
   max_c M max_m { $$ = $2 - $1 + $3; }
