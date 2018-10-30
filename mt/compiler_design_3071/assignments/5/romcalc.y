@@ -119,7 +119,11 @@ int main ()
 void print_roman(int num)
 {
   if (num == 0){ printf("Z");}
-  
+
+  if (num < 0) {
+    printf("-");
+    num = num * -1;
+  }
   while (num > 0) {
           if (num >= 1000) {
                   /* M - 1000 */
