@@ -473,14 +473,14 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "romancalc.l"
+#line 1 "romcalc.l"
 /* FLEX FILE (.l) */
 /* SCANNER */
 /* ------------------------------------------------------- */
 /* Recognize tokens for the roman parser */
 /* Code inspired/sampled using https://github.com/ChristophBerg/postgresql-numeral */
-#line 10 "romancalc.l"
-#include "romancalc.tab.h"
+#line 10 "romcalc.l"
+#include "romcalc.tab.h"
 void yyerror(char *s);
 #line 485 "lex.yy.c"
 #line 486 "lex.yy.c"
@@ -700,7 +700,7 @@ YY_DECL
 		}
 
 	{
-#line 14 "romancalc.l"
+#line 14 "romcalc.l"
 
 
 #line 706 "lex.yy.c"
@@ -772,89 +772,89 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 16 "romancalc.l"
+#line 16 "romcalc.l"
 { yylval = 1; return I; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 17 "romancalc.l"
+#line 17 "romcalc.l"
 { yylval = 5; return V; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 18 "romancalc.l"
+#line 18 "romcalc.l"
 { yylval = 10; return X; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 19 "romancalc.l"
+#line 19 "romcalc.l"
 { yylval = 50; return L; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 20 "romancalc.l"
+#line 20 "romcalc.l"
 { yylval = 100; return C; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 21 "romancalc.l"
+#line 21 "romcalc.l"
 { yylval = 500; return D; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 22 "romancalc.l"
+#line 22 "romcalc.l"
 { yylval = 1000; return M; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 23 "romancalc.l"
+#line 23 "romcalc.l"
 { return ADD; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 24 "romancalc.l"
+#line 24 "romcalc.l"
 { return SUB; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 25 "romancalc.l"
+#line 25 "romcalc.l"
 { return MUL; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 26 "romancalc.l"
+#line 26 "romcalc.l"
 { return DIV; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 27 "romancalc.l"
+#line 27 "romcalc.l"
 { return L_BRACKET; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 28 "romancalc.l"
+#line 28 "romcalc.l"
 { return R_BRACKET; }
 	YY_BREAK
 case 14:
 /* rule 14 can match eol */
 YY_RULE_SETUP
-#line 31 "romancalc.l"
+#line 31 "romcalc.l"
 { return EOL; /* Catch new line and tab/space */}
 	YY_BREAK
 case 15:
 /* rule 15 can match eol */
 YY_RULE_SETUP
-#line 32 "romancalc.l"
+#line 32 "romcalc.l"
 { }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 34 "romancalc.l"
+#line 34 "romcalc.l"
 { printf("syntax error\n"); exit(0);/* Catch everything else not caught and print character */}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 35 "romancalc.l"
+#line 35 "romcalc.l"
 YY_FATAL_ERROR( "flex scanner jammed" );
 	YY_BREAK
 #line 860 "lex.yy.c"
@@ -1874,7 +1874,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 35 "romancalc.l"
+#line 35 "romcalc.l"
 
 
 /* Mainline deleted since parser(roman.y) calls scanner(THIS FILE)*/

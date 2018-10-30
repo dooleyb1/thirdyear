@@ -1,1 +1,1 @@
-bison -d romancalc.y && flex romancalc.l && gcc romancalc.tab.c lex.yy.c
+bison -d romcalc.y && flex romcalc.l && gcc romcalc.tab.c lex.yy.c

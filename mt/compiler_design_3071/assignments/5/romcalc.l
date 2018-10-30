@@ -7,7 +7,7 @@
 %option noyywrap nodefault yylineno
 
 %{
-#include "romancalc.tab.h"
+#include "romcalc.tab.h"
 void yyerror(char *s);
 %}
 

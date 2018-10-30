@@ -62,15 +62,19 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 7 "romancalc.y" /* yacc.c:339  */
+#line 7 "romcalc.y" /* yacc.c:339  */
 
 #include <stdio.h>
+#include <string.h>
+
 int yylex();
 void yyerror(char *s);
+void print_roman(int num);
+
 int results[50];
 int current_index = 0;
 
-#line 74 "romancalc.tab.c" /* yacc.c:339  */
+#line 78 "romcalc.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -89,9 +93,9 @@ int current_index = 0;
 #endif
 
 /* In a future release of Bison, this section will be replaced
-   by #include "romancalc.tab.h".  */
-#ifndef YY_YY_ROMANCALC_TAB_H_INCLUDED
-# define YY_YY_ROMANCALC_TAB_H_INCLUDED
+   by #include "romcalc.tab.h".  */
+#ifndef YY_YY_ROMCALC_TAB_H_INCLUDED
+# define YY_YY_ROMCALC_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -136,11 +140,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_ROMANCALC_TAB_H_INCLUDED  */
+#endif /* !YY_YY_ROMCALC_TAB_H_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
-#line 144 "romancalc.tab.c" /* yacc.c:358  */
+#line 148 "romcalc.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -439,10 +443,10 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    28,    28,    29,    33,    34,    35,    39,    40,    41,
-      42,    47,    48,    49,    50,    51,    52,    53,    57,    58,
-      59,    60,    61,    62,    63,    64,    68,    69,    70,    71,
-      72,    73,    77,    78,    79,    80,    84,    85
+       0,    32,    32,    33,    45,    46,    47,    51,    52,    53,
+      54,    59,    60,    61,    62,    63,    64,    65,    69,    70,
+      71,    72,    73,    74,    75,    76,    80,    81,    82,    83,
+      84,    85,    89,    90,    91,    92,    96,    97
 };
 #endif
 
@@ -1267,205 +1271,213 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 29 "romancalc.y" /* yacc.c:1666  */
-    { printf("= %d\n> ", (yyvsp[-1])); }
-#line 1273 "romancalc.tab.c" /* yacc.c:1666  */
+#line 33 "romcalc.y" /* yacc.c:1666  */
+    {
+
+  /* printf("= "); */
+  print_roman((yyvsp[-1]));
+  /* printf("\n> "); */
+  /* results[current_index] = $2;
+  current_index++; */
+
+}
+#line 1285 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 5:
-#line 34 "romancalc.y" /* yacc.c:1666  */
+#line 46 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-2]) + (yyvsp[0]); }
-#line 1279 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1291 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 6:
-#line 35 "romancalc.y" /* yacc.c:1666  */
+#line 47 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-2]) - (yyvsp[0]); }
-#line 1285 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1297 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 8:
-#line 40 "romancalc.y" /* yacc.c:1666  */
+#line 52 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-2]) * (yyvsp[0]); }
-#line 1291 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1303 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 9:
-#line 41 "romancalc.y" /* yacc.c:1666  */
+#line 53 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-2]) / (yyvsp[0]); }
-#line 1297 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1309 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 10:
-#line 42 "romancalc.y" /* yacc.c:1666  */
+#line 54 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]); }
-#line 1303 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1315 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 11:
-#line 47 "romancalc.y" /* yacc.c:1666  */
+#line 59 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1309 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1321 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 12:
-#line 48 "romancalc.y" /* yacc.c:1666  */
+#line 60 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1315 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1327 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 13:
-#line 49 "romancalc.y" /* yacc.c:1666  */
+#line 61 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1321 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1333 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 14:
-#line 50 "romancalc.y" /* yacc.c:1666  */
+#line 62 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1327 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1339 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 15:
-#line 51 "romancalc.y" /* yacc.c:1666  */
+#line 63 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1333 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1345 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 16:
-#line 52 "romancalc.y" /* yacc.c:1666  */
+#line 64 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1339 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1351 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 17:
-#line 53 "romancalc.y" /* yacc.c:1666  */
+#line 65 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1345 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1357 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 18:
-#line 57 "romancalc.y" /* yacc.c:1666  */
+#line 69 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1351 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1363 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 19:
-#line 58 "romancalc.y" /* yacc.c:1666  */
+#line 70 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1357 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1369 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 20:
-#line 59 "romancalc.y" /* yacc.c:1666  */
+#line 71 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1363 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1375 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 21:
-#line 60 "romancalc.y" /* yacc.c:1666  */
+#line 72 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1369 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1381 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 22:
-#line 61 "romancalc.y" /* yacc.c:1666  */
+#line 73 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1375 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1387 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 23:
-#line 62 "romancalc.y" /* yacc.c:1666  */
+#line 74 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1381 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1393 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 24:
-#line 63 "romancalc.y" /* yacc.c:1666  */
+#line 75 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1387 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1399 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 25:
-#line 64 "romancalc.y" /* yacc.c:1666  */
+#line 76 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1393 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1405 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 26:
-#line 68 "romancalc.y" /* yacc.c:1666  */
+#line 80 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1399 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1411 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 27:
-#line 69 "romancalc.y" /* yacc.c:1666  */
+#line 81 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1405 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1417 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 28:
-#line 70 "romancalc.y" /* yacc.c:1666  */
+#line 82 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1411 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1423 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 29:
-#line 71 "romancalc.y" /* yacc.c:1666  */
+#line 83 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1417 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1429 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 30:
-#line 72 "romancalc.y" /* yacc.c:1666  */
+#line 84 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1423 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1435 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 31:
-#line 73 "romancalc.y" /* yacc.c:1666  */
+#line 85 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1429 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1441 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 32:
-#line 77 "romancalc.y" /* yacc.c:1666  */
+#line 89 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1435 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1447 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 33:
-#line 78 "romancalc.y" /* yacc.c:1666  */
+#line 90 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1441 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1453 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 34:
-#line 79 "romancalc.y" /* yacc.c:1666  */
+#line 91 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) - (yyvsp[-2]) + (yyvsp[0]); }
-#line 1447 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1459 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 35:
-#line 80 "romancalc.y" /* yacc.c:1666  */
+#line 92 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1453 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1465 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 36:
-#line 84 "romancalc.y" /* yacc.c:1666  */
+#line 96 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = 0; }
-#line 1459 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1471 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
   case 37:
-#line 85 "romancalc.y" /* yacc.c:1666  */
+#line 97 "romcalc.y" /* yacc.c:1666  */
     { (yyval) = (yyvsp[-1]) + (yyvsp[0]); }
-#line 1465 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1477 "romcalc.tab.c" /* yacc.c:1666  */
     break;
 
 
-#line 1469 "romancalc.tab.c" /* yacc.c:1666  */
+#line 1481 "romcalc.tab.c" /* yacc.c:1666  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1693,19 +1705,108 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 88 "romancalc.y" /* yacc.c:1910  */
+#line 100 "romcalc.y" /* yacc.c:1910  */
 
 /* parse a given string and return the result via the second argument */
 int main ()
 {
-  printf("> ");
+  /* printf("> "); */
 
   /* Parse user input, call scanner */
   yyparse();
+
+  int i;
+
+  // Print the result integers
+  for(i = 0; i < current_index; i++){
+    print_roman(results[i]);
+  }
+
   return 0;
+}
+
+void print_roman(int num)
+{
+  if (num == 0){ printf("Z");}
+  
+  while (num > 0) {
+          if (num >= 1000) {
+                  /* M - 1000 */
+                  printf("M");
+                  num = num - 1000;
+          } else if (num >= 500) {
+                  /*
+                   * D is 500. CM is 900
+                   * CM = M - C = 1000 - 100 => 900
+                   */
+                  if (num >= 900) {
+                          printf("CM");
+                          num = num - 900;
+                  } else {
+                          printf("D");
+                          num = num - 500;
+                  }
+          } else if (num >= 100) {
+                  /*
+                   * C is 100. CD is 400
+                   * CD = D - C = 500 - 100 => 400
+                   */
+                  if (num >= 400) {
+                          printf("CD");
+                          num = num - 400;
+                  } else {
+                          printf("C");
+                          num = num - 100;
+                  }
+          } else if (num >= 50) {
+                  /*
+                   * L is 50. XC is 90
+                   * XC = C - X = 100 - 10 => 90
+                   */
+                  if (num >= 90) {
+                          printf("XC");
+                          num = num - 90;
+                  } else {
+                          printf("L");
+                          num = num - 50;
+                  }
+          } else if (num >= 9) {
+                  /*
+                   * XL is 40. IX is 9. X is 10
+                   * XL = L - X = 50 - 10 = 40
+                   * IX = X - I = 10 - 1 = 9
+                   */
+                  if (num >= 40) {
+                          printf("XL");
+                          num = num - 40;
+                  } else if (num == 9) {
+                          printf("IX");
+                          num = num - 9;
+                  } else {
+                          printf("X");
+                          num = num - 10;
+                  }
+          } else if (num >= 4) {
+                  /*
+                   * V is 5 and IV is 4
+                   * IV = V - I = 5 - 1 => 4
+                   */
+                  if (num >= 5) {
+                          printf("V");
+                          num = num - 5;
+                  } else {
+                          printf("IV");
+                          num = num - 4;
+                  }
+          } else {
+                  printf("I");
+                  num = num - 1;
+          }
+  }
+  printf("\n");
 }
 
 void yyerror(char *s)
 {
-  fprintf(stderr, "error: %s\n", s);
+  fprintf(stdout, "%s\n", s);
 }
