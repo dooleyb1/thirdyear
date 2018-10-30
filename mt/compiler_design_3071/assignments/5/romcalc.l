@@ -24,8 +24,8 @@ void yyerror(char *s);
 [-]	{ return SUB; }
 [*]	{ return MUL; }
 [/]	{ return DIV; }
-[(]	{ return L_BRACKET; }
-[)]	{ return R_BRACKET; }
+[{]	{ return L_BRACKET; }
+[}]	{ return R_BRACKET; }
 
 
 \n      { return EOL; /* Catch new line and tab/space */}
