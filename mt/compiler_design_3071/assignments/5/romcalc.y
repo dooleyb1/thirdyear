@@ -106,12 +106,12 @@ int main ()
   /* Parse user input, call scanner */
   yyparse();
 
-  int i;
+  /* int i;
 
   // Print the result integers
   for(i = 0; i < current_index; i++){
     print_roman(results[i]);
-  }
+  } */
 
   return 0;
 }
