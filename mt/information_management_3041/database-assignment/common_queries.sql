@@ -88,3 +88,47 @@ DELIMITER ;
 -- Query to test trigger
 INSERT INTO `premier-league`.Managers
 VALUES (11, 'Brandon', 'Dooley', 21, 97000000, Ireland, 1);
+
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+-- Trigger to set manager_id to null for team
+DELIMITER $$
+CREATE TRIGGER process_manager_delete BEFORE DELETE ON Managers
+    FOR EACH ROW
+BEGIN
+  -- Update manager id in Teams
+	UPDATE Teams
+    SET manager_id = NULL
+    WHERE id = OLD.team_id;
+END$$
+DELIMITER ;
+
+-- Query to test trigger
+DELETE FROM Managers WHERE id = 11;
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+-- View for teams summary
+CREATE VIEW `teams_overview` AS
+SELECT t.team_name, m.manager_name, s.stadium_name
+FROM Teams t, Managers m, Stadiums s
+WHERE t.id=m.team_id
+AND t.id=s.team_id;
+
+-- Run view
+SELECT * FROM `premier-league`.teams_overview;
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+-- View for managers summary
+CREATE VIEW `managers_overview` AS
+SELECT m.manager_name, t.team_name, m.salary
+FROM Teams t, Managers m
+WHERE t.id=m.team_id
+
+-- Run view
+SELECT * FROM `premier-league`.teams_overview;
