@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `Fixtures`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = utf8 ;
 CREATE TABLE `Fixtures` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `home_team_id` int(11) DEFAULT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE `Fixtures` (
   CONSTRAINT `Fixtures - Away Team Id` FOREIGN KEY (`away_team_id`) REFERENCES `teams` (`id`),
   CONSTRAINT `Fixtures - Home Team Id` FOREIGN KEY (`home_team_id`) REFERENCES `teams` (`id`),
   CONSTRAINT `Fixtures - Stadium Id` FOREIGN KEY (`stadium_id`) REFERENCES `stadiums` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -58,7 +58,7 @@ UNLOCK TABLES;
 --
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`root`@`localhost` */ /*!50003 TRIGGER `process_fixture_goal_difference` AFTER UPDATE ON `Fixtures` FOR EACH ROW BEGIN
+/*!50003 CREATE */ /*!50017 DEFINER=`dooleyb1`@`mysql.scss.tcd.ie` */ /*!50003 TRIGGER `process_fixture_goal_difference` AFTER UPDATE ON `Fixtures` FOR EACH ROW BEGIN
     IF NEW.result = 'win' THEN
   		-- If the home team won update goal difference accordingly
   		IF NEW.winner_id = NEW.home_team_id THEN
@@ -85,7 +85,7 @@ DELIMITER ;
 --
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`root`@`localhost` */ /*!50003 TRIGGER `process_fixture_win` AFTER UPDATE ON `Fixtures` FOR EACH ROW BEGIN
+/*!50003 CREATE */ /*!50017 DEFINER=`dooleyb1`@`mysql.scss.tcd.ie` */ /*!50003 TRIGGER `process_fixture_win` AFTER UPDATE ON `Fixtures` FOR EACH ROW BEGIN
     IF NEW.result = 'win' THEN
 		    UPDATE Teams
 			SET points = points + 3
@@ -100,7 +100,7 @@ DELIMITER ;
 
 DROP TABLE IF EXISTS `Managers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = utf8 ;
 CREATE TABLE `Managers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `manager_name` varchar(25) NOT NULL,
@@ -112,7 +112,7 @@ CREATE TABLE `Managers` (
   UNIQUE KEY `manager_id_UNIQUE` (`id`),
   KEY `team_id_idx` (`team_id`),
   CONSTRAINT `Managers - Team Id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,7 +129,7 @@ UNLOCK TABLES;
 --
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`root`@`localhost` */ /*!50003 TRIGGER `process_new_manager` AFTER INSERT ON `Managers` FOR EACH ROW BEGIN
+/*!50003 CREATE */ /*!50017 DEFINER=`dooleyb1`@`mysql.scss.tcd.ie` */ /*!50003 TRIGGER `process_new_manager` AFTER INSERT ON `Managers` FOR EACH ROW BEGIN
   -- Update manager id in Teams
 	UPDATE Teams
     SET manager_id = NEW.id
@@ -141,7 +141,7 @@ DELIMITER ;
 --
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`root`@`localhost` */ /*!50003 TRIGGER `process_manager_delete` BEFORE DELETE ON `Managers` FOR EACH ROW BEGIN
+/*!50003 CREATE */ /*!50017 DEFINER=`dooleyb1`@`mysql.scss.tcd.ie` */ /*!50003 TRIGGER `process_manager_delete` BEFORE DELETE ON `Managers` FOR EACH ROW BEGIN
   -- Update manager id in Teams
 	UPDATE Teams
     SET manager_id = NULL
@@ -156,8 +156,8 @@ DELIMITER ;
 DROP TABLE IF EXISTS `managers_overview`;
 /*!50001 DROP VIEW IF EXISTS `managers_overview`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8mb4;
-/*!50001 CREATE VIEW `managers_overview` AS SELECT 
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `managers_overview` AS SELECT
  1 AS `manager_name`,
  1 AS `team_name`,
  1 AS `salary`*/;
@@ -169,7 +169,7 @@ SET character_set_client = @saved_cs_client;
 
 DROP TABLE IF EXISTS `Players`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = utf8 ;
 CREATE TABLE `Players` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(15) NOT NULL,
@@ -183,7 +183,7 @@ CREATE TABLE `Players` (
   UNIQUE KEY `player_id_UNIQUE` (`id`),
   KEY `Players - Team Id_idx` (`team_id`),
   CONSTRAINT `Players - Team Id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -202,7 +202,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Stadiums`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = utf8 ;
 CREATE TABLE `Stadiums` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `stadium_name` varchar(25) NOT NULL,
@@ -214,7 +214,7 @@ CREATE TABLE `Stadiums` (
   UNIQUE KEY `stadium_id_UNIQUE` (`id`),
   KEY `team_id_idx` (`team_id`),
   CONSTRAINT `Stadiums - Team id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -233,7 +233,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Teams`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = utf8 ;
 CREATE TABLE `Teams` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `team_name` varchar(25) NOT NULL,
@@ -249,7 +249,7 @@ CREATE TABLE `Teams` (
   KEY `Teams - Manager Id_idx` (`manager_id`),
   CONSTRAINT `Teams - Manager Id` FOREIGN KEY (`manager_id`) REFERENCES `managers` (`id`),
   CONSTRAINT `Teams - Stadium Id` FOREIGN KEY (`stadium_id`) REFERENCES `stadiums` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -269,8 +269,8 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `teams_overview`;
 /*!50001 DROP VIEW IF EXISTS `teams_overview`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8mb4;
-/*!50001 CREATE VIEW `teams_overview` AS SELECT 
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `teams_overview` AS SELECT
  1 AS `team_name`,
  1 AS `manager_name`,
  1 AS `stadium_name`*/;
@@ -282,7 +282,7 @@ SET character_set_client = @saved_cs_client;
 
 DROP TABLE IF EXISTS `Transfers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = utf8 ;
 CREATE TABLE `Transfers` (
   `id` int(11) NOT NULL,
   `player_id` int(11) DEFAULT NULL,
@@ -297,7 +297,7 @@ CREATE TABLE `Transfers` (
   CONSTRAINT `Transfers - New Team Id` FOREIGN KEY (`new_team_id`) REFERENCES `teams` (`id`),
   CONSTRAINT `Transfers - Old Team Id` FOREIGN KEY (`old_team_id`) REFERENCES `teams` (`id`),
   CONSTRAINT `Transfers - Player Id` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -314,7 +314,7 @@ UNLOCK TABLES;
 --
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`root`@`localhost` */ /*!50003 TRIGGER `process_player_transfer` AFTER INSERT ON `Transfers` FOR EACH ROW BEGIN
+/*!50003 CREATE */ /*!50017 DEFINER=`dooleyb1`@`mysql.scss.tcd.ie` */ /*!50003 TRIGGER `process_player_transfer` AFTER INSERT ON `Transfers` FOR EACH ROW BEGIN
     UPDATE Players
     SET team_id = NEW.new_team_id,
 			changed_at = NOW()
@@ -338,11 +338,11 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`dooleyb1`@`mysql.scss.tcd.ie` SQL SECURITY DEFINER */
 /*!50001 VIEW `managers_overview` AS select `m`.`manager_name` AS `manager_name`,`t`.`team_name` AS `team_name`,`m`.`salary` AS `salary` from (`teams` `t` join `managers` `m`) where (`t`.`id` = `m`.`team_id`) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -356,11 +356,11 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`dooleyb1`@`mysql.scss.tcd.ie` SQL SECURITY DEFINER */
 /*!50001 VIEW `teams_overview` AS select `t`.`team_name` AS `team_name`,`m`.`manager_name` AS `manager_name`,`s`.`stadium_name` AS `stadium_name` from ((`teams` `t` join `managers` `m`) join `stadiums` `s`) where ((`t`.`id` = `m`.`team_id`) and (`t`.`id` = `s`.`team_id`)) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
