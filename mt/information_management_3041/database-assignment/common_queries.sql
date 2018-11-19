@@ -21,7 +21,7 @@ WHERE id=1
 
 -- Trigger to process goal difference
 DELIMITER $$
-CREATE TRIGGER process_fixture_goal_difference AFTER UPDATE ON Fixtures
+CREATE TRIGGER process_fixture_goal_difference AFTER UPDATE ON Result
     FOR EACH ROW
 BEGIN
     IF NEW.result = 'win' THEN
@@ -56,13 +56,12 @@ WHERE id=1
 
 -- Trigger to update player_team_id
 DELIMITER $$
-CREATE TRIGGER process_player_transfer AFTER INSERT ON Transfers
+CREATE TRIGGER process_player_transfer AFTER INSERT ON Transfer
     FOR EACH ROW
 BEGIN
     UPDATE Players
-    SET team_id = NEW.new_team_id,
-			changed_at = NOW()
-	WHERE id = NEW.player_id;
+    SET team_id = NEW.new_team_id
+	WHERE player_id = NEW.player_id;
 END$$
 DELIMITER ;
 
@@ -113,10 +112,10 @@ DELETE FROM Managers WHERE id = 11;
 
 -- View for teams summary
 CREATE VIEW `teams_overview` AS
-SELECT t.team_name, m.manager_name, s.stadium_name
-FROM Teams t, Managers m, Stadiums s
-WHERE t.id=m.team_id
-AND t.id=s.team_id;
+SELECT t.team_name, m.manager_name, s.stadium_name, t.position, t.points
+FROM Team t, Manager m, Stadium s
+WHERE t.team_id=m.team_id
+AND t.team_id=s.team_id;
 
 -- Run view
 SELECT * FROM `premier-league`.teams_overview;
@@ -126,9 +125,21 @@ SELECT * FROM `premier-league`.teams_overview;
 
 -- View for managers summary
 CREATE VIEW `managers_overview` AS
-SELECT m.manager_name, t.team_name, m.salary
-FROM Teams t, Managers m
-WHERE t.id=m.team_id
+SELECT m.manager_name, t.team_name
+FROM Team t, Manager m
+WHERE t.team_id=m.team_id
 
 -- Run view
 SELECT * FROM `premier-league`.teams_overview;
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+-- View for players usmmary
+CREATE VIEW `players_overview` AS
+SELECT concat(p.first_name, ' ', p.second_name) as player_name, t.team_name, p.position, p.country, p.number
+FROM Player p, Team t
+WHERE p.team_id=t.team_id;
+
+-- Run view
+SELECT * FROM `premier-league`.players_overview;
