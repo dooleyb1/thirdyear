@@ -1,4 +1,4 @@
-{- butrfeld Andrew Butterfield -}
+{- dooleyb1 Brandon Dooley -}
 module Ex02 where
 
 -- Datatypes -------------------------------------------------------------------
