@@ -35,9 +35,15 @@ right(UpdatedCount) --> [1], right(Count), {UpdatedCount is Count + 2}.
 
 % Declare person definition and conditions
 s --> person(Colour1, Nationality1, Pet1), person(Colour2, Nationality2, Pet2), person(Colour3, Nationality3, Pet3),
-        {Colour1 \== Colour2, Colour1 \== Colour3, Colour2 \== Colour3,
-         Nationality1 \== Nationality2, Nationality1 \== Nationality3, Nationality2 \== Nationality3,
-         Pet1 \== Pet2, Pet1 \== Pet3, Pet2 \== Pet3}.
+        {Colour1 \== Colour2,
+         Colour1 \== Colour3,
+         Colour2 \== Colour3,
+         Nationality1 \== Nationality2,
+         Nationality1 \== Nationality3,
+         Nationality2 \== Nationality3,
+         Pet1 \== Pet2,
+         Pet1 \== Pet3,
+         Pet2 \== Pet3}.
 
 person(Colour, Nationality, Pet) --> colour(Colour), nationality(Nationality), pet(Pet).
 
