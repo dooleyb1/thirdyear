@@ -1,12 +1,12 @@
 -- Trigger to process a match win
 DELIMITER $$
-CREATE TRIGGER process_fixture_win AFTER UPDATE ON Fixtures
+CREATE TRIGGER process_fixture_win AFTER INSERT ON Result
     FOR EACH ROW
 BEGIN
     IF NEW.result = 'win' THEN
-		    UPDATE Teams
+		    UPDATE Team
 			SET points = points + 3
-			WHERE id = NEW.winner_id;
+			WHERE team_id = NEW.winner_id;
 	END IF;
 END$$
 DELIMITER ;
@@ -21,26 +21,21 @@ WHERE id=1
 
 -- Trigger to process goal difference
 DELIMITER $$
-CREATE TRIGGER process_fixture_goal_difference AFTER UPDATE ON Result
+CREATE TRIGGER process_fixture_goal_difference AFTER INSERT ON Result
     FOR EACH ROW
 BEGIN
     IF NEW.result = 'win' THEN
+      -- Get home_team and away_team id for given Fixtures
+      SET @home_team_for_fixture := (SELECT home_team_id FROM Fixture WHERE fixture_id = NEW.fixture_id);
+      SET @away_team_for_fixture := (SELECT away_team_id FROM Fixture WHERE fixture_id = NEW.fixture_id);
   		-- If the home team won update goal difference accordingly
-  		IF NEW.winner_id = NEW.home_team_id THEN
-  			UPDATE Teams
-  			SET goal_difference = CASE
-  				WHEN id = NEW.home_team_id THEN goal_difference + (NEW.home_goals - NEW.away_goals)
-          WHEN id = NEW.away_team_id THEN goal_difference - (NEW.home_goals - NEW.away_goals)
-          ELSE goal_difference + 0
-        END;
+  		IF NEW.winner_id = @home_team_for_fixture THEN
+  			UPDATE Team SET goal_difference = goal_difference + (NEW.home_goals - NEW.away_goals) WHERE team_id = @home_team_for_fixture
+        UPDATE Team SET goal_difference = goal_difference - (NEW.home_goals - NEW.away_goals) WHERE team_id = @away_team_for_fixture
   		-- If the away team won update goal difference accordingly
-  		ELSEIF NEW.winner_id = NEW.away_team_id THEN
-  			UPDATE Teams
-  			SET goal_difference = CASE
-  				WHEN id = NEW.home_team_id THEN goal_difference - (NEW.away_goals - NEW.home_goals)
-          WHEN id = NEW.away_team_id THEN goal_difference + (NEW.away_goals - NEW.home_goals)
-          ELSE goal_difference + 0
-        END;
+  		ELSEIF NEW.winner_id = @away_team_for_fixture THEN
+  			UPDATE Team SET goal_difference = goal_difference - (NEW.away_goals - NEW.home_goals) WHERE team_id = @home_team_for_fixture
+        UPDATE Team SET goal_difference = goal_difference + (NEW.away_goals - NEW.home_goals) WHERE team_id = @away_team_for_fixture
   		END IF;
 	  END IF;
 END$$
