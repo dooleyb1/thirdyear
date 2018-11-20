@@ -243,7 +243,6 @@ CREATE TABLE `Stadium` (
   `opened` int(11) DEFAULT NULL,
   PRIMARY KEY (`stadium_id`),
   UNIQUE KEY `stadium_id_UNIQUE` (`stadium_id`),
-  KEY `team_id_idx` (`team_id`),
   CONSTRAINT `FK_Stadiums_Team_Id` FOREIGN KEY (`team_id`) REFERENCES `team` (`team_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -276,8 +275,6 @@ CREATE TABLE `Team` (
   `goal_difference` smallint(6) NOT NULL,
   PRIMARY KEY (`team_id`),
   UNIQUE KEY `team_id_UNIQUE` (`team_id`),
-  KEY `Teams - Stadium Id_idx` (`stadium_id`),
-  KEY `Teams - Manager Id_idx` (`manager_id`),
   CONSTRAINT `FK_Teams_Manager_Id` FOREIGN KEY (`manager_id`) REFERENCES `manager` (`manager_id`),
   CONSTRAINT `FK_Teams_Stadium_Id` FOREIGN KEY (`stadium_id`) REFERENCES `stadium` (`stadium_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
