@@ -15,6 +15,9 @@ g	DWORD 4							         ; declare global variable g initialised to 4
 ;
 
 ; function to calculate min(a, b, c)
+;              a -> [ebp+8]
+;              b -> [ebp+12]
+;              c -> [ebp+16]
 ;
 ; returns result in eax
 
