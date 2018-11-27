@@ -1,0 +1,1588 @@
+
+==================== FINAL INTERFACE ====================
+2018-11-27 19:16:42.58965 UTC
+
+interface prfch_3yIeWdQAfX8DVUb2gN9xHL:Theory 7103
+  interface hash: f6428fd772a8fc768349749816f675fd
+  ABI hash: 945be06abe503e01076baa0b98b5ab10
+  export-list hash: 846a3dbe26a72e2c5e47a867ef999f4f
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 4c0a7b65a6dddbc4161c2e2bfabe3dc3
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Theory.findTheorem
+  Theory.parseTheory
+  Theory.Calculation{Theory.CALC Theory.calcs Theory.goal}
+  Theory.Focus{Theory.At Theory.Top}
+  Theory.InductionScheme{Theory.IND Theory.indBase Theory.indStep Theory.indType Theory.indVar}
+  Theory.JLaw{Theory.CS Theory.D Theory.IH Theory.L Theory.SMP}
+  Theory.JRel{Theory.JEq}
+  Theory.Justification{Theory.BECAUSE Theory.focus Theory.jrel Theory.law Theory.usage}
+  Theory.Law{Theory.LAW Theory.lawEqn Theory.lawName}
+  Theory.Strategy{Theory.Induction Theory.ReduceAll Theory.ReduceBoth Theory.ReduceLHS Theory.ReduceRHS Theory.assume Theory.bGoal Theory.baseStrategy Theory.baseVal Theory.iGoal Theory.iVar Theory.stepExpr Theory.stepStrategy}
+  Theory.Theorem{Theory.THEOREM Theory.strategy Theory.theorem Theory.thmName}
+  Theory.Theory{Theory.THEORY Theory.hkImports Theory.thImports Theory.thIndScheme Theory.thLaws Theory.thTheorems Theory.theoryName}
+  Theory.Usage{Theory.L2R Theory.R2L Theory.Whole}
+module dependencies: AST HParse Utilities
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59 ghc-prim-0.4.0.0
+                      haskell-src-1.0.2.0@haske_L5FnTXYimTzE7JszPj0uf6
+                      integer-gmp-1.0.0.0 pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE:Data.Generics.Instances
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+import  -/  base-4.8.2.0:Data.Char c8f827952d4111ae2e47c0b105217cdb
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
+import  -/  base-4.8.2.0:Debug.Trace 6660afb6094d69397ea084364da8f950
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Enum debc6de3086023a15993ab0cecffb90b
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:GHC.Unicode cdf84fc3abbaf34ba6b6645291cef991
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  haskell-src-1.0.2.0@haske_L5FnTXYimTzE7JszPj0uf6:Language.Haskell.ParseMonad 567fe24cb244802cdbaec658f9a43f33
+import  -/  AST 8a2c29d575e8bd3b64abf6366ce4d014
+  exports: d301949d97205237750d6e196e86b7e3
+  Expr 325c8d65ca514c7fe46d5a8a76c991a1
+import  -/  HParse e91c13938b17912a3852ba940530cc11
+  exports: db3468aa75ac833238116da42ac7d278
+  Line 980acf542bbbf1f52e36302664f3a71e
+  Lines ad0b9e424efa097a0939ec902b2c4336
+  Parser 264f4519ca9104d6299b50172e6e0ac9
+  pFail 2780c0ce8319b69b2695fffbc74201a5
+  parseEqual 8cea40c73c5a439ed74d7a33aecd4ac6
+  parseExpr e962a0a3269d8659c7fafaf49a8507b9
+import  -/  Utilities 484eb8075f74a2f8942d226210fb9dba
+  exports: 65ee0be80b584ef80ca60490d28e5776
+  But 62e2a25d296dbc4803db5799bd3d75d4
+  Yes a92e313e45ef8b2e2d97cd107c6f06bd
+06cdb153e96a621e1231a98b6348fbec
+  $fEqFocus :: GHC.Classes.Eq Theory.Focus
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.Focus Theory.$fEqFocus_$c== Theory.$fEqFocus_$c/= -}
+06cdb153e96a621e1231a98b6348fbec
+  $fEqFocus_$c/= :: Theory.Focus -> Theory.Focus -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a :: Theory.Focus b :: Theory.Focus ->
+                 case a of wild {
+                   Theory.Top
+                   -> case b of wild1 {
+                        Theory.Top -> GHC.Types.False
+                        Theory.At ipv ipv1 -> GHC.Types.True }
+                   Theory.At a1 a2
+                   -> case b of wild1 {
+                        Theory.Top -> GHC.Types.True
+                        Theory.At b1 b2
+                        -> case GHC.Base.eqString a1 b1 of wild2 {
+                             GHC.Types.False -> GHC.Types.True
+                             GHC.Types.True
+                             -> case a2 of wild3 { GHC.Types.I# x ->
+                                case b2 of wild4 { GHC.Types.I# y ->
+                                case GHC.Prim.tagToEnum#
+                                       @ GHC.Types.Bool
+                                       (GHC.Prim.==# x y) of wild5 {
+                                  GHC.Types.False -> GHC.Types.True
+                                  GHC.Types.True -> GHC.Types.False } } } } } }) -}
+06cdb153e96a621e1231a98b6348fbec
+  $fEqFocus_$c== :: Theory.Focus -> Theory.Focus -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ ds :: Theory.Focus ds1 :: Theory.Focus ->
+                 case ds of wild {
+                   Theory.Top
+                   -> case ds1 of wild1 {
+                        Theory.Top -> GHC.Types.True
+                        Theory.At ipv ipv1 -> GHC.Types.False }
+                   Theory.At a1 a2
+                   -> case ds1 of wild1 {
+                        Theory.Top -> GHC.Types.False
+                        Theory.At b1 b2
+                        -> case GHC.Base.eqString a1 b1 of wild2 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True -> GHC.Classes.eqInt a2 b2 } } }) -}
+475b87ad1a62e4522bffbb43122d5342
+  $fEqJLaw :: GHC.Classes.Eq Theory.JLaw
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.JLaw Theory.$fEqJLaw_$c== Theory.$fEqJLaw_$c/= -}
+475b87ad1a62e4522bffbb43122d5342
+  $fEqJLaw_$c/= :: Theory.JLaw -> Theory.JLaw -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a :: Theory.JLaw b :: Theory.JLaw ->
+                 case Theory.$fEqJLaw_$c== a b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+475b87ad1a62e4522bffbb43122d5342
+  $fEqJLaw_$c== :: Theory.JLaw -> Theory.JLaw -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ ds :: Theory.JLaw ds1 :: Theory.JLaw ->
+                 case ds of wild {
+                   Theory.L a1
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Theory.L b1 -> GHC.Base.eqString a1 b1 }
+                   Theory.D a1 a2
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Theory.D b1 b2
+                        -> case GHC.Base.eqString a1 b1 of wild2 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True -> GHC.Classes.eqInt a2 b2 } }
+                   Theory.IH
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Theory.IH -> GHC.Types.True }
+                   Theory.CS
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Theory.CS -> GHC.Types.True }
+                   Theory.SMP
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Theory.SMP -> GHC.Types.True } }) -}
+17ccab4524ea2b3c80996fadf8c2593f
+  $fEqJRel :: GHC.Classes.Eq Theory.JRel
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.JRel Theory.$fEqJRel_$c== Theory.$fEqJRel_$c/= -}
+17ccab4524ea2b3c80996fadf8c2593f
+  $fEqJRel_$c/= :: Theory.JRel -> Theory.JRel -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*H><S,1*H>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a :: Theory.JRel b :: Theory.JRel ->
+                 case a of wild { Theory.JEq ->
+                 case b of wild1 { Theory.JEq -> GHC.Types.False } }) -}
+17ccab4524ea2b3c80996fadf8c2593f
+  $fEqJRel_$c== :: Theory.JRel -> Theory.JRel -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*H><S,1*H>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: Theory.JRel ds1 :: Theory.JRel ->
+                 case ds of wild { Theory.JEq ->
+                 case ds1 of wild1 { Theory.JEq -> GHC.Types.True } }) -}
+106be8dcba0fa471969adf639abc45c5
+  $fEqUsage :: GHC.Classes.Eq Theory.Usage
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.Usage Theory.$fEqUsage_$c== Theory.$fEqUsage_$c/= -}
+106be8dcba0fa471969adf639abc45c5
+  $fEqUsage_$c/= :: Theory.Usage -> Theory.Usage -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a :: Theory.Usage b :: Theory.Usage ->
+                 case a of wild {
+                   Theory.Whole
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Theory.Whole -> GHC.Types.False }
+                   Theory.L2R
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Theory.L2R -> GHC.Types.False }
+                   Theory.R2L
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Theory.R2L -> GHC.Types.False } }) -}
+106be8dcba0fa471969adf639abc45c5
+  $fEqUsage_$c== :: Theory.Usage -> Theory.Usage -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: Theory.Usage ds1 :: Theory.Usage ->
+                 case ds of wild {
+                   Theory.Whole
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Theory.Whole -> GHC.Types.True }
+                   Theory.L2R
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Theory.L2R -> GHC.Types.True }
+                   Theory.R2L
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Theory.R2L -> GHC.Types.True } }) -}
+cfedafbf8ac37dfe9953e203ea617cbf
+  $fShowCalculation :: GHC.Show.Show Theory.Calculation
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.Calculation
+                  Theory.$fShowCalculation_$cshowsPrec
+                  Theory.$fShowCalculation_$cshow
+                  Theory.$fShowCalculation_$cshowList -}
+cfedafbf8ac37dfe9953e203ea617cbf
+  $fShowCalculation1 :: Theory.Calculation -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Theory.Calculation w1 :: GHC.Base.String ->
+                 case w of ww { Theory.CALC ww1 ww2 ->
+                 Theory.$w$cshowsPrec 0 ww1 ww2 w1 }) -}
+cfedafbf8ac37dfe9953e203ea617cbf
+  $fShowCalculation_$cshow :: Theory.Calculation -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Theory.Calculation ->
+                 Theory.$fShowCalculation_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+cfedafbf8ac37dfe9953e203ea617cbf
+  $fShowCalculation_$cshowList ::
+    [Theory.Calculation] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Theory.Calculation
+                   Theory.$fShowCalculation1) -}
+cfedafbf8ac37dfe9953e203ea617cbf
+  $fShowCalculation_$cshowsPrec ::
+    GHC.Types.Int -> Theory.Calculation -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Theory.Calculation
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Theory.CALC ww3 ww4 ->
+                 Theory.$w$cshowsPrec ww1 ww3 ww4 w2 } }) -}
+06cdb153e96a621e1231a98b6348fbec
+  $fShowFocus :: GHC.Show.Show Theory.Focus
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.Focus
+                  Theory.$fShowFocus_$cshowsPrec
+                  Theory.$fShowFocus_$cshow
+                  Theory.$fShowFocus_$cshowList -}
+06cdb153e96a621e1231a98b6348fbec
+  $fShowFocus1 :: Theory.Focus -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (Theory.$fShowFocus_$cshowsPrec Theory.$fShowFocus2) -}
+973940900db5d63a0d78ae4db162ca1f
+  $fShowFocus2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0) -}
+c394c0fe7e592503040050dffaf707d7
+  $fShowFocus3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "At "#) -}
+e25b411f9dfa7ca26354497deb3071e2
+  $fShowFocus4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Top"#) -}
+06cdb153e96a621e1231a98b6348fbec
+  $fShowFocus_$cshow :: Theory.Focus -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Theory.Focus ->
+                 Theory.$fShowFocus_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+06cdb153e96a621e1231a98b6348fbec
+  $fShowFocus_$cshowList :: [Theory.Focus] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Theory.Focus
+                   Theory.$fShowFocus1) -}
+06cdb153e96a621e1231a98b6348fbec
+  $fShowFocus_$cshowsPrec ::
+    GHC.Types.Int -> Theory.Focus -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,1*U(U)><S,1*U><L,U>,
+     Unfolding: (\ ds :: GHC.Types.Int
+                   ds1 :: Theory.Focus
+                   eta :: GHC.Base.String ->
+                 case ds1 of wild {
+                   Theory.Top -> GHC.Base.++ @ GHC.Types.Char Theory.$fShowFocus4 eta
+                   Theory.At b1 b2
+                   -> case ds of wild1 { GHC.Types.I# x ->
+                      let {
+                        p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                        = \ x1 :: GHC.Base.String[OneShot] ->
+                          GHC.Base.++
+                            @ GHC.Types.Char
+                            Theory.$fShowFocus3
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.shows6
+                               (GHC.Show.showLitString
+                                  b1
+                                  (GHC.Types.:
+                                     @ GHC.Types.Char
+                                     GHC.Show.shows6
+                                     (GHC.Types.:
+                                        @ GHC.Types.Char
+                                        GHC.Show.showSpace1
+                                        (case b2 of ww2 { GHC.Types.I# ww3 ->
+                                         case GHC.Show.$wshowSignedInt
+                                                11
+                                                ww3
+                                                x1 of ww4 { (#,#) ww5 ww6 ->
+                                         GHC.Types.: @ GHC.Types.Char ww5 ww6 } })))))
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# x 11) of wild2 {
+                        GHC.Types.False -> p eta
+                        GHC.Types.True
+                        -> GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows9
+                             (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 eta)) } } }) -}
+df665f8fcf8a83b187f86956825af6c9
+  $fShowInductionScheme :: GHC.Show.Show Theory.InductionScheme
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.InductionScheme
+                  Theory.$fShowInductionScheme_$cshowsPrec
+                  Theory.$fShowInductionScheme_$cshow
+                  Theory.$fShowInductionScheme_$cshowList -}
+df665f8fcf8a83b187f86956825af6c9
+  $fShowInductionScheme1 :: Theory.InductionScheme -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Theory.InductionScheme w1 :: GHC.Base.String ->
+                 case w of ww { Theory.IND ww1 ww2 ww3 ww4 ->
+                 Theory.$w$cshowsPrec1 0 ww1 ww2 ww3 ww4 w1 }) -}
+9e99359823254538a438d5ced89bee2b
+  $fShowInductionScheme2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+eb97bd0904b23c73da3683bf1939cb9a
+  $fShowInductionScheme3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "indStep = "#) -}
+46b82438b4beb6d27aee7e8d7d5cd652
+  $fShowInductionScheme4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "indBase = "#) -}
+b96749aee37fa0be622c51d8589b6b1c
+  $fShowInductionScheme5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "indVar = "#) -}
+5ae8fe654f5b562d387f27fcd057a38e
+  $fShowInductionScheme6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+63d6c8c03cf38499ea967d56b79532d8
+  $fShowInductionScheme7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "indType = "#) -}
+e654ff687bdccad134c8106a01eb7e30
+  $fShowInductionScheme8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "IND {"#) -}
+df665f8fcf8a83b187f86956825af6c9
+  $fShowInductionScheme_$cshow ::
+    Theory.InductionScheme -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U,1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Theory.InductionScheme ->
+                 Theory.$fShowInductionScheme_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+df665f8fcf8a83b187f86956825af6c9
+  $fShowInductionScheme_$cshowList ::
+    [Theory.InductionScheme] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Theory.InductionScheme
+                   Theory.$fShowInductionScheme1) -}
+df665f8fcf8a83b187f86956825af6c9
+  $fShowInductionScheme_$cshowsPrec ::
+    GHC.Types.Int -> Theory.InductionScheme -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U,1*U,1*U,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Theory.InductionScheme
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Theory.IND ww3 ww4 ww5 ww6 ->
+                 Theory.$w$cshowsPrec1 ww1 ww3 ww4 ww5 ww6 w2 } }) -}
+475b87ad1a62e4522bffbb43122d5342
+  $fShowJLaw :: GHC.Show.Show Theory.JLaw
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.JLaw
+                  Theory.$fShowJLaw_$cshowsPrec
+                  Theory.$fShowJLaw_$cshow
+                  Theory.$fShowJLaw_$cshowList -}
+475b87ad1a62e4522bffbb43122d5342
+  $fShowJLaw1 :: Theory.JLaw -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (Theory.$fShowJLaw_$cshowsPrec Theory.$fShowFocus2) -}
+65d910881df776e98aee649f7cda1b57
+  $fShowJLaw2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "SMP"#) -}
+a3dd286d4534a9f69330cbdf2525cfb5
+  $fShowJLaw3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "CS"#) -}
+58a44cb7dd260f7559560b8b1ca3cc27
+  $fShowJLaw4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "IH"#) -}
+30c2b4e8879a510039c121038a2cb233
+  $fShowJLaw5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "D "#) -}
+215f86d937ee836198c0e8e80f061c23
+  $fShowJLaw6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "L "#) -}
+475b87ad1a62e4522bffbb43122d5342
+  $fShowJLaw_$cshow :: Theory.JLaw -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Theory.JLaw ->
+                 Theory.$fShowJLaw_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+475b87ad1a62e4522bffbb43122d5342
+  $fShowJLaw_$cshowList :: [Theory.JLaw] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Theory.JLaw
+                   Theory.$fShowJLaw1) -}
+475b87ad1a62e4522bffbb43122d5342
+  $fShowJLaw_$cshowsPrec ::
+    GHC.Types.Int -> Theory.JLaw -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,1*U(U)><S,1*U><L,U>,
+     Unfolding: (\ a :: GHC.Types.Int
+                   ds :: Theory.JLaw
+                   eta :: GHC.Base.String ->
+                 case ds of wild {
+                   Theory.L b1
+                   -> case a of wild1 { GHC.Types.I# x ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# x 11) of wild2 {
+                        GHC.Types.False
+                        -> GHC.Base.++
+                             @ GHC.Types.Char
+                             Theory.$fShowJLaw6
+                             (GHC.Types.:
+                                @ GHC.Types.Char
+                                GHC.Show.shows6
+                                (GHC.Show.showLitString
+                                   b1
+                                   (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 eta)))
+                        GHC.Types.True
+                        -> GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows9
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Theory.$fShowJLaw6
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows6
+                                   (GHC.Show.showLitString
+                                      b1
+                                      (GHC.Types.:
+                                         @ GHC.Types.Char
+                                         GHC.Show.shows6
+                                         (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 eta))))) } }
+                   Theory.D b1 b2
+                   -> case a of wild1 { GHC.Types.I# x ->
+                      let {
+                        p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                        = \ x1 :: GHC.Base.String[OneShot] ->
+                          GHC.Base.++
+                            @ GHC.Types.Char
+                            Theory.$fShowJLaw5
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.shows6
+                               (GHC.Show.showLitString
+                                  b1
+                                  (GHC.Types.:
+                                     @ GHC.Types.Char
+                                     GHC.Show.shows6
+                                     (GHC.Types.:
+                                        @ GHC.Types.Char
+                                        GHC.Show.showSpace1
+                                        (case b2 of ww2 { GHC.Types.I# ww3 ->
+                                         case GHC.Show.$wshowSignedInt
+                                                11
+                                                ww3
+                                                x1 of ww4 { (#,#) ww5 ww6 ->
+                                         GHC.Types.: @ GHC.Types.Char ww5 ww6 } })))))
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# x 11) of wild2 {
+                        GHC.Types.False -> p eta
+                        GHC.Types.True
+                        -> GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows9
+                             (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 eta)) } }
+                   Theory.IH -> GHC.Base.++ @ GHC.Types.Char Theory.$fShowJLaw4 eta
+                   Theory.CS -> GHC.Base.++ @ GHC.Types.Char Theory.$fShowJLaw3 eta
+                   Theory.SMP
+                   -> GHC.Base.++ @ GHC.Types.Char Theory.$fShowJLaw2 eta }) -}
+17ccab4524ea2b3c80996fadf8c2593f
+  $fShowJRel :: GHC.Show.Show Theory.JRel
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.JRel
+                  Theory.$fShowJRel_$cshowsPrec
+                  Theory.$fShowJRel_$cshow
+                  Theory.$fShowJRel_$cshowList -}
+17ccab4524ea2b3c80996fadf8c2593f
+  $fShowJRel1 :: Theory.JRel -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*H><L,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: Theory.JRel eta :: GHC.Base.String ->
+                 case ds of wild { Theory.JEq ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                    GHC.Base.foldr @ GHC.Types.Char @ b c n Theory.$fShowJRel2)
+                   eta }) -}
+67f16e4a720286cab9dfdacd55ef88b5
+  $fShowJRel2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "JEq"#) -}
+17ccab4524ea2b3c80996fadf8c2593f
+  $fShowJRel_$cshow :: Theory.JRel -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*H>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Theory.JRel ->
+                 case x of wild { Theory.JEq -> Theory.$fShowJRel2 }) -}
+17ccab4524ea2b3c80996fadf8c2593f
+  $fShowJRel_$cshowList :: [Theory.JRel] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Theory.JRel
+                   Theory.$fShowJRel1) -}
+17ccab4524ea2b3c80996fadf8c2593f
+  $fShowJRel_$cshowsPrec ::
+    GHC.Types.Int -> Theory.JRel -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*H><L,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ ds :: GHC.Types.Int ds1 :: Theory.JRel eta :: GHC.Base.String ->
+                 case ds1 of wild { Theory.JEq ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                    GHC.Base.foldr @ GHC.Types.Char @ b c n Theory.$fShowJRel2)
+                   eta }) -}
+9fb398a2d4d5431d4425dabff5ee01b9
+  $fShowJustification :: GHC.Show.Show Theory.Justification
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.Justification
+                  Theory.$fShowJustification_$cshowsPrec
+                  Theory.$fShowJustification_$cshow
+                  Theory.$fShowJustification_$cshowList -}
+9fb398a2d4d5431d4425dabff5ee01b9
+  $fShowJustification1 :: Theory.Justification -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Theory.Justification w1 :: GHC.Base.String ->
+                 case w of ww { Theory.BECAUSE ww1 ww2 ww3 ww4 ->
+                 Theory.$w$cshowsPrec2 0 ww1 ww2 ww3 ww4 w1 }) -}
+a4d57a0706777a27a07c554a87b1896c
+  $fShowJustification2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "R2L"#) -}
+b746919eb5f58f64f79bbed1d03cf46b
+  $fShowJustification3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "L2R"#) -}
+11848a986fdcb6bd2f436a09fb162fd0
+  $fShowJustification4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Whole"#) -}
+9caa4167b7df67bd72907a3b373e6045
+  $fShowJustification5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "focus = "#) -}
+84c3e1edf8d1e12fa17daa11a9acfc1f
+  $fShowJustification6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "usage = "#) -}
+1a5d079b9e2a7a59ec0c107d3012f1c9
+  $fShowJustification7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "law = "#) -}
+7cc0c049e8b79601be41fe04c565dbb4
+  $fShowJustification8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "jrel = "#) -}
+e5dca65277cea4dd61200696faf9e696
+  $fShowJustification9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "BECAUSE {"#) -}
+9fb398a2d4d5431d4425dabff5ee01b9
+  $fShowJustification_$cshow ::
+    Theory.Justification -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*H,1*U,1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Theory.Justification ->
+                 Theory.$fShowJustification_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+9fb398a2d4d5431d4425dabff5ee01b9
+  $fShowJustification_$cshowList ::
+    [Theory.Justification] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Theory.Justification
+                   Theory.$fShowJustification1) -}
+9fb398a2d4d5431d4425dabff5ee01b9
+  $fShowJustification_$cshowsPrec ::
+    GHC.Types.Int -> Theory.Justification -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*H,1*U,1*U,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Theory.Justification
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Theory.BECAUSE ww3 ww4 ww5 ww6 ->
+                 Theory.$w$cshowsPrec2 ww1 ww3 ww4 ww5 ww6 w2 } }) -}
+a941c025b2cb90eaaa807693ab089d0c
+  $fShowLaw :: GHC.Show.Show Theory.Law
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.Law
+                  Theory.$fShowLaw_$cshowsPrec
+                  Theory.$fShowLaw_$cshow
+                  Theory.$fShowLaw_$cshowList -}
+a941c025b2cb90eaaa807693ab089d0c
+  $fShowLaw1 :: Theory.Law -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Theory.Law w1 :: GHC.Base.String ->
+                 case w of ww { Theory.LAW ww1 ww2 ->
+                 Theory.$w$cshowsPrec3 0 ww1 ww2 w1 }) -}
+bdc80c48dfdaa20ad2396ad467c0e861
+  $fShowLaw2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "lawEqn = "#) -}
+592d06717c789941572eb89b40541139
+  $fShowLaw3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "lawName = "#) -}
+a74a0096c7352a7d85f1268a0e531737
+  $fShowLaw4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "LAW {"#) -}
+a941c025b2cb90eaaa807693ab089d0c
+  $fShowLaw_$cshow :: Theory.Law -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Theory.Law ->
+                 Theory.$fShowLaw_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+a941c025b2cb90eaaa807693ab089d0c
+  $fShowLaw_$cshowList :: [Theory.Law] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__ @ Theory.Law Theory.$fShowLaw1) -}
+a941c025b2cb90eaaa807693ab089d0c
+  $fShowLaw_$cshowsPrec ::
+    GHC.Types.Int -> Theory.Law -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int w1 :: Theory.Law w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Theory.LAW ww3 ww4 ->
+                 Theory.$w$cshowsPrec3 ww1 ww3 ww4 w2 } }) -}
+4f5a33fddad632d48359401d308703c3
+  $fShowStrategy :: GHC.Show.Show Theory.Strategy
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.Strategy
+                  Theory.$fShowStrategy_$cshowsPrec
+                  Theory.$fShowStrategy_$cshow
+                  Theory.$fShowStrategy_$cshowList -}
+4f5a33fddad632d48359401d308703c3
+  $fShowStrategy1 :: Theory.Strategy -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Theory.Strategy w1 :: GHC.Base.String ->
+                 Theory.$w$cshowsPrec4 0 w w1) -}
+4f5a33fddad632d48359401d308703c3
+  $fShowStrategy_$cshow :: Theory.Strategy -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Theory.Strategy ->
+                 Theory.$fShowStrategy_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+4f5a33fddad632d48359401d308703c3
+  $fShowStrategy_$cshowList :: [Theory.Strategy] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Theory.Strategy
+                   Theory.$fShowStrategy1) -}
+4f5a33fddad632d48359401d308703c3
+  $fShowStrategy_$cshowsPrec ::
+    GHC.Types.Int -> Theory.Strategy -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U><L,U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Theory.Strategy
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Theory.$w$cshowsPrec4 ww1 w1 w2 }) -}
+3fd49cf6767e49588e214e1f58198a02
+  $fShowTheorem :: GHC.Show.Show Theory.Theorem
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.Theorem
+                  Theory.$fShowTheorem_$cshowsPrec
+                  Theory.$fShowTheorem_$cshow
+                  Theory.$fShowTheorem_$cshowList -}
+3fd49cf6767e49588e214e1f58198a02
+  $fShowTheorem1 :: Theory.Theorem -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Theory.Theorem w1 :: GHC.Base.String ->
+                 case w of ww { Theory.THEOREM ww1 ww2 ww3 ->
+                 Theory.$w$cshowsPrec5 0 ww1 ww2 ww3 w1 }) -}
+dbe9d2e42f98ff9eb40d8dab773e2856
+  $fShowTheorem2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "strategy = "#) -}
+4463bb626c7ea56b56aafa2e852223c9
+  $fShowTheorem3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "theorem = "#) -}
+758011a0bb956d1034ffb7f708e82044
+  $fShowTheorem4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "thmName = "#) -}
+11acc3009cb175270e43a4f4fdd0b060
+  $fShowTheorem5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "THEOREM {"#) -}
+3fd49cf6767e49588e214e1f58198a02
+  $fShowTheorem_$cshow :: Theory.Theorem -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Theory.Theorem ->
+                 Theory.$fShowTheorem_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+3fd49cf6767e49588e214e1f58198a02
+  $fShowTheorem_$cshowList :: [Theory.Theorem] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Theory.Theorem
+                   Theory.$fShowTheorem1) -}
+3fd49cf6767e49588e214e1f58198a02
+  $fShowTheorem_$cshowsPrec ::
+    GHC.Types.Int -> Theory.Theorem -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U,1*U,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int w1 :: Theory.Theorem w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Theory.THEOREM ww3 ww4 ww5 ->
+                 Theory.$w$cshowsPrec5 ww1 ww3 ww4 ww5 w2 } }) -}
+b9686a1808a31bd14ddb9b050635ef72
+  $fShowTheory :: GHC.Show.Show Theory.Theory
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.Theory
+                  Theory.$fShowTheory_$cshowsPrec
+                  Theory.$fShowTheory_$cshow
+                  Theory.$fShowTheory_$cshowList -}
+b9686a1808a31bd14ddb9b050635ef72
+  $fShowTheory1 :: Theory.Theory -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Theory.Theory w1 :: GHC.Base.String ->
+                 case w of ww { Theory.THEORY ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 Theory.$w$cshowsPrec6 0 ww1 ww2 ww3 ww4 ww5 ww6 w1 }) -}
+b9686a1808a31bd14ddb9b050635ef72
+  $fShowTheory_$cshow :: Theory.Theory -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U,1*U,1*U,1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Theory.Theory ->
+                 Theory.$fShowTheory_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+b9686a1808a31bd14ddb9b050635ef72
+  $fShowTheory_$cshowList :: [Theory.Theory] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Theory.Theory
+                   Theory.$fShowTheory1) -}
+b9686a1808a31bd14ddb9b050635ef72
+  $fShowTheory_$cshowsPrec ::
+    GHC.Types.Int -> Theory.Theory -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S,1*U(U)><S,1*U(1*U,1*U,1*U,1*U,1*U,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int w1 :: Theory.Theory w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Theory.THEORY ww3 ww4 ww5 ww6 ww7 ww8 ->
+                 Theory.$w$cshowsPrec6 ww1 ww3 ww4 ww5 ww6 ww7 ww8 w2 } }) -}
+106be8dcba0fa471969adf639abc45c5
+  $fShowUsage :: GHC.Show.Show Theory.Usage
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Theory.Usage
+                  Theory.$fShowUsage_$cshowsPrec
+                  Theory.$fShowUsage_$cshow
+                  Theory.$fShowUsage_$cshowList -}
+106be8dcba0fa471969adf639abc45c5
+  $fShowUsage_$cshow :: Theory.Usage -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Theory.Usage ->
+                 case x of wild {
+                   Theory.Whole -> Theory.$fShowJustification4
+                   Theory.L2R -> Theory.$fShowJustification3
+                   Theory.R2L -> Theory.$fShowJustification2 }) -}
+106be8dcba0fa471969adf639abc45c5
+  $fShowUsage_$cshowList :: [Theory.Usage] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Theory.Usage
+                   Theory.$w$cshowsPrec7) -}
+106be8dcba0fa471969adf639abc45c5
+  $fShowUsage_$cshowsPrec ::
+    GHC.Types.Int -> Theory.Usage -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ w :: GHC.Types.Int w1 :: Theory.Usage w2 :: GHC.Base.String ->
+                 Theory.$w$cshowsPrec7 w1 w2) -}
+a85d2d6e0eb4fd22bfad282a7df26235
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> AST.Expr
+    -> [(Theory.Justification, AST.Expr)]
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4, Strictness: <L,U><L,1*U><L,1*U><L,U>, Inline: [0] -}
+e9d44fc7227cc3491d49b1bb1c4e1e1b
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> AST.Expr
+    -> AST.Expr
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 6, Strictness: <L,U><L,1*U><L,1*U><L,1*U><L,1*U><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: GHC.Base.String
+                   ww2 :: GHC.Base.String
+                   ww3 :: AST.Expr
+                   ww4 :: AST.Expr
+                   w :: GHC.Base.String ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Theory.$fShowInductionScheme8
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Theory.$fShowInductionScheme7
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows6
+                             (GHC.Show.showLitString
+                                ww1
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows6
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      Theory.$fShowInductionScheme6
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Theory.$fShowInductionScheme5
+                                         (GHC.Types.:
+                                            @ GHC.Types.Char
+                                            GHC.Show.shows6
+                                            (GHC.Show.showLitString
+                                               ww2
+                                               (GHC.Types.:
+                                                  @ GHC.Types.Char
+                                                  GHC.Show.shows6
+                                                  (GHC.Base.++
+                                                     @ GHC.Types.Char
+                                                     Theory.$fShowInductionScheme6
+                                                     (GHC.Base.++
+                                                        @ GHC.Types.Char
+                                                        Theory.$fShowInductionScheme4
+                                                        (AST.$w$cshowsPrec2
+                                                           0
+                                                           ww3
+                                                           (GHC.Base.++
+                                                              @ GHC.Types.Char
+                                                              Theory.$fShowInductionScheme6
+                                                              (GHC.Base.++
+                                                                 @ GHC.Types.Char
+                                                                 Theory.$fShowInductionScheme3
+                                                                 (AST.$w$cshowsPrec2
+                                                                    0
+                                                                    ww4
+                                                                    (GHC.Base.++
+                                                                       @ GHC.Types.Char
+                                                                       Theory.$fShowInductionScheme2
+                                                                       x))))))))))))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w)) }) -}
+bae496cecbc0b26131d489a708feb806
+  $w$cshowsPrec2 ::
+    GHC.Prim.Int#
+    -> Theory.JRel
+    -> Theory.JLaw
+    -> Theory.Usage
+    -> Theory.Focus
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 6, Strictness: <L,U><L,1*H><L,1*U><L,1*U><L,1*U><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: Theory.JRel
+                   ww2 :: Theory.JLaw
+                   ww3 :: Theory.Usage
+                   ww4 :: Theory.Focus
+                   w :: GHC.Base.String ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Theory.$fShowJustification9
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Theory.$fShowJustification8
+                          (case ww1 of wild { Theory.JEq ->
+                           GHC.Base.++
+                             @ GHC.Types.Char
+                             Theory.$fShowJRel2
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Theory.$fShowInductionScheme6
+                                (GHC.Base.++
+                                   @ GHC.Types.Char
+                                   Theory.$fShowJustification7
+                                   (Theory.$fShowJLaw_$cshowsPrec
+                                      Theory.$fShowFocus2
+                                      ww2
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Theory.$fShowInductionScheme6
+                                         (GHC.Base.++
+                                            @ GHC.Types.Char
+                                            Theory.$fShowJustification6
+                                            (let {
+                                               eta :: GHC.Base.String
+                                               = GHC.Base.++
+                                                   @ GHC.Types.Char
+                                                   Theory.$fShowInductionScheme6
+                                                   (GHC.Base.++
+                                                      @ GHC.Types.Char
+                                                      Theory.$fShowJustification5
+                                                      (Theory.$fShowFocus_$cshowsPrec
+                                                         Theory.$fShowFocus2
+                                                         ww4
+                                                         (GHC.Base.++
+                                                            @ GHC.Types.Char
+                                                            Theory.$fShowInductionScheme2
+                                                            x)))
+                                             } in
+                                             case ww3 of wild1 {
+                                               Theory.Whole
+                                               -> GHC.Base.++
+                                                    @ GHC.Types.Char
+                                                    Theory.$fShowJustification4
+                                                    eta
+                                               Theory.L2R
+                                               -> GHC.Base.++
+                                                    @ GHC.Types.Char
+                                                    Theory.$fShowJustification3
+                                                    eta
+                                               Theory.R2L
+                                               -> GHC.Base.++
+                                                    @ GHC.Types.Char
+                                                    Theory.$fShowJustification2
+                                                    eta })))))) }))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w)) }) -}
+7270502e0d339f22db3a854cc88ed7b1
+  $w$cshowsPrec3 ::
+    GHC.Prim.Int#
+    -> GHC.Base.String
+    -> AST.Expr
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4, Strictness: <L,U><L,1*U><L,1*U><L,U>, Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: GHC.Base.String
+                   ww2 :: AST.Expr
+                   w :: GHC.Base.String ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Theory.$fShowLaw4
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Theory.$fShowLaw3
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows6
+                             (GHC.Show.showLitString
+                                ww1
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows6
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      Theory.$fShowInductionScheme6
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Theory.$fShowLaw2
+                                         (AST.$w$cshowsPrec2
+                                            0
+                                            ww2
+                                            (GHC.Base.++
+                                               @ GHC.Types.Char
+                                               Theory.$fShowInductionScheme2
+                                               x))))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w)) }) -}
+4f5a33fddad632d48359401d308703c3
+  $w$cshowsPrec4 ::
+    GHC.Prim.Int#
+    -> Theory.Strategy -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <L,U><S,1*U><L,U>, Inline: [0] -}
+458a71674375ebd7567972b22a30319f
+  $w$cshowsPrec5 ::
+    GHC.Prim.Int#
+    -> GHC.Base.String
+    -> AST.Expr
+    -> Theory.Strategy
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 5, Strictness: <L,U><L,1*U><L,1*U><L,1*U><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: GHC.Base.String
+                   ww2 :: AST.Expr
+                   ww3 :: Theory.Strategy
+                   w :: GHC.Base.String ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Theory.$fShowTheorem5
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Theory.$fShowTheorem4
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows6
+                             (GHC.Show.showLitString
+                                ww1
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows6
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      Theory.$fShowInductionScheme6
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Theory.$fShowTheorem3
+                                         (AST.$w$cshowsPrec2
+                                            0
+                                            ww2
+                                            (GHC.Base.++
+                                               @ GHC.Types.Char
+                                               Theory.$fShowInductionScheme6
+                                               (GHC.Base.++
+                                                  @ GHC.Types.Char
+                                                  Theory.$fShowTheorem2
+                                                  (Theory.$w$cshowsPrec4
+                                                     0
+                                                     ww3
+                                                     (GHC.Base.++
+                                                        @ GHC.Types.Char
+                                                        Theory.$fShowInductionScheme2
+                                                        x)))))))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w)) }) -}
+b782de56f670186198ba5528d2a0f13f
+  $w$cshowsPrec6 ::
+    GHC.Prim.Int#
+    -> GHC.Base.String
+    -> [GHC.Base.String]
+    -> [GHC.Base.String]
+    -> [Theory.Law]
+    -> [Theory.InductionScheme]
+    -> [Theory.Theorem]
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 8,
+     Strictness: <L,U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,U>,
+     Inline: [0] -}
+106be8dcba0fa471969adf639abc45c5
+  $w$cshowsPrec7 ::
+    Theory.Usage -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: Theory.Usage w1 :: GHC.Base.String ->
+                 case w of wild {
+                   Theory.Whole
+                   -> GHC.Base.++ @ GHC.Types.Char Theory.$fShowJustification4 w1
+                   Theory.L2R
+                   -> GHC.Base.++ @ GHC.Types.Char Theory.$fShowJustification3 w1
+                   Theory.R2L
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Theory.$fShowJustification2
+                        w1 }) -}
+cfedafbf8ac37dfe9953e203ea617cbf
+  data Calculation
+    = CALC {goal :: AST.Expr,
+            calcs :: [(Theory.Justification, AST.Expr)]}
+06cdb153e96a621e1231a98b6348fbec
+  data Focus = Top | At GHC.Base.String GHC.Types.Int
+df665f8fcf8a83b187f86956825af6c9
+  data InductionScheme
+    = IND {indType :: GHC.Base.String,
+           indVar :: GHC.Base.String,
+           indBase :: AST.Expr,
+           indStep :: AST.Expr}
+475b87ad1a62e4522bffbb43122d5342
+  data JLaw
+    = L GHC.Base.String
+    | D GHC.Base.String GHC.Types.Int
+    | IH
+    | CS
+    | SMP
+17ccab4524ea2b3c80996fadf8c2593f
+  data JRel = JEq
+    Promotable
+9fb398a2d4d5431d4425dabff5ee01b9
+  data Justification
+    = BECAUSE {jrel :: Theory.JRel,
+               law :: Theory.JLaw,
+               usage :: Theory.Usage,
+               focus :: Theory.Focus}
+a941c025b2cb90eaaa807693ab089d0c
+  data Law = LAW {lawName :: GHC.Base.String, lawEqn :: AST.Expr}
+d4382d0e8d9fe12d043a6a56a7ed9502
+  type Steps = [(HParse.Line, HParse.Lines)]
+4f5a33fddad632d48359401d308703c3
+  data Strategy
+    = ReduceAll Theory.Calculation
+    | ReduceLHS Theory.Calculation
+    | ReduceRHS Theory.Calculation
+    | ReduceBoth Theory.Calculation Theory.Calculation
+    | Induction {iVar :: (GHC.Base.String, GHC.Base.String),
+                 baseVal :: AST.Expr,
+                 bGoal :: AST.Expr,
+                 baseStrategy :: Theory.Strategy,
+                 stepExpr :: AST.Expr,
+                 assume :: AST.Expr,
+                 iGoal :: AST.Expr,
+                 stepStrategy :: Theory.Strategy}
+3fd49cf6767e49588e214e1f58198a02
+  data Theorem
+    = THEOREM {thmName :: GHC.Base.String,
+               theorem :: AST.Expr,
+               strategy :: Theory.Strategy}
+b9686a1808a31bd14ddb9b050635ef72
+  data Theory
+    = THEORY {theoryName :: GHC.Base.String,
+              thImports :: [GHC.Base.String],
+              hkImports :: [GHC.Base.String],
+              thLaws :: [Theory.Law],
+              thIndScheme :: [Theory.InductionScheme],
+              thTheorems :: [Theory.Theorem]}
+106be8dcba0fa471969adf639abc45c5
+  data Usage = Whole | L2R | R2L
+    Promotable
+c9c4e90ea77a17fc2f776ceba688c821
+  assume :: Theory.Strategy -> AST.Expr
+  RecSel Theory.Strategy
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Strategy ->
+                 case ds of wild {
+                   DEFAULT -> Theory.assume1
+                   Theory.Induction ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 -> ds6 }) -}
+289b9d534800fcfbe6bddf9894f3b435
+  assume1 :: AST.Expr
+  {- Strictness: b -}
+755468344254d9b76a5f31de18c72028
+  bGoal :: Theory.Strategy -> AST.Expr
+  RecSel Theory.Strategy
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Strategy ->
+                 case ds of wild {
+                   DEFAULT -> Theory.bGoal1
+                   Theory.Induction ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 -> ds3 }) -}
+e7ce004fec47d35d1b515d384558b5c0
+  bGoal1 :: AST.Expr
+  {- Strictness: b -}
+b24650d4ea527862a99feabf0fb58bb3
+  baseStrategy :: Theory.Strategy -> Theory.Strategy
+  RecSel Theory.Strategy
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Strategy ->
+                 case ds of wild {
+                   DEFAULT -> Theory.baseStrategy1
+                   Theory.Induction ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 -> ds4 }) -}
+a0eaed8bfb25f162acaa1cec05961e52
+  baseStrategy1 :: Theory.Strategy
+  {- Strictness: b -}
+d2cfa6065bbeefa1562c8accaa58a86b
+  baseVal :: Theory.Strategy -> AST.Expr
+  RecSel Theory.Strategy
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Strategy ->
+                 case ds of wild {
+                   DEFAULT -> Theory.baseVal1
+                   Theory.Induction ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 -> ds2 }) -}
+33051b2e2bb23349f03d0de0e3fa38e3
+  baseVal1 :: AST.Expr
+  {- Strictness: b -}
+d389bc88b7ee6a31a2b7f32722309017
+  calcs :: Theory.Calculation -> [(Theory.Justification, AST.Expr)]
+  RecSel Theory.Calculation
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Calculation ->
+                 case ds of wild { Theory.CALC ds1 ds2 -> ds2 }) -}
+0ff4db779ed1f0c1eb8f9d824bc05815
+  findTheorem ::
+    GHC.Base.Monad m =>
+    GHC.Base.String -> [Theory.Theorem] -> m Theory.Theorem
+  {- Arity: 3,
+     Strictness: <S,1*U(A,A,A,1*C1(U),1*C1(U))><L,U><S,1*U> -}
+445883622d8ee7564273060c5f2c9846
+  focus :: Theory.Justification -> Theory.Focus
+  RecSel Theory.Justification
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLS),1*U(A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Justification ->
+                 case ds of wild { Theory.BECAUSE ds1 ds2 ds3 ds4 -> ds4 }) -}
+dfe0e8c047c1bd30a5b737e3a4ba3989
+  goal :: Theory.Calculation -> AST.Expr
+  RecSel Theory.Calculation
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Calculation ->
+                 case ds of wild { Theory.CALC ds1 ds2 -> ds1 }) -}
+1bd71700729a3b0ca4cd656acb1b5121
+  hkImports :: Theory.Theory -> [GHC.Base.String]
+  RecSel Theory.Theory
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLL),1*U(A,A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Theory ->
+                 case ds of wild { Theory.THEORY ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds3 }) -}
+94a9916e13a1ad2d27739893e3cd45cb
+  iGoal :: Theory.Strategy -> AST.Expr
+  RecSel Theory.Strategy
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Strategy ->
+                 case ds of wild {
+                   DEFAULT -> Theory.iGoal1
+                   Theory.Induction ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 -> ds7 }) -}
+70abcac9e1613a2f8a1e9a6995f23824
+  iGoal1 :: AST.Expr
+  {- Strictness: b -}
+51558ec96715b03273eee04700aff808
+  iVar :: Theory.Strategy -> (GHC.Base.String, GHC.Base.String)
+  RecSel Theory.Strategy
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Strategy ->
+                 case ds of wild {
+                   DEFAULT -> Theory.iVar1
+                   Theory.Induction ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 -> ds1 }) -}
+7d911e879dd069129c45639888206ecb
+  iVar1 :: (GHC.Base.String, GHC.Base.String)
+  {- Strictness: b -}
+45838c92dc9367e4a93cf88892f6888c
+  indBase :: Theory.InductionScheme -> AST.Expr
+  RecSel Theory.InductionScheme
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLSL),1*U(A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.InductionScheme ->
+                 case ds of wild { Theory.IND ds1 ds2 ds3 ds4 -> ds3 }) -}
+15145ce65420b55b81f7c300259a1c35
+  indStep :: Theory.InductionScheme -> AST.Expr
+  RecSel Theory.InductionScheme
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLS),1*U(A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.InductionScheme ->
+                 case ds of wild { Theory.IND ds1 ds2 ds3 ds4 -> ds4 }) -}
+a834efa171e5aa9de4cd46db48a51bd6
+  indType :: Theory.InductionScheme -> GHC.Base.String
+  RecSel Theory.InductionScheme
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLLL),1*U(1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.InductionScheme ->
+                 case ds of wild { Theory.IND ds1 ds2 ds3 ds4 -> ds1 }) -}
+d7361b7d8592c6483c8dcc044ca2d8d7
+  indVar :: Theory.InductionScheme -> GHC.Base.String
+  RecSel Theory.InductionScheme
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSLL),1*U(A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.InductionScheme ->
+                 case ds of wild { Theory.IND ds1 ds2 ds3 ds4 -> ds2 }) -}
+7de611cd4a7f2b9e277bb8d369f68417
+  jrel :: Theory.Justification -> Theory.JRel
+  RecSel Theory.Justification
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLLL),1*U(1*U(),A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Justification ->
+                 case ds of wild { Theory.BECAUSE ds1 ds2 ds3 ds4 -> ds1 }) -}
+189fd37927f4dc7dc25aeadeda906a41
+  law :: Theory.Justification -> Theory.JLaw
+  RecSel Theory.Justification
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSLL),1*U(A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Justification ->
+                 case ds of wild { Theory.BECAUSE ds1 ds2 ds3 ds4 -> ds2 }) -}
+52adfeeda58690c6854dd376ad3d29ba
+  lawEqn :: Theory.Law -> AST.Expr
+  RecSel Theory.Law
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Law ->
+                 case ds of wild { Theory.LAW ds1 ds2 -> ds2 }) -}
+93711316b35ad1b5ffc9bea1b3d727aa
+  lawName :: Theory.Law -> GHC.Base.String
+  RecSel Theory.Law
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Law ->
+                 case ds of wild { Theory.LAW ds1 ds2 -> ds1 }) -}
+eff0f9d9ea2c4e164fbbd73b98599961
+  parseBody ::
+    GHC.Base.Monad m =>
+    Language.Haskell.ParseMonad.ParseMode
+    -> Theory.Theory -> HParse.Parser m Theory.Theory
+  {- Arity: 4,
+     Strictness: <S,U(A,C(C1(U)),A,C(U),C(U))><L,U(U)><L,U(U,U,U,U,U,U)><S,1*U> -}
+fd7b35b20d78cfff360c601d75bcf710
+  parseTheory ::
+    GHC.Base.Monad m =>
+    Language.Haskell.ParseMonad.ParseMode
+    -> GHC.Base.String -> m Theory.Theory
+  {- Arity: 3,
+     Strictness: <S(LC(C(S))LLL),U(A,C(C1(U)),A,C(U),C(U))><L,U(U)><L,1*U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   $dMonad :: GHC.Base.Monad m
+                   pmode :: Language.Haskell.ParseMonad.ParseMode
+                   str :: GHC.Base.String ->
+                 GHC.Base.>>=
+                   @ m
+                   $dMonad
+                   @ (Theory.Theory, HParse.Lines)
+                   @ Theory.Theory
+                   (GHC.Base.>>=
+                      @ m
+                      $dMonad
+                      @ (GHC.Base.String, HParse.Lines)
+                      @ (Theory.Theory, HParse.Lines)
+                      (Theory.requireKeyAndName
+                         @ m
+                         $dMonad
+                         Theory.parseTheory2
+                         (GHC.List.zip
+                            @ GHC.Types.Int
+                            @ [GHC.Types.Char]
+                            Theory.parseTheory1
+                            (Data.OldList.lines str)))
+                      (\ ds :: (GHC.Base.String, HParse.Lines) ->
+                       case ds of wild { (,) thryNm lns' ->
+                       Theory.parseBody
+                         @ m
+                         $dMonad
+                         pmode
+                         (Theory.THEORY
+                            thryNm
+                            (GHC.Types.[] @ GHC.Base.String)
+                            (GHC.Types.[] @ GHC.Base.String)
+                            (GHC.Types.[] @ Theory.Law)
+                            (GHC.Types.[] @ Theory.InductionScheme)
+                            (GHC.Types.[] @ Theory.Theorem))
+                         lns' }))
+                   (\ ds :: (Theory.Theory, HParse.Lines) ->
+                    case ds of wild { (,) thry ds1 ->
+                    GHC.Base.return @ m $dMonad @ Theory.Theory thry })) -}
+6295f349c16c3e129eda5672a6019fad
+  parseTheory1 :: [GHC.Types.Int]
+  {- Unfolding: (GHC.Enum.eftInt 1 9223372036854775807) -}
+c3f45903208427e4ae836527f0b7a8c0
+  parseTheory2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "THEORY"#) -}
+5ec60bf09bca751d4eb47bb4ab320330
+  requireKeyAndName ::
+    GHC.Base.Monad m =>
+    GHC.Base.String -> HParse.Parser m GHC.Base.String
+  {- Arity: 3,
+     Strictness: <S,1*U(A,A,A,1*C1(U),1*C1(U))><L,U><S,1*U> -}
+7d33f2e702b4f54d6fe1cb69dd79910f
+  stepExpr :: Theory.Strategy -> AST.Expr
+  RecSel Theory.Strategy
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Strategy ->
+                 case ds of wild {
+                   DEFAULT -> Theory.stepExpr1
+                   Theory.Induction ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 -> ds5 }) -}
+221d7408cb88529cb390b618675f2ebc
+  stepExpr1 :: AST.Expr
+  {- Strictness: b -}
+940907f05a1e2c1f82fc69312f60aa94
+  stepStrategy :: Theory.Strategy -> Theory.Strategy
+  RecSel Theory.Strategy
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Strategy ->
+                 case ds of wild {
+                   DEFAULT -> Theory.stepStrategy1
+                   Theory.Induction ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 -> ds8 }) -}
+75a4cd1c708c124001e3f373c8365213
+  stepStrategy1 :: Theory.Strategy
+  {- Strictness: b -}
+a654f75d3ba0578292484a6ac763c8e4
+  strategy :: Theory.Theorem -> Theory.Strategy
+  RecSel Theory.Theorem
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Theorem ->
+                 case ds of wild { Theory.THEOREM ds1 ds2 ds3 -> ds3 }) -}
+1ab004d5f99f96a23e80a771985268b6
+  thImports :: Theory.Theory -> [GHC.Base.String]
+  RecSel Theory.Theory
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLL),1*U(A,1*U,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Theory ->
+                 case ds of wild { Theory.THEORY ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds2 }) -}
+cb8852c60bf61daab2766bb138d89126
+  thIndScheme :: Theory.Theory -> [Theory.InductionScheme]
+  RecSel Theory.Theory
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSL),1*U(A,A,A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Theory ->
+                 case ds of wild { Theory.THEORY ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds5 }) -}
+f5bcaeb0208b2f21266adc42c3bdb48d
+  thLaws :: Theory.Theory -> [Theory.Law]
+  RecSel Theory.Theory
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLL),1*U(A,A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Theory ->
+                 case ds of wild { Theory.THEORY ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds4 }) -}
+34cb30c30b8d089f79519d82b92aa663
+  thTheorems :: Theory.Theory -> [Theory.Theorem]
+  RecSel Theory.Theory
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLS),1*U(A,A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Theory ->
+                 case ds of wild { Theory.THEORY ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds6 }) -}
+67cbe9e1aaa272cb7320e12a7a6d2892
+  theorem :: Theory.Theorem -> AST.Expr
+  RecSel Theory.Theorem
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Theorem ->
+                 case ds of wild { Theory.THEOREM ds1 ds2 ds3 -> ds2 }) -}
+3c8a9154bc7079ad09eea485b196088d
+  theoryName :: Theory.Theory -> GHC.Base.String
+  RecSel Theory.Theory
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLL),1*U(1*U,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Theory ->
+                 case ds of wild { Theory.THEORY ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds1 }) -}
+8deeb588d90832ae0a23787866befca9
+  thmName :: Theory.Theorem -> GHC.Base.String
+  RecSel Theory.Theorem
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Theorem ->
+                 case ds of wild { Theory.THEOREM ds1 ds2 ds3 -> ds1 }) -}
+e25b9a70a37952594b586914bba24821
+  usage :: Theory.Justification -> Theory.Usage
+  RecSel Theory.Justification
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLSL),1*U(A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Theory.Justification ->
+                 case ds of wild { Theory.BECAUSE ds1 ds2 ds3 ds4 -> ds3 }) -}
+instance GHC.Classes.Eq [Theory.Focus] = Theory.$fEqFocus
+instance GHC.Classes.Eq [Theory.JLaw] = Theory.$fEqJLaw
+instance GHC.Classes.Eq [Theory.JRel] = Theory.$fEqJRel
+instance GHC.Classes.Eq [Theory.Usage] = Theory.$fEqUsage
+instance GHC.Show.Show [Theory.Calculation]
+  = Theory.$fShowCalculation
+instance GHC.Show.Show [Theory.Focus] = Theory.$fShowFocus
+instance GHC.Show.Show [Theory.InductionScheme]
+  = Theory.$fShowInductionScheme
+instance GHC.Show.Show [Theory.JLaw] = Theory.$fShowJLaw
+instance GHC.Show.Show [Theory.JRel] = Theory.$fShowJRel
+instance GHC.Show.Show [Theory.Justification]
+  = Theory.$fShowJustification
+instance GHC.Show.Show [Theory.Law] = Theory.$fShowLaw
+instance GHC.Show.Show [Theory.Strategy] = Theory.$fShowStrategy
+instance GHC.Show.Show [Theory.Theorem] = Theory.$fShowTheorem
+instance GHC.Show.Show [Theory.Theory] = Theory.$fShowTheory
+instance GHC.Show.Show [Theory.Usage] = Theory.$fShowUsage
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,586 @@
+
+==================== FINAL INTERFACE ====================
+2018-11-27 19:16:39.485162 UTC
+
+interface prfch_3yIeWdQAfX8DVUb2gN9xHL:REPL 7103
+  interface hash: d207031cb4496df925c614dfc084ac74
+  ABI hash: e6f17684bf5f7ac1b79efaf607186fdf
+  export-list hash: 3b9912d86e2106b8cfcce885e7bcc60f
+  orphan hash: d18c309f8ee16d3fa800ac071f91851c
+  flag hash: 4c0a7b65a6dddbc4161c2e2bfabe3dc3
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  REPL.charTypeParse
+  REPL.clearLong
+  REPL.idParse
+  REPL.pickByNumber
+  REPL.pickPairing
+  REPL.putListOneLine
+  REPL.runREPL
+  REPL.selectPairings
+  REPL.wordParse
+  REPL.REPLArguments
+  REPL.REPLCmd
+  REPL.REPLCmdDescr
+  REPL.REPLCommands
+  REPL.REPLConfig{REPL.REPLC REPL.replCommands REPL.replEOFReplacement REPL.replEndCondition REPL.replEndTidy REPL.replHelpCmds REPL.replParser REPL.replPrompt REPL.replQuit REPL.replQuitCmds}
+  REPL.REPLExit
+  REPL.REPLParser
+module dependencies: Utilities
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      haskeline-0.7.2.3@haske_EOSKKWeaf41IRQ0fRCqT5R integer-gmp-1.0.0.0
+                      terminfo-0.4.0.2@termi_GTEmnLYt1ob2hCwhW9sVjr
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+import  -/  base-4.8.2.0:Data.Char c8f827952d4111ae2e47c0b105217cdb
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO.Handle 631f32e0ad65df940f6a2b3e721d8452
+import  -/  base-4.8.2.0:GHC.IO.Handle.FD 43ef1c409a5b322c789fa1f7098e143b
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:GHC.Unicode cdf84fc3abbaf34ba6b6645291cef991
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0899686bfc1d9ef72dff3de85e99862a
+import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  haskeline-0.7.2.3@haske_EOSKKWeaf41IRQ0fRCqT5R:System.Console.Haskeline c71f32cd59e065690ac599e8f7de0603
+import  -/  haskeline-0.7.2.3@haske_EOSKKWeaf41IRQ0fRCqT5R:System.Console.Haskeline.InputT 74a23bd91fbfc411da7febbd86939139
+import  -/  Utilities 484eb8075f74a2f8942d226210fb9dba
+  exports: 65ee0be80b584ef80ca60490d28e5776
+  clearIt 9943e33abc012102235976d6781d7664
+  nlookup 007909f2dd83f066a63dcc036157b7e7
+  numberList 9c660412fd52269a0c3270b07fb57d55
+  readInt e99d93396906018225feab66d0b7c703
+  trim 5b4b3bc3b9220e7333371771444609e8
+import  -/  transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.IO.Class 37487179a2f5eb2ea7922b911abcae56
+738da74a4d9e1001ca6c8b34ac3c34b4
+  $sdefaultSettings ::
+    System.Console.Haskeline.InputT.Settings GHC.Types.IO
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, False)
+                (System.Console.Haskeline.InputT.Settings
+                   @ GHC.Types.IO
+                   (System.Console.Haskeline.Completion.completeFilename
+                      @ GHC.Types.IO
+                      Control.Monad.IO.Class.$fMonadIOIO)
+                   (GHC.Base.Nothing @ GHC.IO.FilePath)
+                   GHC.Types.True) -}
+cd8fc8691ae554e68c0285941e4f7b51
+  $wloopREPL ::
+    (GHC.Types.Bool -> state -> GHC.Base.String)
+    -> [GHC.Base.String]
+    -> REPL.REPLParser
+    -> [GHC.Base.String]
+    -> REPL.REPLExit state
+    -> [GHC.Base.String]
+    -> REPL.REPLCommands state
+    -> (state -> GHC.Types.Bool)
+    -> REPL.REPLCmd state
+    -> GHC.Types.Bool
+    -> state
+    -> System.Console.Haskeline.InputT.InputT GHC.Types.IO state
+  {- Arity: 11,
+     Strictness: <L,C(C1(U))><L,U><L,C(U)><L,U><L,C(C1(C1(U(U,1*U(1*U,U)))))><L,U><L,U><C(S),C(U)><L,C(C1(U))><L,U><L,U>,
+     Inline: [0] -}
+f95401128eae9fbc517cf070a797d6ba
+  type REPLArguments = [GHC.Base.String]
+e80a96810da846f7212e70f5e216bfc0
+  type REPLCmd state =
+    REPL.REPLArguments -> state -> GHC.Types.IO state
+ae4a54bac11c657e0f91a01731a4c066
+  type REPLCmdDescr state =
+    (GHC.Base.String,
+     GHC.Base.String,
+     GHC.Base.String,
+     REPL.REPLCmd state)
+1944c2149f1b35746400e7531d633429
+  type REPLCommands state = [REPL.REPLCmdDescr state]
+e712f01947e75ef069d7e339cc9c63ec
+  data REPLConfig state
+    = REPLC {replPrompt :: GHC.Types.Bool -> state -> GHC.Base.String,
+             replEOFReplacement :: [GHC.Base.String],
+             replParser :: REPL.REPLParser,
+             replQuitCmds :: [GHC.Base.String],
+             replQuit :: REPL.REPLExit state,
+             replHelpCmds :: [GHC.Base.String],
+             replCommands :: REPL.REPLCommands state,
+             replEndCondition :: state -> GHC.Types.Bool,
+             replEndTidy :: REPL.REPLCmd state}
+f13ef59cf350814553f80f3a7c320855
+  type REPLExit state =
+    REPL.REPLArguments -> state -> GHC.Types.IO (GHC.Types.Bool, state)
+022c2603347bac61c0918b06780ef1d7
+  type REPLParser = GHC.Base.String -> REPL.REPLArguments
+e37e89c09a1486b21af6b46daa7d32b6
+  charTypeParse :: REPL.REPLParser
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (\ x :: GHC.Base.String ->
+                 Data.OldList.wordsFB
+                   @ [[GHC.Types.Char]]
+                   REPL.charTypeParse1
+                   (GHC.Types.[] @ [GHC.Types.Char])
+                   x) -}
+7999b8a3d9b248133ddf8e45d948f718
+  charTypeParse1 ::
+    [GHC.Types.Char] -> [[GHC.Types.Char]] -> [[GHC.Types.Char]]
+  {- Arity: 2, HasNoCafRefs,
+     Unfolding: (\ x :: [GHC.Types.Char]
+                   ys :: [[GHC.Types.Char]][OneShot] ->
+                 GHC.Base.++
+                   @ [GHC.Types.Char]
+                   (REPL.charTypeParse_segment (GHC.Types.[] @ [GHC.Types.Char]) x)
+                   ys) -}
+f312cfd4e23c2b6f89283967ea188737
+  charTypeParse_segment ::
+    [[GHC.Types.Char]] -> [GHC.Types.Char] -> [[GHC.Types.Char]]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U> -}
+8f3ae0d693d4bb6e71f48faf14e06bb5
+  clearLong :: REPL.REPLCmdDescr s -> REPL.REPLCmdDescr s
+  {- Arity: 1, Strictness: <S,1*U(U,U,1*U,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ s
+                   ds :: (GHC.Base.String,
+                          GHC.Base.String,
+                          GHC.Base.String,
+                          REPL.REPLCmd s) ->
+                 case ds of wild { (,,,) nm short long func ->
+                 (nm, short, Utilities.clearIt long, func) }) -}
+20a04c83625dd590d94ccf8f348ec115
+  idParse :: REPL.REPLParser
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ s :: GHC.Base.String ->
+                 GHC.Types.:
+                   @ GHC.Base.String
+                   s
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+3fa62c6a4e7c3cc0de77f593bd80f905
+  pickByNumber ::
+    GHC.Base.String
+    -> (t -> GHC.Base.String) -> t -> GHC.Types.IO GHC.Types.Int
+  {- Arity: 4, Strictness: <L,1*U><L,1*C1(U)><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                REPL.pickByNumber1
+                  `cast`
+                (forall t.
+                 <GHC.Base.String>_R
+                 ->_R <t -> GHC.Base.String>_R
+                 ->_R <t>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <GHC.Types.Int>_R)) -}
+d4967c6d66d20700059cfb29bd2bbb67
+  pickByNumber1 ::
+    GHC.Base.String
+    -> (t -> GHC.Base.String)
+    -> t
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Types.Int #)
+  {- Arity: 4, Strictness: <L,1*U><L,1*C1(U)><L,U><L,U>,
+     Unfolding: (\ @ t
+                   prompt :: GHC.Base.String
+                   showx :: t -> GHC.Base.String
+                   x :: t
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (showx x)
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        prompt
+                        GHC.Types.False
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case GHC.IO.Handle.Internals.wantWritableHandle1
+                        @ ()
+                        GHC.IO.Handle.hFlush2
+                        GHC.IO.Handle.FD.stdout
+                        GHC.IO.Handle.Internals.flushWriteBuffer1
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle__>_R
+                         ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case GHC.IO.Handle.Internals.wantReadableHandle_1
+                        @ GHC.Base.String
+                        GHC.IO.Handle.Text.hGetLine4
+                        GHC.IO.Handle.FD.stdin
+                        GHC.IO.Handle.Text.hGetLine2
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle__>_R
+                         ->_R Sym (GHC.Types.NTCo:IO[0] <GHC.Base.String>_R))
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 (# ipv6, Utilities.readInt (Utilities.trim ipv7) #) } } } }) -}
+73f194fb49732769d97055310c68f0f0
+  pickPairing ::
+    GHC.Base.String
+    -> (c -> GHC.Base.String)
+    -> GHC.Base.String
+    -> (a -> GHC.Base.String)
+    -> GHC.Base.String
+    -> (b -> GHC.Base.String)
+    -> (a -> GHC.Base.String)
+    -> c
+    -> [a]
+    -> [b]
+    -> GHC.Types.IO (GHC.Types.Bool, [(a, b)])
+  {- Arity: 11,
+     Strictness: <L,1*U><L,1*C1(U)><L,1*U><L,C(U)><L,1*U><L,C(U)><L,C(U)><L,U><L,U><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                REPL.pickPairing1
+                  `cast`
+                (forall c a11 b.
+                 <GHC.Base.String>_R
+                 ->_R <c -> GHC.Base.String>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R <a11 -> GHC.Base.String>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R <b -> GHC.Base.String>_R
+                 ->_R <a11 -> GHC.Base.String>_R
+                 ->_R <c>_R
+                 ->_R <[a11]>_R
+                 ->_R <[b]>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0]
+                               <(GHC.Types.Bool, [(a11, b)])>_R)) -}
+88be1455d094ad4fcbef6d1ec4e106f9
+  pickPairing1 ::
+    GHC.Base.String
+    -> (c -> GHC.Base.String)
+    -> GHC.Base.String
+    -> (a -> GHC.Base.String)
+    -> GHC.Base.String
+    -> (b -> GHC.Base.String)
+    -> (a -> GHC.Base.String)
+    -> c
+    -> [a]
+    -> [b]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Types.Bool, [(a, b)]) #)
+  {- Arity: 11,
+     Strictness: <L,1*U><L,1*C1(U)><L,1*U><L,C(U)><L,1*U><L,C(U)><L,C(U)><L,U><L,U><L,U><L,U>,
+     Unfolding: (\ @ c
+                   @ a11
+                   @ b
+                   whatCtxt :: GHC.Base.String
+                   showCtxt :: c -> GHC.Base.String
+                   whatA :: GHC.Base.String
+                   showA :: a11 -> GHC.Base.String
+                   whatB :: GHC.Base.String
+                   showB :: b -> GHC.Base.String
+                   prompt :: a11 -> GHC.Base.String
+                   ctxt :: c
+                   as :: [a11]
+                   bs :: [b]
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.Base.++ @ GHC.Types.Char whatCtxt (showCtxt ctxt))
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        whatA
+                        GHC.Types.False
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case REPL.pickPairing3
+                        @ a11
+                        showA
+                        as
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        whatB
+                        GHC.Types.True
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (Utilities.numberList @ b showB bs)
+                        GHC.Types.True
+                        ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                 REPL.pickPairing2
+                   @ a11
+                   @ b
+                   prompt
+                   (GHC.Types.[] @ (a11, b))
+                   bs
+                   as
+                   ipv8 } } } } }) -}
+b0367291f2f72d08028b888def8de21a
+  pickPairing2 ::
+    (a -> GHC.Base.String)
+    -> [(a, b)]
+    -> [b]
+    -> [a]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Types.Bool, [(a, b)]) #)
+  {- Arity: 5, Strictness: <L,C(U)><L,U><L,U><S,1*U><L,U> -}
+afa9cc932dfd8008726b0cea47fcd594
+  pickPairing3 ::
+    (t -> GHC.Base.String)
+    -> [t]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3, Strictness: <L,C(U)><S,1*U><L,U> -}
+7672a7c449a1746f2861af447c26d5cf
+  putListOneLine :: (t -> GHC.Base.String) -> [t] -> GHC.Types.IO ()
+  {- Arity: 3, Strictness: <L,C(U)><S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                REPL.pickPairing3
+                  `cast`
+                (forall t.
+                 <t -> GHC.Base.String>_R
+                 ->_R <[t]>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+62e1f84af2ba86c7ca042c054ea9d7a0
+  replCommands :: REPL.REPLConfig state -> REPL.REPLCommands state
+  RecSel REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLSLL),1*U(A,A,A,A,A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state ds :: REPL.REPLConfig state ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds7 }) -}
+45610e65b6021fdee98533818eae4026
+  replEOFReplacement :: REPL.REPLConfig state -> [GHC.Base.String]
+  RecSel REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLLLLL),1*U(A,1*U,A,A,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state ds :: REPL.REPLConfig state ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds2 }) -}
+8d833539f1eb9033c65a78677df9f781
+  replEndCondition ::
+    REPL.REPLConfig state -> state -> GHC.Types.Bool
+  RecSel REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLSL),1*U(A,A,A,A,A,A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state ds :: REPL.REPLConfig state ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds8 }) -}
+51b3220975f3a311175362d83904c415
+  replEndTidy :: REPL.REPLConfig state -> REPL.REPLCmd state
+  RecSel REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLS),1*U(A,A,A,A,A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state ds :: REPL.REPLConfig state ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds9 }) -}
+5f4b9cf0dfd88f1025dda16efb01275e
+  replHelpCmds :: REPL.REPLConfig state -> [GHC.Base.String]
+  RecSel REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLSLLL),1*U(A,A,A,A,A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state ds :: REPL.REPLConfig state ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds6 }) -}
+f6307d1148a83ab39e1cb32c1176c986
+  replParser :: REPL.REPLConfig state -> REPL.REPLParser
+  RecSel REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLLLLL),1*U(A,A,1*U,A,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state ds :: REPL.REPLConfig state ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds3 }) -}
+e16d32c84049ac35a2fb4d1ec7992ae9
+  replPrompt ::
+    REPL.REPLConfig state -> GHC.Types.Bool -> state -> GHC.Base.String
+  RecSel REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLLLLL),1*U(1*U,A,A,A,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state ds :: REPL.REPLConfig state ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds1 }) -}
+40d7e427713cf0c0a715f8ed57b875ca
+  replQuit :: REPL.REPLConfig state -> REPL.REPLExit state
+  RecSel REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSLLLL),1*U(A,A,A,A,1*U,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state ds :: REPL.REPLConfig state ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds5 }) -}
+beb01b7d5dff94aab898d9cb345fec32
+  replQuitCmds :: REPL.REPLConfig state -> [GHC.Base.String]
+  RecSel REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLLLLL),1*U(A,A,A,1*U,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state ds :: REPL.REPLConfig state ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds4 }) -}
+b44b01c27bbcaf0187af93a0e207152f
+  runREPL ::
+    GHC.Base.String
+    -> REPL.REPLConfig state -> state -> GHC.Types.IO state
+  {- Arity: 3,
+     Strictness: <L,1*U><L,1*U(C(C1(U)),U,C(U),U,C(C1(C1(U(U,1*U(1*U,U))))),U,U,C(U),C(C1(U)))><L,U>,
+     Unfolding: (\ @ state
+                   wlcm :: GHC.Base.String
+                   config :: REPL.REPLConfig state
+                   s0 :: state ->
+                 System.Console.Haskeline.InputT.$wrunInputTBehavior
+                   @ GHC.Types.IO
+                   @ state
+                   System.Console.Haskeline.MonadException.$fMonadExceptionIO
+                   System.Console.Haskeline.Backend.defaultRunTerm1
+                     `cast`
+                   (Sym (GHC.Types.NTCo:IO[0]
+                             <System.Console.Haskeline.Term.RunTerm>_R))
+                   REPL.$sdefaultSettings
+                   (REPL.runREPL1
+                      @ state
+                      (System.Console.Haskeline.getInputLine1
+                         @ GHC.Types.IO
+                         Control.Monad.IO.Class.$fMonadIOIO
+                         (GHC.Base.++
+                            @ GHC.Types.Char
+                            wlcm
+                            System.Console.Haskeline.outputStrLn2))
+                        `cast`
+                      (Sym (Control.Monad.Trans.Reader.NTCo:ReaderT[0]
+                                <System.Console.Haskeline.Term.RunTerm>_R
+                                <Control.Monad.Trans.Reader.ReaderT
+                                   (GHC.IORef.IORef System.Console.Haskeline.History.History)
+                                   (Control.Monad.Trans.Reader.ReaderT
+                                      (GHC.IORef.IORef
+                                         System.Console.Haskeline.Command.KillRing.KillRing)
+                                      (Control.Monad.Trans.Reader.ReaderT
+                                         System.Console.Haskeline.Prefs.Prefs
+                                         (Control.Monad.Trans.Reader.ReaderT
+                                            (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                                            GHC.Types.IO)))>_R
+                                <()>_N))
+                      (case config of ww { REPL.REPLC ww1 ww2 ww3 ww4 ww5 ww6 ww7 ww8 ww9 ->
+                       (REPL.$wloopREPL
+                          @ state
+                          ww1
+                          ww2
+                          ww3
+                          ww4
+                          ww5
+                          ww6
+                          ww7
+                          ww8
+                          ww9
+                          GHC.Types.True
+                          s0)
+                         `cast`
+                       (System.Console.Haskeline.InputT.NTCo:InputT[0]
+                            <GHC.Types.IO>_R <state>_N) }))
+                     `cast`
+                   (Sym (System.Console.Haskeline.InputT.NTCo:InputT[0]
+                             <GHC.Types.IO>_R) <state>_N)) -}
+036387b1851db13a06123cb0af811c2f
+  runREPL1 ::
+    Control.Monad.Trans.Reader.ReaderT
+      System.Console.Haskeline.Term.RunTerm
+      (Control.Monad.Trans.Reader.ReaderT
+         (GHC.IORef.IORef System.Console.Haskeline.History.History)
+         (Control.Monad.Trans.Reader.ReaderT
+            (GHC.IORef.IORef
+               System.Console.Haskeline.Command.KillRing.KillRing)
+            (Control.Monad.Trans.Reader.ReaderT
+               System.Console.Haskeline.Prefs.Prefs
+               (Control.Monad.Trans.Reader.ReaderT
+                  (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                  GHC.Types.IO))))
+      ()
+    -> Control.Monad.Trans.Reader.ReaderT
+         System.Console.Haskeline.Term.RunTerm
+         (Control.Monad.Trans.Reader.ReaderT
+            (GHC.IORef.IORef System.Console.Haskeline.History.History)
+            (Control.Monad.Trans.Reader.ReaderT
+               (GHC.IORef.IORef
+                  System.Console.Haskeline.Command.KillRing.KillRing)
+               (Control.Monad.Trans.Reader.ReaderT
+                  System.Console.Haskeline.Prefs.Prefs
+                  (Control.Monad.Trans.Reader.ReaderT
+                     (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                     GHC.Types.IO))))
+         state
+    -> Control.Monad.Trans.Reader.ReaderT
+         System.Console.Haskeline.Term.RunTerm
+         (Control.Monad.Trans.Reader.ReaderT
+            (GHC.IORef.IORef System.Console.Haskeline.History.History)
+            (Control.Monad.Trans.Reader.ReaderT
+               (GHC.IORef.IORef
+                  System.Console.Haskeline.Command.KillRing.KillRing)
+               (Control.Monad.Trans.Reader.ReaderT
+                  System.Console.Haskeline.Prefs.Prefs
+                  (Control.Monad.Trans.Reader.ReaderT
+                     (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                     GHC.Types.IO))))
+         state
+  {- Unfolding: (\ @ state ->
+                 System.Console.Haskeline.InputT.$wa2
+                   @ GHC.Types.IO
+                   GHC.Base.$fMonadIO
+                   @ ()
+                   @ state) -}
+c5c6c34c88042351bff8e37cb3052e34
+  selectPairings ::
+    (a -> GHC.Base.String)
+    -> [(a, b)]
+    -> [b]
+    -> [a]
+    -> GHC.Types.IO (GHC.Types.Bool, [(a, b)])
+  {- Arity: 5, Strictness: <L,C(U)><L,U><L,U><S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                REPL.pickPairing2
+                  `cast`
+                (forall a11 b.
+                 <a11 -> GHC.Base.String>_R
+                 ->_R <[(a11, b)]>_R
+                 ->_R <[b]>_R
+                 ->_R <[a11]>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0]
+                               <(GHC.Types.Bool, [(a11, b)])>_R)) -}
+f1fdd0f8e0da4945ee3abadb42cfcde6
+  wordParse :: REPL.REPLParser
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True) Data.OldList.words -}
+"SPEC/REPL defaultSettings @ IO" [ALWAYS] forall $dMonadIO :: Control.Monad.IO.Class.MonadIO
+                                                                GHC.Types.IO
+  System.Console.Haskeline.defaultSettings @ GHC.Types.IO $dMonadIO
+  = REPL.$sdefaultSettings
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,434 @@
+
+==================== FINAL INTERFACE ====================
+2018-11-27 19:16:44.837591 UTC
+
+interface prfch_3yIeWdQAfX8DVUb2gN9xHL:Paths_prfchk 7103
+  interface hash: 0401e76c741cebe045db2e25f3f0f9c4
+  ABI hash: 0214e97dc93dca22c1dc7f5e87926f49
+  export-list hash: c6cd6fcd29afea687ca9368e829e143f
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 64450bf1e0a530880e4bd2b3d11b6c2b
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Paths_prfchk.getBinDir
+  Paths_prfchk.getDataDir
+  Paths_prfchk.getDataFileName
+  Paths_prfchk.getLibDir
+  Paths_prfchk.getLibexecDir
+  Paths_prfchk.getSysconfDir
+  Paths_prfchk.version
+module dependencies:
+package dependencies: base-4.8.2.0* ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Monoid
+                         base-4.8.2.0:Data.Type.Equality base-4.8.2.0:GHC.Generics
+import  -/  base-4.8.2.0:Control.Exception e9090e246fba030faecf7b81b3e8e320
+import  -/  base-4.8.2.0:Control.Exception.Base b99410eaf0cc6bb119b1d45a497c1b10
+import  -/  base-4.8.2.0:Data.Version 9815b783f03931eca811eea941e5e81a
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.IO.Exception e38c1261b70caecb7af416b94c82c925
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.Environment ba6e36000c8274703cf7786fbe8d0f6c
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+78723a835929d264c8a58ba36b91b8f8
+  getBinDir :: GHC.Types.IO GHC.IO.FilePath
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Paths_prfchk.getBinDir1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0] <GHC.IO.FilePath>_R)) -}
+e96a964bd1a38927d2e784d21f66937b
+  getBinDir1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.IO.FilePath #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.Prim.catch#
+                   @ GHC.IO.FilePath
+                   @ GHC.Exception.SomeException
+                   Paths_prfchk.getBinDir4
+                   Paths_prfchk.getBinDir2
+                   eta) -}
+80ed27dbff8e0d862f8a297201bd38c5
+  getBinDir2 ::
+    GHC.Exception.SomeException
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.IO.FilePath #)
+  {- Arity: 2,
+     Unfolding: (\ e1 :: GHC.Exception.SomeException[OneShot]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case e1 of wild { GHC.Exception.SomeException e100 $dException1 e2 ->
+                 case (GHC.Exception.$p1Exception @ e100 $dException1)
+                        `cast`
+                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e100>_N)
+                        (GHC.Prim.proxy#
+                           @ *
+                           @ e100) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
+                 case dt of wild2 {
+                   DEFAULT
+                   -> GHC.Prim.raiseIO#
+                        @ GHC.Exception.SomeException
+                        @ GHC.IO.FilePath
+                        wild
+                        eta
+                   __word 7238999624334008818
+                   -> case dt1 of wild3 {
+                        DEFAULT
+                        -> GHC.Prim.raiseIO#
+                             @ GHC.Exception.SomeException
+                             @ GHC.IO.FilePath
+                             wild
+                             eta
+                        __word 10769272474234763719
+                        -> (# eta, Paths_prfchk.getBinDir3 #) } } } }) -}
+775bca5177897ba86b4ad9e77cb0abd5
+  getBinDir3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/Users/xsellco/github/college/functional-gitlab/proof-check/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/bin"#) -}
+b54307d3c9c7bbf95960e8849ec473be
+  getBinDir4 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
+  {- Arity: 1,
+     Unfolding: (System.Environment.getEnv1 Paths_prfchk.getBinDir5) -}
+6543d5be013fa885815fbc0cab0754cb
+  getBinDir5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "prfchk_bindir"#) -}
+4c57fe7e893b73dc29ec2a861eac8968
+  getDataDir :: GHC.Types.IO GHC.IO.FilePath
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Paths_prfchk.getDataDir1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0] <GHC.IO.FilePath>_R)) -}
+8ce6ea1b1a9f74a8a06adc015502e7ca
+  getDataDir1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.IO.FilePath #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.Prim.catch#
+                   @ GHC.IO.FilePath
+                   @ GHC.Exception.SomeException
+                   Paths_prfchk.getDataDir4
+                   Paths_prfchk.getDataDir2
+                   eta) -}
+8cab63e357de12e25d5cee0e2934993e
+  getDataDir2 ::
+    GHC.Exception.SomeException
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.IO.FilePath #)
+  {- Arity: 2,
+     Unfolding: (\ e1 :: GHC.Exception.SomeException[OneShot]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case e1 of wild { GHC.Exception.SomeException e100 $dException1 e2 ->
+                 case (GHC.Exception.$p1Exception @ e100 $dException1)
+                        `cast`
+                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e100>_N)
+                        (GHC.Prim.proxy#
+                           @ *
+                           @ e100) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
+                 case dt of wild2 {
+                   DEFAULT
+                   -> GHC.Prim.raiseIO#
+                        @ GHC.Exception.SomeException
+                        @ GHC.IO.FilePath
+                        wild
+                        eta
+                   __word 7238999624334008818
+                   -> case dt1 of wild3 {
+                        DEFAULT
+                        -> GHC.Prim.raiseIO#
+                             @ GHC.Exception.SomeException
+                             @ GHC.IO.FilePath
+                             wild
+                             eta
+                        __word 10769272474234763719
+                        -> (# eta, Paths_prfchk.getDataDir3 #) } } } }) -}
+d003145ea5f67a2754c55ebbec9c8997
+  getDataDir3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/Users/xsellco/github/college/functional-gitlab/proof-check/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/share/x86_64-osx-ghc-7.10.3/prfchk-0.9.0.0"#) -}
+2bf5272bfc9077eff2d505a8eca2e305
+  getDataDir4 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
+  {- Arity: 1,
+     Unfolding: (System.Environment.getEnv1 Paths_prfchk.getDataDir5) -}
+31c9dfa42af19acf5ffc6f8151d3c196
+  getDataDir5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "prfchk_datadir"#) -}
+c52dc1ff071e4c2b209dc341217d0b87
+  getDataFileName :: GHC.IO.FilePath -> GHC.Types.IO GHC.IO.FilePath
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Paths_prfchk.getDataFileName1
+                  `cast`
+                (<GHC.IO.FilePath>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <GHC.IO.FilePath>_R)) -}
+783f39b2b5a3714f67b51f3fa74607a6
+  getDataFileName1 ::
+    GHC.IO.FilePath
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.IO.FilePath #)
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: (\ name :: GHC.IO.FilePath
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.Prim.catch#
+                        @ GHC.IO.FilePath
+                        @ GHC.Exception.SomeException
+                        Paths_prfchk.getDataDir4
+                        Paths_prfchk.getDataDir2
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv,
+                    GHC.Base.++
+                      @ GHC.Types.Char
+                      ipv1
+                      (GHC.CString.unpackAppendCString# "/"# name) #) }) -}
+e871a7fe1dd9d533db4f836efd468025
+  getLibDir :: GHC.Types.IO GHC.IO.FilePath
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Paths_prfchk.getLibDir1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0] <GHC.IO.FilePath>_R)) -}
+a4eda40340ace2c6c6d8e9a3d2c79456
+  getLibDir1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.IO.FilePath #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.Prim.catch#
+                   @ GHC.IO.FilePath
+                   @ GHC.Exception.SomeException
+                   Paths_prfchk.getLibDir4
+                   Paths_prfchk.getLibDir2
+                   eta) -}
+7d00e4fc00e946c9eb1661e5547725ca
+  getLibDir2 ::
+    GHC.Exception.SomeException
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.IO.FilePath #)
+  {- Arity: 2,
+     Unfolding: (\ e1 :: GHC.Exception.SomeException[OneShot]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case e1 of wild { GHC.Exception.SomeException e100 $dException1 e2 ->
+                 case (GHC.Exception.$p1Exception @ e100 $dException1)
+                        `cast`
+                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e100>_N)
+                        (GHC.Prim.proxy#
+                           @ *
+                           @ e100) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
+                 case dt of wild2 {
+                   DEFAULT
+                   -> GHC.Prim.raiseIO#
+                        @ GHC.Exception.SomeException
+                        @ GHC.IO.FilePath
+                        wild
+                        eta
+                   __word 7238999624334008818
+                   -> case dt1 of wild3 {
+                        DEFAULT
+                        -> GHC.Prim.raiseIO#
+                             @ GHC.Exception.SomeException
+                             @ GHC.IO.FilePath
+                             wild
+                             eta
+                        __word 10769272474234763719
+                        -> (# eta, Paths_prfchk.getLibDir3 #) } } } }) -}
+9fdf3336bb8761c3eceec283f258f2ee
+  getLibDir3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/Users/xsellco/github/college/functional-gitlab/proof-check/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/lib/x86_64-osx-ghc-7.10.3/prfchk-0.9.0.0-3yIeWdQAfX8DVUb2gN9xHL"#) -}
+4d907492bb1a8fc7aa9c6209dc18dee4
+  getLibDir4 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
+  {- Arity: 1,
+     Unfolding: (System.Environment.getEnv1 Paths_prfchk.getLibDir5) -}
+aec791aaad448025be48aac3ce264d6a
+  getLibDir5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "prfchk_libdir"#) -}
+f18cbdb9770bbd70c5dd03a20d269d70
+  getLibexecDir :: GHC.Types.IO GHC.IO.FilePath
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Paths_prfchk.getLibexecDir1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0] <GHC.IO.FilePath>_R)) -}
+51e2cd9eef7f828dbb1504e972a6c4b4
+  getLibexecDir1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.IO.FilePath #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.Prim.catch#
+                   @ GHC.IO.FilePath
+                   @ GHC.Exception.SomeException
+                   Paths_prfchk.getLibexecDir4
+                   Paths_prfchk.getLibexecDir2
+                   eta) -}
+77cfbc8bb43b6465cb15a46bcfd49313
+  getLibexecDir2 ::
+    GHC.Exception.SomeException
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.IO.FilePath #)
+  {- Arity: 2,
+     Unfolding: (\ e1 :: GHC.Exception.SomeException[OneShot]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case e1 of wild { GHC.Exception.SomeException e100 $dException1 e2 ->
+                 case (GHC.Exception.$p1Exception @ e100 $dException1)
+                        `cast`
+                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e100>_N)
+                        (GHC.Prim.proxy#
+                           @ *
+                           @ e100) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
+                 case dt of wild2 {
+                   DEFAULT
+                   -> GHC.Prim.raiseIO#
+                        @ GHC.Exception.SomeException
+                        @ GHC.IO.FilePath
+                        wild
+                        eta
+                   __word 7238999624334008818
+                   -> case dt1 of wild3 {
+                        DEFAULT
+                        -> GHC.Prim.raiseIO#
+                             @ GHC.Exception.SomeException
+                             @ GHC.IO.FilePath
+                             wild
+                             eta
+                        __word 10769272474234763719
+                        -> (# eta, Paths_prfchk.getLibexecDir3 #) } } } }) -}
+da955bfee10a387324729e014c0c0cb7
+  getLibexecDir3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/Users/xsellco/github/college/functional-gitlab/proof-check/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/libexec"#) -}
+48dbb4158546107f91d23635106b338c
+  getLibexecDir4 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
+  {- Arity: 1,
+     Unfolding: (System.Environment.getEnv1
+                   Paths_prfchk.getLibexecDir5) -}
+d34b29b48501f62eb57f9709eeb92e3a
+  getLibexecDir5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "prfchk_libexecdir"#) -}
+f214833ab8f13252d5cf35836ee48766
+  getSysconfDir :: GHC.Types.IO GHC.IO.FilePath
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Paths_prfchk.getSysconfDir1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0] <GHC.IO.FilePath>_R)) -}
+df610b1fe02af5d5209506e9f8ca924d
+  getSysconfDir1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.IO.FilePath #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.Prim.catch#
+                   @ GHC.IO.FilePath
+                   @ GHC.Exception.SomeException
+                   Paths_prfchk.getSysconfDir4
+                   Paths_prfchk.getSysconfDir2
+                   eta) -}
+b23134d724dbb1b60968c4e0117305e4
+  getSysconfDir2 ::
+    GHC.Exception.SomeException
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.IO.FilePath #)
+  {- Arity: 2,
+     Unfolding: (\ e1 :: GHC.Exception.SomeException[OneShot]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case e1 of wild { GHC.Exception.SomeException e100 $dException1 e2 ->
+                 case (GHC.Exception.$p1Exception @ e100 $dException1)
+                        `cast`
+                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e100>_N)
+                        (GHC.Prim.proxy#
+                           @ *
+                           @ e100) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
+                 case dt of wild2 {
+                   DEFAULT
+                   -> GHC.Prim.raiseIO#
+                        @ GHC.Exception.SomeException
+                        @ GHC.IO.FilePath
+                        wild
+                        eta
+                   __word 7238999624334008818
+                   -> case dt1 of wild3 {
+                        DEFAULT
+                        -> GHC.Prim.raiseIO#
+                             @ GHC.Exception.SomeException
+                             @ GHC.IO.FilePath
+                             wild
+                             eta
+                        __word 10769272474234763719
+                        -> (# eta, Paths_prfchk.getSysconfDir3 #) } } } }) -}
+1841f6fbb33f5233b8c74451f657643a
+  getSysconfDir3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/Users/xsellco/github/college/functional-gitlab/proof-check/.stack-work/install/x86_64-osx/lts-6.19/7.10.3/etc"#) -}
+47c7707b7566de112ba20e0a8a34ccc1
+  getSysconfDir4 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
+  {- Arity: 1,
+     Unfolding: (System.Environment.getEnv1
+                   Paths_prfchk.getSysconfDir5) -}
+0776230bffd01232d49df5dc956938c1
+  getSysconfDir5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "prfchk_sysconfdir"#) -}
+6475249f0039fd649f73a3419aa4a418
+  version :: Data.Version.Version
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Data.Version.Version
+                   Paths_prfchk.version1
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+60e1407aeeb7e350dcdc7d6102de87f5
+  version1 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Paths_prfchk.version5
+                   Paths_prfchk.version2) -}
+7ecfb9690674c6dc0940d3d95c73a6c9
+  version2 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Paths_prfchk.version6
+                   Paths_prfchk.version3) -}
+10731e0c7475005a2afc5ebd0dfb6b89
+  version3 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Paths_prfchk.version5
+                   Paths_prfchk.version4) -}
+67c1863d2ae76b5eb6bc82f37b4b2b5c
+  version4 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Paths_prfchk.version5
+                   (GHC.Types.[] @ GHC.Types.Int)) -}
+a8a927561cdeb459cfc7a8898cd241f1
+  version5 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0) -}
+e8d0098e2e5386ee6c7fe5e041756604
+  version6 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 9) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

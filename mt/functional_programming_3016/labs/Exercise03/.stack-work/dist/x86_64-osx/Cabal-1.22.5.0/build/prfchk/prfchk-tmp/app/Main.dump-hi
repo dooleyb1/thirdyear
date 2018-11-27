@@ -1,0 +1,1739 @@
+
+==================== FINAL INTERFACE ====================
+2018-11-27 19:16:46.102212 UTC
+
+interface main@main:Main 7103
+  interface hash: 9c116c4f5619a78fb2ec4576ba28c570
+  ABI hash: b9b588390f7cede4afdc74557387dcfa
+  export-list hash: 9f5caac15ae9a7d1e58afad8042cba80
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: db0aa23af2ed8459f0bd6d0710130d84
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.batch
+  Main.cmdCheckTheorem
+  Main.cmdLoadHaskell
+  Main.cmdLoadTheory
+  Main.cmdParseHaskell
+  Main.cmdShowLaws
+  Main.cmdShowState
+  Main.currThry_
+  Main.currThry__
+  Main.hmods_
+  Main.hmods__
+  Main.hreqCommands
+  Main.hreqConfig
+  Main.hreqEOFreplacmement
+  Main.hreqEndCondition
+  Main.hreqEndTidy
+  Main.hreqHelpCmds
+  Main.hreqParser
+  Main.hreqPrompt
+  Main.hreqQuit
+  Main.hreqQuitCmds
+  Main.hreqWelcome
+  Main.hreqs0
+  Main.hthrys_
+  Main.hthrys__
+  Main.isThr
+  Main.loadDependencies
+  Main.loadModDeps
+  Main.loadSource
+  Main.loadTheory
+  Main.loadThryDeps
+  Main.main
+  Main.nquit
+  Main.parseHaskell
+  Main.readHaskell
+  Main.readTheory
+  Main.repl
+  Main.shlist
+  Main.showCurrThry
+  Main.showDecl
+  Main.showHModLaws
+  Main.showHModNames
+  Main.showLaw
+  Main.showLaws
+  Main.showState
+  Main.showTFiles
+  Main.showTheorem
+  Main.showTheorems
+  Main.showTheoryFiles
+  Main.showTheoryLaws
+  Main.showTheoryNames
+  Main.theoremCheck
+  Main.version
+  Main.HReqCmd
+  Main.HReqCmdDescr
+  Main.HReqCommands
+  Main.HReqConfig
+  Main.HReqExit
+  Main.HReqState{Main.HReq Main.currThry Main.hmods Main.hthrys}
+module dependencies:
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      haskeline-0.7.2.3@haske_EOSKKWeaf41IRQ0fRCqT5R
+                      haskell-src-1.0.2.0@haske_L5FnTXYimTzE7JszPj0uf6
+                      integer-gmp-1.0.0.0 pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      prfchk-0.9.0.0@prfch_3yIeWdQAfX8DVUb2gN9xHL
+                      syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE
+                      terminfo-0.4.0.2@termi_GTEmnLYt1ob2hCwhW9sVjr
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE:Data.Generics.Instances
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+import  -/  base-4.8.2.0:Control.Exception e9090e246fba030faecf7b81b3e8e320
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.Maybe 1cb58de2b04ee3c0c0a7dc9201184aff
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.Environment ba6e36000c8274703cf7786fbe8d0f6c
+import  -/  base-4.8.2.0:System.IO 0899686bfc1d9ef72dff3de85e99862a
+import  -/  directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm:System.Directory a90331b0d3a954e7d46e510cba448504
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath 6a7eafb8f3ea5de45bf8aaade5c8108e
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath.Posix da2bfc0e51fee241a6f2334547c9597d
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  haskell-src-1.0.2.0@haske_L5FnTXYimTzE7JszPj0uf6:Language.Haskell.ParseMonad 567fe24cb244802cdbaec658f9a43f33
+import  -/  prfchk-0.9.0.0@prfch_3yIeWdQAfX8DVUb2gN9xHL:AST 8a2c29d575e8bd3b64abf6366ce4d014
+import  -/  prfchk-0.9.0.0@prfch_3yIeWdQAfX8DVUb2gN9xHL:Check beb495fcb643ef320a9363a690ef146b
+import  -/  prfchk-0.9.0.0@prfch_3yIeWdQAfX8DVUb2gN9xHL:HParse e91c13938b17912a3852ba940530cc11
+import  -/  prfchk-0.9.0.0@prfch_3yIeWdQAfX8DVUb2gN9xHL:Matching 4337ae5eedd456eb3a53c0c9a3d8b38f
+import  -/  prfchk-0.9.0.0@prfch_3yIeWdQAfX8DVUb2gN9xHL:REPL e6f17684bf5f7ac1b79efaf607186fdf
+import  -/  prfchk-0.9.0.0@prfch_3yIeWdQAfX8DVUb2gN9xHL:Theory 945be06abe503e01076baa0b98b5ab10
+import  -/  prfchk-0.9.0.0@prfch_3yIeWdQAfX8DVUb2gN9xHL:Utilities 484eb8075f74a2f8942d226210fb9dba
+c1f4c2948560c0ac34fcd22b350d60be
+  $fShowHReqState :: GHC.Show.Show Main.HReqState
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.HReqState
+                  Main.$fShowHReqState_$cshowsPrec
+                  Main.$fShowHReqState_$cshow
+                  Main.$fShowHReqState_$cshowList -}
+c1f4c2948560c0ac34fcd22b350d60be
+  $fShowHReqState1 :: Main.HReqState -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ w :: Main.HReqState ->
+                 case w of ww { Main.HReq ww1 ww2 ww3 ->
+                 Main.$w$cshowsPrec 0 ww1 ww2 ww3 }) -}
+c1f4c2948560c0ac34fcd22b350d60be
+  $fShowHReqState_$cshow :: Main.HReqState -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(U,U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Main.HReqState ->
+                 Main.$fShowHReqState_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+c1f4c2948560c0ac34fcd22b350d60be
+  $fShowHReqState_$cshowList :: [Main.HReqState] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Main.HReqState
+                   Main.$fShowHReqState1) -}
+c1f4c2948560c0ac34fcd22b350d60be
+  $fShowHReqState_$cshowsPrec ::
+    GHC.Types.Int -> Main.HReqState -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U(U)><S,1*U(U,U,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: GHC.Types.Int w1 :: Main.HReqState ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Main.HReq ww3 ww4 ww5 ->
+                 Main.$w$cshowsPrec ww1 ww3 ww4 ww5 } }) -}
+5e2a4f23a2a474c8d116633d114acdb8
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> [AST.Mdl]
+    -> [Theory.Theory]
+    -> GHC.Base.Maybe Theory.Theory
+    -> GHC.Show.ShowS
+  {- Arity: 4, Strictness: <L,U><L,U><L,U><L,1*U>, Inline: [0] -}
+fbe995438abd65a64d6ce4937b32bc5e
+  $wa ::
+    GHC.Base.String
+    -> [GHC.Base.String]
+    -> [GHC.Base.String]
+    -> [Theory.Law]
+    -> [Theory.InductionScheme]
+    -> [Theory.Theorem]
+    -> Main.HReqState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.HReqState #)
+  {- Arity: 8,
+     Strictness: <L,U><L,U><S,U><L,U><L,U><L,U><L,1*H><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Base.String
+                   ww1 :: [GHC.Base.String]
+                   ww2 :: [GHC.Base.String]
+                   ww3 :: [Theory.Law]
+                   ww4 :: [Theory.InductionScheme]
+                   ww5 :: [Theory.Theorem]
+                   w :: Main.HReqState
+                   w1 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Main.cmdLoadTheory5 ww2 w1 of ds1 { (#,#) ipv ipv1 ->
+                 case Main.cmdLoadTheory4 ww1 ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.cmdLoadTheory3
+                        GHC.Types.True
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 (# ipv4,
+                    case w of wild { Main.HReq ds ds4 ds5 ->
+                    Main.HReq
+                      ipv1
+                      ipv3
+                      (GHC.Base.Just
+                         @ Theory.Theory
+                         (Theory.THEORY ww ww1 ww2 ww3 ww4 ww5)) } #) } } }) -}
+5c88abea10fd0762e377e5d469e88494
+  $wa1 ::
+    [AST.Mdl]
+    -> [Theory.Theory]
+    -> GHC.Base.Maybe Theory.Theory
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.HReqState #)
+  {- Arity: 4, Strictness: <S,U><L,U><L,U><L,U>, Inline: [0],
+     Unfolding: (\ @ t
+                   ww :: [AST.Mdl]
+                   ww1 :: [Theory.Theory]
+                   ww2 :: GHC.Base.Maybe Theory.Theory
+                   w :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Main.cmdShowLaws8 ww w of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        GHC.Types.True
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case Main.cmdShowLaws7 ww1 ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        GHC.Types.True
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 case ww2 of wild {
+                   GHC.Base.Nothing
+                   -> case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.cmdShowLaws6
+                             GHC.Types.True
+                             ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                      (# ipv8, Main.HReq ww ww1 (GHC.Base.Nothing @ Theory.Theory) #) }
+                   GHC.Base.Just thry
+                   -> case Main.cmdShowLaws4 thry ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                      case Main.cmdShowLaws2 thry ipv8 of ds6 { (#,#) ipv10 ipv11 ->
+                      (# ipv10, Main.HReq ww ww1 wild #) } } } } } } }) -}
+68defc5a9b88628e92e79af8f65cc251
+  $wa2 ::
+    [AST.Mdl]
+    -> [Theory.Theory]
+    -> GHC.Base.Maybe Theory.Theory
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.HReqState #)
+  {- Arity: 4, Strictness: <S,U><L,U><L,U><L,U>, Inline: [0],
+     Unfolding: (\ @ t
+                   ww :: [AST.Mdl]
+                   ww1 :: [Theory.Theory]
+                   ww2 :: GHC.Base.Maybe Theory.Theory
+                   w :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Main.cmdShowState6 ww w of ds1 { (#,#) ipv ipv1 ->
+                 case Main.cmdShowState3 ww1 ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case ww2 of wild {
+                   GHC.Base.Nothing
+                   -> case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.cmdShowState2
+                             GHC.Types.True
+                             ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                      (# ipv4, Main.HReq ww ww1 (GHC.Base.Nothing @ Theory.Theory) #) }
+                   GHC.Base.Just thry
+                   -> case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             (GHC.CString.unpackAppendCString#
+                                "\n\
+                                \Current Theory: "#
+                                (case thry of wild1 { Theory.THEORY ds3 ds4 ds5 ds6 ds7 ds8 ->
+                                 ds3 }))
+                             GHC.Types.True
+                             ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                      (# ipv4, Main.HReq ww ww1 wild #) } } } }) -}
+40c5755454d63e19b42474feb65e27d4
+  $wa3 ::
+    b
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, b #)
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: [0],
+     Unfolding: (\ @ t
+                   @ b
+                   w :: b
+                   w1 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case System.Directory.getDirectoryContents1
+                        Main.showTFiles2
+                        w1 of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (Data.OldList.unlines
+                           (GHC.List.filter @ [GHC.Types.Char] Main.isThr ipv1))
+                        GHC.Types.True
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (# ipv2, w #) } }) -}
+43ef82677152ac8e21b56704f382a7ad
+  type HReqCmd = REPL.REPLCmd Main.HReqState
+e7c3d6a652e5d8d8db3586954912ac19
+  type HReqCmdDescr = REPL.REPLCmdDescr Main.HReqState
+c697ea48f9ffd35547ad4dfc4d27e5de
+  type HReqCommands = REPL.REPLCommands Main.HReqState
+5360b2249c5953cf733797a55c67dd5e
+  type HReqConfig = REPL.REPLConfig Main.HReqState
+766330466a209deedd0a21381a3f8ef9
+  type HReqExit = REPL.REPLExit Main.HReqState
+c1f4c2948560c0ac34fcd22b350d60be
+  data HReqState
+    = HReq {hmods :: [AST.Mdl],
+            hthrys :: [Theory.Theory],
+            currThry :: GHC.Base.Maybe Theory.Theory}
+c3d66a17c79ded1c05b6a9006105a777
+  batch :: GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.batch1
+                  `cast`
+                (<GHC.Base.String>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+38536d8b320796b9b0de5aa4b20c805c
+  batch1 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><L,U> -}
+ffb686c0b2bd635c21961e25386d3c1d
+  cmdCheckTheorem :: Main.HReqCmdDescr
+  {- Strictness: m,
+     Unfolding: ((Main.cmdCheckTheorem6,
+                  Main.cmdCheckTheorem5,
+                  Main.cmdCheckTheorem4,
+                  Main.cmdCheckTheorem1
+                    `cast`
+                  (<[GHC.Base.String]>_R
+                   ->_R <Main.HReqState>_R
+                   ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)))) -}
+879a2e9fd632fb2f6a808f4778bbdd54
+  cmdCheckTheorem1 ::
+    [GHC.Base.String]
+    -> Main.HReqState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.HReqState #)
+  {- Arity: 3, Strictness: <S,1*U><L,U(U,U,U)><L,U>,
+     Unfolding: (\ ds :: [GHC.Base.String]
+                   hreqs :: Main.HReqState
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds of wild {
+                   []
+                   -> case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.cmdCheckTheorem3
+                             GHC.Types.True
+                             eta of ds1 { (#,#) ipv ipv1 ->
+                      (# ipv, hreqs #) }
+                   : n ds1
+                   -> case hreqs of wild1 { Main.HReq ds2 ds3 ds4 ->
+                      case ds4 of wild2 {
+                        GHC.Base.Nothing
+                        -> case GHC.IO.Handle.Text.hPutStr2
+                                  GHC.IO.Handle.FD.stdout
+                                  Main.cmdCheckTheorem2
+                                  GHC.Types.True
+                                  eta of ds5 { (#,#) ipv ipv1 ->
+                           (# ipv, wild1 #) }
+                        GHC.Base.Just thry
+                        -> case Theory.findTheorem
+                                  @ GHC.Base.Maybe
+                                  GHC.Base.$fMonadMaybe
+                                  n
+                                  (Theory.thTheorems thry) of wild3 {
+                             GHC.Base.Nothing
+                             -> case GHC.IO.Handle.Text.hPutStr2
+                                       GHC.IO.Handle.FD.stdout
+                                       (GHC.CString.unpackAppendCString# "Theorem not found: "# n)
+                                       GHC.Types.True
+                                       eta of ds5 { (#,#) ipv ipv1 ->
+                                (# ipv, wild1 #) }
+                             GHC.Base.Just thm
+                             -> case GHC.IO.Handle.Text.hPutStr2
+                                       GHC.IO.Handle.FD.stdout
+                                       (Data.OldList.unlines
+                                          (Check.checkTheorem
+                                             ds2
+                                             (GHC.Base.++
+                                                @ Theory.Theory
+                                                ds3
+                                                (GHC.Types.:
+                                                   @ Theory.Theory
+                                                   thry
+                                                   (GHC.Types.[] @ Theory.Theory)))
+                                             thm))
+                                       GHC.Types.True
+                                       eta of ds5 { (#,#) ipv ipv1 ->
+                                (# ipv, wild1 #) } } } } }) -}
+c634242d48854c837d8acb5307b47fa1
+  cmdCheckTheorem2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "no current theory"#) -}
+94d36b26d22f7b370bb3ca58b0939a80
+  cmdCheckTheorem3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "no theorem specified"#) -}
+93c1e83562db58ac4fa1cfc8c38973c4
+  cmdCheckTheorem4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "check <name> -- check theorem called name"#) -}
+4e6b81363aa8636339be09d4d459b39c
+  cmdCheckTheorem5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "check theorem"#) -}
+f85a72f167546b4a1c087956c50e00d2
+  cmdCheckTheorem6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "check"#) -}
+be524e2125dc5707d8a208f1ae1ffb92
+  cmdLoadHaskell :: Main.HReqCmdDescr
+  {- Strictness: m,
+     Unfolding: ((Main.cmdLoadHaskell11,
+                  Main.cmdLoadHaskell10,
+                  Main.cmdLoadHaskell7,
+                  (Main.cmdLoadHaskell1 @ Main.HReqState)
+                    `cast`
+                  (<[[GHC.Types.Char]]>_R
+                   ->_R <Main.HReqState>_R
+                   ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)))) -}
+e2ed96507a86df4e17685b9896a761bc
+  cmdLoadHaskell1 ::
+    [[GHC.Types.Char]]
+    -> b
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, b #)
+  {- Arity: 3, Strictness: <S,1*U><L,U><L,U>,
+     Unfolding: (\ @ b
+                   ds :: [[GHC.Types.Char]]
+                   hreqs :: b
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds of wild {
+                   []
+                   -> case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.cmdLoadHaskell6
+                             GHC.Types.True
+                             eta of ds1 { (#,#) ipv ipv1 ->
+                      (# ipv, hreqs #) }
+                   : fnroot ds1
+                   -> case Main.cmdLoadHaskell4 fnroot eta of ds2 { (#,#) ipv ipv1 ->
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.cmdLoadHaskell3
+                             GHC.Types.True
+                             ipv of ds3 { (#,#) ipv2 ipv3 ->
+                      let {
+                        aststr :: GHC.Base.String
+                        = case ipv1 of ww2 { AST.Mdl ww3 ww4 ww5 ->
+                          AST.$w$cshowsPrec5 0 ww3 ww4 ww5 (GHC.Types.[] @ GHC.Types.Char) }
+                      } in
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             aststr
+                             GHC.Types.True
+                             ipv2 of ds4 { (#,#) ipv4 ipv5 ->
+                      case Control.Exception.Base.bracket1
+                             @ GHC.IO.Handle.Types.Handle
+                             @ ()
+                             @ ()
+                             (GHC.IO.Handle.FD.openFile1
+                                (GHC.CString.unpackAppendCString#
+                                   "data/"#
+                                   (GHC.Base.++ @ GHC.Types.Char fnroot Main.cmdLoadHaskell2))
+                                GHC.IO.IOMode.WriteMode)
+                               `cast`
+                             (Sym (GHC.Types.NTCo:IO[0] <GHC.IO.Handle.Types.Handle>_R))
+                             GHC.IO.Handle.hClose1
+                               `cast`
+                             (<GHC.IO.Handle.Types.Handle>_R
+                              ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                             (\ hdl :: GHC.IO.Handle.Types.Handle[OneShot] ->
+                              GHC.IO.Handle.Text.hPutStr1 hdl aststr)
+                               `cast`
+                             (<GHC.IO.Handle.Types.Handle>_R
+                              ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                             ipv4 of ds5 { (#,#) ipv6 ipv7 ->
+                      (# ipv6, hreqs #) } } } } }) -}
+0fa992e8224b96e84ddb80f8ceeb0301
+  cmdLoadHaskell10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "load Haskell source"#) -}
+01c12cd0dbdbbe1d859d48b8937e2495
+  cmdLoadHaskell11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "lh"#) -}
+d094ea0d4845491b62cd51388d69d6f0
+  cmdLoadHaskell2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ".ast"#) -}
+d2e6b507094a4ce361bdeae0879b8e3c
+  cmdLoadHaskell3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Module AST:\n"#) -}
+1e3217c5ae8f2149182373042999d31f
+  cmdLoadHaskell4 ::
+    [GHC.Types.Char]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, AST.Mdl #)
+  {- Arity: 2, Strictness: <L,1*U><L,U>,
+     Unfolding: (\ fnroot :: [GHC.Types.Char]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 let {
+                   fname :: [GHC.Types.Char]
+                   = GHC.Base.++ @ GHC.Types.Char fnroot Main.cmdLoadHaskell5
+                 } in
+                 case GHC.IO.Handle.FD.openFile1
+                        (GHC.CString.unpackAppendCString# "data/"# fname)
+                        GHC.IO.IOMode.ReadMode
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (HParse.parseHModule @ GHC.Types.IO GHC.Base.$fMonadIO fname ipv3)
+                   `cast`
+                 (GHC.Types.NTCo:IO[0] <AST.Mdl>_R)
+                   ipv2 } }) -}
+2e24df930dabd57ca4bb194a2f1f9a75
+  cmdLoadHaskell5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ".hs"#) -}
+6e650152fde4106c038b1be914f3e2b6
+  cmdLoadHaskell6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "no file given"#) -}
+17bccae8d1cb8fe1a7d9bf524279aba2
+  cmdLoadHaskell7 :: GHC.Base.String
+  {- Unfolding: (Data.OldList.unlines Main.cmdLoadHaskell8) -}
+6d72d258ae2fb953a2f62f561ddd679e
+  cmdLoadHaskell8 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.cmdLoadHaskell9
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+33dcd41e4093e5853a5a10dd99d49083
+  cmdLoadHaskell9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "lh <fname>  -- parse and dump AST for data/<fname>.hs"#) -}
+ff14d4f38ec1c33efa72b31b9f7aa3c6
+  cmdLoadTheory :: Main.HReqCmdDescr
+  {- Strictness: m,
+     Unfolding: ((Main.cmdLoadTheory15,
+                  Main.cmdLoadTheory14,
+                  Main.cmdLoadTheory9,
+                  Main.cmdLoadTheory1
+                    `cast`
+                  (<[[GHC.Types.Char]]>_R
+                   ->_R <Main.HReqState>_R
+                   ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)))) -}
+a7797bfbe99ddfad7b155256d104ec94
+  cmdLoadTheory1 ::
+    [[GHC.Types.Char]]
+    -> Main.HReqState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.HReqState #)
+  {- Arity: 3, Strictness: <S,1*U><L,U><L,U>,
+     Unfolding: (\ ds :: [[GHC.Types.Char]]
+                   hreqs :: Main.HReqState
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds of wild {
+                   []
+                   -> case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.cmdLoadHaskell6
+                             GHC.Types.True
+                             eta of ds1 { (#,#) ipv ipv1 ->
+                      (# ipv, hreqs #) }
+                   : fnroot ds1
+                   -> case Main.cmdLoadTheory7 fnroot eta of ds2 { (#,#) ipv ipv1 ->
+                      case ipv1 of wild1 {
+                        GHC.Base.Nothing -> (# ipv, hreqs #)
+                        GHC.Base.Just theory
+                        -> case GHC.IO.Handle.Text.hPutStr2
+                                  GHC.IO.Handle.FD.stdout
+                                  (GHC.CString.unpackAppendCString#
+                                     "\n\
+                                     \Loaded Theory '"#
+                                     (GHC.Base.++ @ GHC.Types.Char fnroot Main.cmdLoadTheory6))
+                                  GHC.Types.True
+                                  ipv of ds3 { (#,#) ipv2 ipv3 ->
+                           Main.cmdLoadTheory2 theory hreqs ipv2 } } } }) -}
+10390f1d84809dc16085c229ef051169
+  cmdLoadTheory10 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.cmdLoadTheory13
+                   Main.cmdLoadTheory11) -}
+be0f6277cb53c5a003f87b39bbf3cd53
+  cmdLoadTheory11 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.cmdLoadTheory12
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+36eec84e471babcd4cfd6346ab9340be
+  cmdLoadTheory12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   " -- also loads all haskell modules and theories that it imports"#) -}
+c33af865d30d92e21b4753fb048a703a
+  cmdLoadTheory13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "load <fname>  -- load data/<fname>.thr"#) -}
+c52a4985434ff55a23fdee9f53103e5c
+  cmdLoadTheory14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "load Theory source"#) -}
+d4e7153d75be1c72de4674338ae35480
+  cmdLoadTheory15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "load"#) -}
+7ac325683505286bef75902d430b8e9b
+  cmdLoadTheory2 ::
+    Theory.Theory
+    -> Main.HReqState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.HReqState #)
+  {- Arity: 3, Strictness: <S(LLSLLL),U(U,U,U,U,U,U)><L,1*H><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: Theory.Theory
+                   w1 :: Main.HReqState
+                   w2 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case w of ww { Theory.THEORY ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 Main.$wa ww1 ww2 ww3 ww4 ww5 ww6 w1 w2 }) -}
+68256488da24eacb820bcf6cd8ff198a
+  cmdLoadTheory3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Theory dependencies loaded.\n"#) -}
+e0a4a06ee4aba87ca3d6e2586673f733
+  cmdLoadTheory4 ::
+    [[GHC.Types.Char]]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [Theory.Theory] #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+d072654045f27a2aacf43d83a92a8b44
+  cmdLoadTheory5 ::
+    [[GHC.Types.Char]]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [AST.Mdl] #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+09154369e2ddfc285cd3bce987dee4ba
+  cmdLoadTheory6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "'"#) -}
+ccc92ad2aab18992b8d6a7d04395f103
+  cmdLoadTheory7 ::
+    [GHC.Types.Char]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          GHC.Base.Maybe Theory.Theory #)
+  {- Arity: 2, Strictness: <L,1*U><L,U>,
+     Unfolding: (\ fnroot :: [GHC.Types.Char]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 let {
+                   fname :: [GHC.Types.Char]
+                   = GHC.Base.++ @ GHC.Types.Char fnroot Main.cmdLoadTheory8
+                 } in
+                 case GHC.IO.Handle.FD.openFile1
+                        (GHC.CString.unpackAppendCString# "data/"# fname)
+                        GHC.IO.IOMode.ReadMode
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case Theory.parseTheory
+                        @ Utilities.YesBut
+                        Utilities.$fMonadYesBut
+                        (Language.Haskell.ParseMonad.ParseMode fname)
+                        ipv3 of wild {
+                   Utilities.Yes thry
+                   -> (# ipv2, GHC.Base.Just @ Theory.Theory thry #)
+                   Utilities.But msgs
+                   -> case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             (Data.OldList.unlines msgs)
+                             GHC.Types.True
+                             ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                      (# ipv4, GHC.Base.Nothing @ Theory.Theory #) } } } }) -}
+2ec4a80ddc50d2a763e455c5dc40868b
+  cmdLoadTheory8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ".thr"#) -}
+c9c830540317356954670efcadd3fbb2
+  cmdLoadTheory9 :: GHC.Base.String
+  {- Unfolding: (Data.OldList.unlines Main.cmdLoadTheory10) -}
+a89f62ea9084e7f2f8696578f3dcfc54
+  cmdParseHaskell :: Main.HReqCmdDescr
+  {- Strictness: m,
+     Unfolding: ((Main.cmdParseHaskell6,
+                  Main.cmdParseHaskell8,
+                  Main.cmdParseHaskell7,
+                  (Main.cmdParseHaskell1 @ Main.HReqState)
+                    `cast`
+                  (<[GHC.Base.String]>_R
+                   ->_R <Main.HReqState>_R
+                   ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)))) -}
+24c545971f1f1f915b7264c0b83c208e
+  cmdParseHaskell1 ::
+    [GHC.Base.String]
+    -> b
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, b #)
+  {- Arity: 3, Strictness: <L,1*U><L,U><L,U>,
+     Unfolding: (\ @ b
+                   args :: [GHC.Base.String]
+                   hreqs :: b
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case HParse.hParseE
+                        @ Utilities.YesBut
+                        Utilities.$fMonadYesBut
+                        Main.cmdParseHaskell5
+                        (GHC.Types.[] @ HParse.Line)
+                        (GHC.Types.:
+                           @ HParse.Line
+                           (Main.cmdParseHaskell4, Data.OldList.unwords args)
+                           (GHC.Types.[] @ HParse.Line)) of wild {
+                   Utilities.Yes ds
+                   -> case ds of wild1 { (,) hsexp ds1 ->
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.cmdParseHaskell3
+                             GHC.Types.True
+                             s of ds2 { (#,#) ipv ipv1 ->
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             (Language.Haskell.Syntax.$fShowHsExp_$cshow hsexp)
+                             GHC.Types.True
+                             ipv of ds3 { (#,#) ipv2 ipv3 ->
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.cmdParseHaskell2
+                             GHC.Types.True
+                             ipv2 of ds4 { (#,#) ipv4 ipv5 ->
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             (AST.$w$cshowsPrec2
+                                0
+                                (AST.hsExp2Expr AST.preludeFixTab hsexp)
+                                (GHC.Types.[] @ GHC.Types.Char))
+                             GHC.Types.True
+                             ipv4 of ds5 { (#,#) ipv6 ipv7 ->
+                      (# ipv6, hreqs #) } } } } }
+                   Utilities.But msgs
+                   -> case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             (Data.OldList.unlines msgs)
+                             GHC.Types.True
+                             s of ds1 { (#,#) ipv ipv1 ->
+                      (# ipv, hreqs #) } }) -}
+36077d6be36259e56d5ba57bff427ee2
+  cmdParseHaskell2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "simple AST version:"#) -}
+4d73c0b42b14561166b8be5c9e4e10fc
+  cmdParseHaskell3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "haskell-src parse:"#) -}
+876cdd7a884d4c25761dd6dd4e5d8e61
+  cmdParseHaskell4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1) -}
+c4b1c453634e45a366725112e26f1bab
+  cmdParseHaskell5 :: Language.Haskell.ParseMonad.ParseMode
+  {- Strictness: m,
+     Unfolding: (Language.Haskell.ParseMonad.ParseMode
+                   Main.cmdParseHaskell6) -}
+e8ea4d560b83f382186d9c59ff684381
+  cmdParseHaskell6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ph"#) -}
+b9cdf43cb577bdc92e6707b2d44d5b1c
+  cmdParseHaskell7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "ph <haskell-expr> -- parse haskell expression on command line"#) -}
+e83822b18e2c533a69268ee3901e74ad
+  cmdParseHaskell8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "parse Haskell"#) -}
+b4fd137334d6d69c3abda0a84967d41c
+  cmdShowLaws :: Main.HReqCmdDescr
+  {- Strictness: m,
+     Unfolding: ((Main.cmdShowLaws11,
+                  Main.cmdShowLaws10,
+                  Main.cmdShowLaws9,
+                  (Main.cmdShowLaws1 @ REPL.REPLArguments)
+                    `cast`
+                  (<REPL.REPLArguments>_R
+                   ->_R <Main.HReqState>_R
+                   ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)))) -}
+3977a36fc179d59ed51b2039c41e83ea
+  cmdShowLaws1 ::
+    t
+    -> Main.HReqState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.HReqState #)
+  {- Arity: 3, Strictness: <L,A><S(SLL),1*U(U,U,U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ t
+                   w :: t
+                   w1 :: Main.HReqState
+                   w2 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case w1 of ww { Main.HReq ww1 ww2 ww3 ->
+                 Main.$wa1 @ t ww1 ww2 ww3 w2 }) -}
+a4f3e76b694c629de631bdee87ca980b
+  cmdShowLaws10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "'law' names"#) -}
+02695bd9f138ed9af0be38cc6a7a4008
+  cmdShowLaws11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "laws"#) -}
+a8f4fa4c5f5af66157f33b52773a3f00
+  cmdShowLaws2 ::
+    Theory.Theory
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U(1*U,A,A,A,A,1*U)><L,U>,
+     Unfolding: (\ thry :: Theory.Theory
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.CString.unpackAppendCString#
+                           "Theorems in Theory '"#
+                           (case thry of wild { Theory.THEORY ds1 ds2 ds3 ds4 ds5 ds6 ->
+                            GHC.Base.++ @ GHC.Types.Char ds1 Main.cmdLoadTheory6 }))
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case thry of wild { Theory.THEORY ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 Main.cmdShowLaws3 ds7 ipv } }) -}
+3c2fcda66960c5dd6f30b571dc241f9e
+  cmdShowLaws3 ::
+    [Theory.Theorem]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+ae2bd6aeb395a886818404997cfbf60b
+  cmdShowLaws4 ::
+    Theory.Theory
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U(1*U,A,A,1*U,A,A)><L,U>,
+     Unfolding: (\ thry :: Theory.Theory
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.CString.unpackAppendCString#
+                           "Laws in Theory '"#
+                           (case thry of wild { Theory.THEORY ds1 ds2 ds3 ds4 ds5 ds6 ->
+                            GHC.Base.++ @ GHC.Types.Char ds1 Main.cmdLoadTheory6 }))
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case thry of wild { Theory.THEORY ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 Main.cmdShowLaws5 ds5 ipv } }) -}
+336d09b2f6a87ed7ebc11ffa204a0d33
+  cmdShowLaws5 ::
+    [Theory.Law]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+006b69ffce41804671d5154ae8e6a38b
+  cmdShowLaws6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No Current Theory"#) -}
+2fcc73002407253edf9dd74124eea39b
+  cmdShowLaws7 ::
+    [Theory.Theory]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+a184379611ffa2ec43c821a9e33b609f
+  cmdShowLaws8 ::
+    [AST.Mdl]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+867376f6d0b074a2224d1ca07484031c
+  cmdShowLaws9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "show all law and definition names"#) -}
+5565e4a3671ba12587898ffa19736038
+  cmdShowState :: Main.HReqCmdDescr
+  {- Strictness: m,
+     Unfolding: ((Main.cmdShowState10,
+                  Main.cmdShowState9,
+                  Main.cmdShowState8,
+                  (Main.cmdShowState1 @ REPL.REPLArguments)
+                    `cast`
+                  (<REPL.REPLArguments>_R
+                   ->_R <Main.HReqState>_R
+                   ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)))) -}
+ba5edf7b83b61698a435135c3ba5a0fb
+  cmdShowState1 ::
+    t
+    -> Main.HReqState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.HReqState #)
+  {- Arity: 3, Strictness: <L,A><S(SLL),U(U,U,U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ t
+                   w :: t
+                   w1 :: Main.HReqState
+                   w2 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case w1 of ww { Main.HReq ww1 ww2 ww3 ->
+                 Main.$wa2 @ t ww1 ww2 ww3 w2 }) -}
+6a3fbc5984cf9bcddd1a04a7cea93884
+  cmdShowState10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "state"#) -}
+4b936a31374f354f69788258ea004fbd
+  cmdShowState2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "\n\
+                   \No Current Theory"#) -}
+b924f0fc3ba5bbac51514f8bb35fdf87
+  cmdShowState3 ::
+    [Theory.Theory]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ ds :: [Theory.Theory]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds of wild {
+                   []
+                   -> GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.cmdShowState5
+                        GHC.Types.True
+                        eta
+                   : ipv ipv1
+                   -> GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.CString.unpackAppendCString#
+                           "Required Theories: "#
+                           (case GHC.Base.map
+                                   @ Theory.Theory
+                                   @ [GHC.Types.Char]
+                                   Theory.theoryName
+                                   wild of wild1 {
+                              [] -> GHC.Types.[] @ GHC.Types.Char
+                              : x xs1
+                              -> Data.OldList.intercalate_$spoly_go
+                                   @ GHC.Types.Char
+                                   x
+                                   (Data.OldList.prependToAll
+                                      @ [GHC.Types.Char]
+                                      Main.cmdShowState4
+                                      xs1) }))
+                        GHC.Types.True
+                        eta }) -}
+24101320e285d5120896f243d0a31735
+  cmdShowState4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+005a919884434a922320ba3534afbbc1
+  cmdShowState5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "No Required Theories"#) -}
+2b3fe729034deec44b6e0eb875418c53
+  cmdShowState6 ::
+    [AST.Mdl]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ ds :: [AST.Mdl]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds of wild {
+                   []
+                   -> GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.cmdShowState7
+                        GHC.Types.True
+                        eta
+                   : ipv ipv1
+                   -> GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.CString.unpackAppendCString#
+                           "Haskell Modules: "#
+                           (case GHC.Base.map
+                                   @ AST.Mdl
+                                   @ [GHC.Types.Char]
+                                   AST.mname
+                                   wild of wild1 {
+                              [] -> GHC.Types.[] @ GHC.Types.Char
+                              : x xs1
+                              -> Data.OldList.intercalate_$spoly_go
+                                   @ GHC.Types.Char
+                                   x
+                                   (Data.OldList.prependToAll
+                                      @ [GHC.Types.Char]
+                                      Main.cmdShowState4
+                                      xs1) }))
+                        GHC.Types.True
+                        eta }) -}
+6827e54fce1c0552099f2632a47eceea
+  cmdShowState7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No Haskell Modules"#) -}
+5db0faef1d35bcb4a3a0ecd43e9fe590
+  cmdShowState8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "show short summary of state contents"#) -}
+1319c280abf00975f92f653ecbbf4c70
+  cmdShowState9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "show state"#) -}
+0885ed72de65fa82faa4660a3c22304e
+  currThry :: Main.HReqState -> GHC.Base.Maybe Theory.Theory
+  RecSel Main.HReqState
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Main.HReqState ->
+                 case ds of wild { Main.HReq ds1 ds2 ds3 -> ds3 }) -}
+f7b95887d2ab5ecafd399bfeaa15edbc
+  currThry_ ::
+    GHC.Base.Maybe Theory.Theory -> Main.HReqState -> Main.HReqState
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U(U,U,A)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ h :: GHC.Base.Maybe Theory.Theory eta :: Main.HReqState ->
+                 case eta of wild { Main.HReq ds ds1 ds2 -> Main.HReq ds ds1 h }) -}
+81aadb8a5837e8eb33f2a1ab496bf152
+  currThry__ ::
+    (GHC.Base.Maybe Theory.Theory -> GHC.Base.Maybe Theory.Theory)
+    -> Main.HReqState -> Main.HReqState
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*C1(U)><S,1*U(U,U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ f :: GHC.Base.Maybe Theory.Theory
+                        -> GHC.Base.Maybe Theory.Theory
+                   hrs :: Main.HReqState ->
+                 case hrs of wild { Main.HReq ds ds1 ds2 ->
+                 Main.HReq ds ds1 (f ds2) }) -}
+070d1329c37ecbab1bd66cf23255d547
+  hmods :: Main.HReqState -> [AST.Mdl]
+  RecSel Main.HReqState
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Main.HReqState ->
+                 case ds of wild { Main.HReq ds1 ds2 ds3 -> ds1 }) -}
+61bef25de66ca8ff753712d9e0543008
+  hmods_ :: [AST.Mdl] -> Main.HReqState -> Main.HReqState
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U(A,U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ h :: [AST.Mdl] eta :: Main.HReqState ->
+                 case eta of wild { Main.HReq ds ds1 ds2 ->
+                 Main.HReq h ds1 ds2 }) -}
+4a0580be28924004426af133fd35ef3f
+  hmods__ ::
+    ([AST.Mdl] -> [AST.Mdl]) -> Main.HReqState -> Main.HReqState
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*C1(U)><S,1*U(U,U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ f :: [AST.Mdl] -> [AST.Mdl] hrs :: Main.HReqState ->
+                 case hrs of wild { Main.HReq ds ds1 ds2 ->
+                 Main.HReq (f ds) ds1 ds2 }) -}
+2438cdb5a8f6b89f1235cb2a8f233729
+  hreqCommands :: Main.HReqCommands
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (REPL.REPLCmdDescr Main.HReqState)
+                   Main.cmdShowState
+                   Main.hreqCommands1) -}
+33b6e89bfced729a0852cd6a843567d6
+  hreqCommands1 :: [REPL.REPLCmdDescr Main.HReqState]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (REPL.REPLCmdDescr Main.HReqState)
+                   Main.cmdShowLaws
+                   Main.hreqCommands2) -}
+9de0483aa8feaab31918b42f8c616c70
+  hreqCommands2 :: [REPL.REPLCmdDescr Main.HReqState]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (REPL.REPLCmdDescr Main.HReqState)
+                   Main.cmdLoadTheory
+                   Main.hreqCommands3) -}
+4782cfde2113ea5b1db6d83e6f72fbb2
+  hreqCommands3 :: [REPL.REPLCmdDescr Main.HReqState]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (REPL.REPLCmdDescr Main.HReqState)
+                   Main.cmdCheckTheorem
+                   (GHC.Types.[] @ (REPL.REPLCmdDescr Main.HReqState))) -}
+f6520f318f2cafb137e7b77d197d6570
+  hreqConfig :: REPL.REPLConfig Main.HReqState
+  {- Strictness: m,
+     Unfolding: (REPL.REPLC
+                   @ Main.HReqState
+                   Main.hreqPrompt
+                   Main.hreqQuitCmds
+                   Data.OldList.words
+                   Main.hreqQuitCmds
+                   Main.hreqConfig2
+                     `cast`
+                   (<REPL.REPLArguments>_R
+                    ->_R <Main.HReqState>_R
+                    ->_R Sym (GHC.Types.NTCo:IO[0]
+                                  <(GHC.Types.Bool, Main.HReqState)>_R))
+                   Main.hreqHelpCmds
+                   Main.hreqCommands
+                   (Main.hreqEndCondition @ Main.HReqState)
+                   Main.hreqConfig1
+                     `cast`
+                   (<REPL.REPLArguments>_R
+                    ->_R <Main.HReqState>_R
+                    ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R))) -}
+62a3e10b19c6ba0d9dfefce3b47771f0
+  hreqConfig1 ::
+    REPL.REPLArguments
+    -> Main.HReqState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.HReqState #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,U><L,U>,
+     Unfolding: InlineRule (3, True, True)
+                (\ ds :: REPL.REPLArguments
+                   hreqs :: Main.HReqState
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 (# s, hreqs #)) -}
+0596bc1b08e53e565e96fd32c76ec921
+  hreqConfig2 ::
+    REPL.REPLArguments
+    -> Main.HReqState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Types.Bool, Main.HReqState) #)
+  {- Arity: 3, Strictness: <L,A><L,U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ ds :: REPL.REPLArguments
+                   hreqs :: Main.HReqState
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.hreqConfig3
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, (GHC.Types.True, hreqs) #) }) -}
+a7be504970d18124400a751965544557
+  hreqConfig3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "\n\
+                   \Goodbye!\n"#) -}
+8d2dce0a3a0d9ebf837d286220ea0018
+  hreqEOFreplacmement :: [[GHC.Types.Char]]
+  {- Strictness: m2, Unfolding: (Main.hreqQuitCmds) -}
+8b88b54faafcf5898390b355f3d0a07e
+  hreqEndCondition :: t -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ t ds :: t -> GHC.Types.False) -}
+2b3cef4c85dd89a4dfbdc052ea01a345
+  hreqEndTidy :: GHC.Base.Monad m => t -> a -> m a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LLLC(S)L),1*U(A,A,A,1*C1(U),A)><L,A><L,U>,
+     Unfolding: InlineRule (3, True, True)
+                (\ @ t
+                   @ (m :: * -> *)
+                   @ a1
+                   $dMonad :: GHC.Base.Monad m
+                   ds :: t
+                   hreqs :: a1 ->
+                 GHC.Base.return @ m $dMonad @ a1 hreqs) -}
+fedbe1d4329f58fb26d8db9efb15cdb4
+  hreqHelpCmds :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.hreqHelpCmds1
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+f25bac671f16cd235cadedf59b221dd1
+  hreqHelpCmds1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "?"#) -}
+1d1a69a793ab31ff6c48a460892fcaeb
+  hreqParser :: REPL.REPLParser
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True) Data.OldList.words -}
+cd3f03124b103b8c4cdbd19d9f1b3968
+  hreqPrompt :: GHC.Types.Bool -> Main.HReqState -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,A><L,A>,
+     Unfolding: InlineRule (2, True, True)
+                (\ ds :: GHC.Types.Bool ds1 :: Main.HReqState ->
+                 Main.hreqPrompt1) -}
+48e210052b52234aca3cfa13f562f238
+  hreqPrompt1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "prfchk> "#) -}
+3ba565591157f276fb3ff4f540129daa
+  hreqQuit :: Main.HReqExit
+  {- Arity: 3, Strictness: <L,A><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.hreqConfig2
+                  `cast`
+                (<REPL.REPLArguments>_R
+                 ->_R <Main.HReqState>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0]
+                               <(GHC.Types.Bool, Main.HReqState)>_R)) -}
+9e502b6aec410df4fb9a06098cd1ced0
+  hreqQuitCmds :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.nquit
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+e3fad95b9134ab3de051fba9ccbf4850
+  hreqWelcome :: GHC.Base.String
+  {- Unfolding: (Data.OldList.unlines Main.hreqWelcome1) -}
+450e639212e871b0aebc025473e30311
+  hreqWelcome1 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.hreqWelcome6
+                   Main.hreqWelcome2) -}
+e23d6ebc0d961a82e24852b94ba1ede9
+  hreqWelcome2 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.hreqWelcome5
+                   Main.hreqWelcome3) -}
+647eb3e9cae30f5e0339ceb63cd03279
+  hreqWelcome3 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.hreqWelcome4
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+a8ec16939515801ca8db41b543f355d8
+  hreqWelcome4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Type '?' for help."#) -}
+3be5ed280e18a5e031254d7ebabd41f3
+  hreqWelcome5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "To run in batch mode, give name of theory file when invoking from shell."#) -}
+c2ea27d74606168e30f9d7f285c95e74
+  hreqWelcome6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackAppendCString#
+                   "Welcome to Proof Check v"#
+                   Main.version) -}
+0013f7fe7d14dff6023b256b1399b8bd
+  hreqs0 :: Main.HReqState
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Main.HReq
+                   (GHC.Types.[] @ AST.Mdl)
+                   (GHC.Types.[] @ Theory.Theory)
+                   (GHC.Base.Nothing @ Theory.Theory)) -}
+ca6a6979dd89393bc2c9b6bb81daea9e
+  hthrys :: Main.HReqState -> [Theory.Theory]
+  RecSel Main.HReqState
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Main.HReqState ->
+                 case ds of wild { Main.HReq ds1 ds2 ds3 -> ds2 }) -}
+334d86f3596d35a0acd8f645d19d8933
+  hthrys_ :: [Theory.Theory] -> Main.HReqState -> Main.HReqState
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U(U,A,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ h :: [Theory.Theory] eta :: Main.HReqState ->
+                 case eta of wild { Main.HReq ds ds1 ds2 -> Main.HReq ds h ds2 }) -}
+a05470c29c916f33bda696dcd91a318f
+  hthrys__ ::
+    ([Theory.Theory] -> [Theory.Theory])
+    -> Main.HReqState -> Main.HReqState
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*C1(U)><S,1*U(U,U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ f :: [Theory.Theory] -> [Theory.Theory] hrs :: Main.HReqState ->
+                 case hrs of wild { Main.HReq ds ds1 ds2 ->
+                 Main.HReq ds (f ds1) ds2 }) -}
+be2ebc92a861cf7f39df7c253b1febda
+  isThr :: GHC.IO.FilePath -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ fp :: GHC.IO.FilePath ->
+                 case System.FilePath.Posix.$wsplitExtension
+                        fp of ww { (#,#) ww1 ww2 ->
+                 GHC.Base.eqString ww2 Main.cmdLoadTheory8 }) -}
+d2323eae1afe4a581b2c0849d6cbab10
+  loadDependencies ::
+    Theory.Theory -> Main.HReqState -> GHC.Types.IO Main.HReqState
+  {- Arity: 3, Strictness: <S(LLSLLL),U(U,U,U,U,U,U)><L,1*H><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdLoadTheory2
+                  `cast`
+                (<Theory.Theory>_R
+                 ->_R <Main.HReqState>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)) -}
+be44d2a96a074faf7e93cc60485fe500
+  loadModDeps :: [[GHC.Types.Char]] -> GHC.Types.IO [AST.Mdl]
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdLoadTheory5
+                  `cast`
+                (<[[GHC.Types.Char]]>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <[AST.Mdl]>_R)) -}
+125f9830f40f609724eff54282b686d2
+  loadSource :: [[GHC.Types.Char]] -> b -> GHC.Types.IO b
+  {- Arity: 3, Strictness: <S,1*U><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdLoadHaskell1
+                  `cast`
+                (forall b.
+                 <[[GHC.Types.Char]]>_R
+                 ->_R <b>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <b>_R)) -}
+b9358c5c53a02e75b9d4a5b57eca53f3
+  loadTheory ::
+    [[GHC.Types.Char]] -> Main.HReqState -> GHC.Types.IO Main.HReqState
+  {- Arity: 3, Strictness: <S,1*U><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdLoadTheory1
+                  `cast`
+                (<[[GHC.Types.Char]]>_R
+                 ->_R <Main.HReqState>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)) -}
+bbb58c56c3b76c95543b847c5197c173
+  loadThryDeps :: [[GHC.Types.Char]] -> GHC.Types.IO [Theory.Theory]
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdLoadTheory4
+                  `cast`
+                (<[[GHC.Types.Char]]>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <[Theory.Theory]>_R)) -}
+be9120ffbaaf4239d032e743c1f8b233
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+0a35079d26e112afdd14c7cc8d362ce0
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild {
+                   []
+                   -> case Main.main13
+                             `cast`
+                           (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)
+                             ipv of ds2 { (#,#) ipv2 ipv3 ->
+                      (# ipv2, GHC.Tuple.() #) }
+                   : nm ds
+                   -> case ds of wild1 {
+                        [] -> Main.batch1 nm ipv
+                        : ipv2 ipv3
+                        -> GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.main2
+                             GHC.Types.True
+                             ipv } } }) -}
+a5750197eade66846668506a5bbb88cd
+  main10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "If no name given, the command line interface runs"#) -}
+1c43663c9e2456257a2a9a8815f92978
+  main11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   " name is of .thr file in /data"#) -}
+5e9e2ec9dffe2df252430689c2ba6834
+  main12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "usage: prfchk [name]"#) -}
+2d77609cbd2520a82b271c3d5b2b685d
+  main13 :: GHC.Types.IO Main.HReqState
+  {- Unfolding: (REPL.runREPL
+                   @ Main.HReqState
+                   Main.hreqWelcome
+                   Main.hreqConfig
+                   Main.hreqs0) -}
+705222d6a8ddf06256ec0bc8b6317b4d
+  main14 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+02d2a938b0fc39ae2da9241540aa69fb
+  main2 :: GHC.Base.String
+  {- Unfolding: (Data.OldList.unlines Main.main3) -}
+aa0e574d3a7eacd3434fafba126503e1
+  main3 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.main12
+                   Main.main4) -}
+edcd78d4fd80affa71d355614e04155f
+  main4 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.main11
+                   Main.main5) -}
+23b531b8b009530fa16ea2358d81c1a1
+  main5 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.main10
+                   Main.main6) -}
+745de3224ace0dad424a82c48a28b7b7
+  main6 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.main9
+                   Main.main7) -}
+fe2411310ce761646b6ee1cd33cec6c8
+  main7 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.main8
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+fa2a5d645fc139f117974af3b15bc148
+  main8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   " that theory is loaded and all theorems are checked"#) -}
+461a841d3c06c444ca8e41d13c6e5ca4
+  main9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "if name is given,"#) -}
+8c2df98e8cc574676526c4c1f686593a
+  nquit :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "q"#) -}
+28c6cbc1ce7764feeb1312f408e79de6
+  parseHaskell :: [GHC.Base.String] -> b -> GHC.Types.IO b
+  {- Arity: 3, Strictness: <L,1*U><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdParseHaskell1
+                  `cast`
+                (forall b.
+                 <[GHC.Base.String]>_R
+                 ->_R <b>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <b>_R)) -}
+c3225b28b8aafa6601db84ce7557ce39
+  readHaskell :: [GHC.Types.Char] -> GHC.Types.IO AST.Mdl
+  {- Arity: 2, Strictness: <L,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdLoadHaskell4
+                  `cast`
+                (<[GHC.Types.Char]>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <AST.Mdl>_R)) -}
+a0bc0a3ae6d02f65a4eec6e22d72a5ad
+  readTheory ::
+    [GHC.Types.Char] -> GHC.Types.IO (GHC.Base.Maybe Theory.Theory)
+  {- Arity: 2, Strictness: <L,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdLoadTheory7
+                  `cast`
+                (<[GHC.Types.Char]>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0]
+                               <GHC.Base.Maybe Theory.Theory>_R)) -}
+7b853716a8a5ee74a3a722b3c929575a
+  repl :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.repl1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+be8c39c37ac1ea0fef8c60c62686681e
+  repl1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Main.main13 `cast` (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, GHC.Tuple.() #) }) -}
+606689e1a10917f502693d02bf715732
+  shlist :: [[GHC.Types.Char]] -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ strs :: [[GHC.Types.Char]] ->
+                 Data.OldList.intercalate
+                   @ GHC.Types.Char
+                   Main.cmdShowState4
+                   strs) -}
+1ae2e0ca041011d87c58319b928d6598
+  showCurrThry :: GHC.Base.Maybe Theory.Theory -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.showCurrThry1
+                  `cast`
+                (<GHC.Base.Maybe Theory.Theory>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+fe6a692afc9bacaf4ce66291ba74061e
+  showCurrThry1 ::
+    GHC.Base.Maybe Theory.Theory
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ ds :: GHC.Base.Maybe Theory.Theory
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds of wild {
+                   GHC.Base.Nothing
+                   -> GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.cmdShowState2
+                        GHC.Types.True
+                        eta
+                   GHC.Base.Just thry
+                   -> GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.CString.unpackAppendCString#
+                           "\n\
+                           \Current Theory: "#
+                           (case thry of wild1 { Theory.THEORY ds1 ds2 ds3 ds4 ds5 ds6 ->
+                            ds1 }))
+                        GHC.Types.True
+                        eta }) -}
+170fc0b79ba59fca1812ce71165c2352
+  showDecl :: AST.Decl -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.showDecl1
+                  `cast`
+                (<AST.Decl>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+3f87f7946690b31c29595a0487cf763f
+  showDecl1 ::
+    AST.Decl
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ ds :: AST.Decl
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds of wild {
+                   DEFAULT
+                   -> GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.showDecl3
+                        GHC.Types.True
+                        eta
+                   AST.Fun ds1
+                   -> case ds1 of wild1 {
+                        []
+                        -> GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.showDecl2
+                             GHC.Types.True
+                             eta
+                        : m ds2
+                        -> GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             (GHC.CString.unpackAppendCString#
+                                "  "#
+                                (case m of wild2 { AST.Match ds3 ds4 ds5 ds6 -> ds3 }))
+                             GHC.Types.True
+                             eta }
+                   AST.Bind ds1 ds2 ds3
+                   -> case ds1 of wild1 {
+                        DEFAULT
+                        -> GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.showDecl3
+                             GHC.Types.True
+                             eta
+                        AST.Var n
+                        -> GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             (GHC.CString.unpackAppendCString# "  "# n)
+                             GHC.Types.True
+                             eta } }) -}
+b3794448675503cd25ae83f098006ba7
+  showDecl2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "  !dud function definition!"#) -}
+1864b16bbc262177dfe976600d66991e
+  showDecl3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "  ??"#) -}
+d1e2029b175a9b599880432dacecbb17
+  showHModLaws :: AST.Mdl -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U(1*U,A,1*U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.showHModLaws1
+                  `cast`
+                (<AST.Mdl>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+a9bffd2753329a768625e33c6dba5098
+  showHModLaws1 ::
+    AST.Mdl
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U(1*U,A,1*U)><L,U>,
+     Unfolding: (\ hmod :: AST.Mdl
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.CString.unpackAppendCString#
+                           "Laws in Haskell source '"#
+                           (case hmod of wild { AST.Mdl ds1 ds2 ds3 ->
+                            GHC.Base.++ @ GHC.Types.Char ds1 Main.cmdLoadTheory6 }))
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case hmod of wild { AST.Mdl ds2 ds3 ds4 ->
+                 Main.showHModLaws2 ds4 ipv } }) -}
+c4d37d6574efe4af7b8944a4473c26a6
+  showHModLaws2 ::
+    [AST.Decl]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+4f0a48d46b52317f9a20b6fe94d9bfa6
+  showHModNames :: [AST.Mdl] -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdShowState6
+                  `cast`
+                (<[AST.Mdl]>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+f0ee571e27b7186ddc34a978e459ccf6
+  showLaw :: Theory.Law -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,1*U(1*U,A)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.showLaw1
+                  `cast`
+                (<Theory.Law>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+05c6dd34e9f5cff433798f65de46293d
+  showLaw1 ::
+    Theory.Law
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,1*U(1*U,A)><L,U>,
+     Unfolding: (\ law :: Theory.Law
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (GHC.CString.unpackAppendCString#
+                      "  "#
+                      (case law of wild { Theory.LAW ds1 ds2 -> ds1 }))
+                   GHC.Types.True
+                   eta) -}
+5d8f687581785cc1960121182fc3faa3
+  showLaws :: t -> Main.HReqState -> GHC.Types.IO Main.HReqState
+  {- Arity: 3, Strictness: <L,A><S(SLL),1*U(U,U,U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdShowLaws1
+                  `cast`
+                (forall t.
+                 <t>_R
+                 ->_R <Main.HReqState>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)) -}
+3e3df04e5660493b4da0dbdd21a07e16
+  showState :: t -> Main.HReqState -> GHC.Types.IO Main.HReqState
+  {- Arity: 3, Strictness: <L,A><S(SLL),U(U,U,U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdShowState1
+                  `cast`
+                (forall t.
+                 <t>_R
+                 ->_R <Main.HReqState>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)) -}
+72e41a2a26e459f3f5fd0d5fb3af58d2
+  showTFiles :: t -> b -> GHC.Types.IO b
+  {- Arity: 3, Strictness: <L,A><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.showTFiles1
+                  `cast`
+                (forall t b.
+                 <t>_R ->_R <b>_R ->_R Sym (GHC.Types.NTCo:IO[0] <b>_R)) -}
+e04262e0cae93f07008d2501447ffa44
+  showTFiles1 ::
+    t
+    -> b
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, b #)
+  {- Arity: 3, Strictness: <L,A><L,U><L,U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ @ t
+                   @ b
+                   w :: t
+                   w1 :: b
+                   w2 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 Main.$wa3 @ t @ b w1 w2) -}
+5eeed21d62a6a7d909239160fda42080
+  showTFiles2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "./data"#) -}
+17a59c0784873fcff6948adbe540e8b2
+  showTheorem :: Theory.Theorem -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,1*U(1*U,A,A)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.showTheorem1
+                  `cast`
+                (<Theory.Theorem>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+86a848ccf07c9fb1d2b4d1cc5c360d33
+  showTheorem1 ::
+    Theory.Theorem
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,1*U(1*U,A,A)><L,U>,
+     Unfolding: (\ thrm :: Theory.Theorem
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (GHC.CString.unpackAppendCString#
+                      "  "#
+                      (case thrm of wild { Theory.THEOREM ds1 ds2 ds3 -> ds1 }))
+                   GHC.Types.True
+                   eta) -}
+87cafc48238e2fbabb618d2b885941d1
+  showTheorems :: Theory.Theory -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U(1*U,A,A,A,A,1*U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdShowLaws2
+                  `cast`
+                (<Theory.Theory>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+6a13c0f4cb3db082326df6fe8088925b
+  showTheoryFiles :: Main.HReqCmdDescr
+  {- Strictness: m,
+     Unfolding: ((Main.showTheoryFiles3,
+                  Main.showTheoryFiles2,
+                  Main.showTheoryFiles1,
+                  (Main.showTFiles1 @ REPL.REPLArguments @ Main.HReqState)
+                    `cast`
+                  (<REPL.REPLArguments>_R
+                   ->_R <Main.HReqState>_R
+                   ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)))) -}
+9bc0cc99078007102a7b6a11626d9c7e
+  showTheoryFiles1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "show list of *.thr in /data."#) -}
+b4c881a7ebc3772d4b74e77a8170b120
+  showTheoryFiles2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "show theory files"#) -}
+1a01bd7d2c04e475391e36bc33cd0edc
+  showTheoryFiles3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "tf"#) -}
+aa2877a4748bee75d0a4e78f3e0058c5
+  showTheoryLaws :: Theory.Theory -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U(1*U,A,A,1*U,A,A)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdShowLaws4
+                  `cast`
+                (<Theory.Theory>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+39ee665a035cb34bb2230b84e544dddd
+  showTheoryNames :: [Theory.Theory] -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdShowState3
+                  `cast`
+                (<[Theory.Theory]>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+6fb3c9a32557569c9c45f8249d9b1c1a
+  theoremCheck ::
+    [GHC.Base.String] -> Main.HReqState -> GHC.Types.IO Main.HReqState
+  {- Arity: 3, Strictness: <S,1*U><L,U(U,U,U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.cmdCheckTheorem1
+                  `cast`
+                (<[GHC.Base.String]>_R
+                 ->_R <Main.HReqState>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <Main.HReqState>_R)) -}
+9aca35d12c59a8e6e42d8950e27a3903
+  version :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "0.9.0.0"#) -}
+instance GHC.Show.Show [Main.HReqState] = Main.$fShowHReqState
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

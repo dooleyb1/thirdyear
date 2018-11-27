@@ -1,0 +1,1136 @@
+
+==================== FINAL INTERFACE ====================
+2018-11-27 19:16:48.469441 UTC
+
+interface main@main:Main 7103
+  interface hash: 958a7a10f56b54d943b8836d2e543a60
+  ABI hash: 7c418e8a2ccc8b01dfc832f083aba463
+  export-list hash: 873f090ab27691ffb15f9717298d97cc
+  orphan hash: 9cc9a8dbfa7f5d8f73f11c0ca45ebcae
+  flag hash: 6b242118510248395edabba1e2f8ce87
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.@?/=
+  Main.assertNotEqual
+  Main.dbg
+  Main.eparse
+  Main.main
+  Main.mdbg
+  Main.parseTests
+  Main.tests
+module dependencies:
+package dependencies: HUnit-1.3.1.2@HUnit_AzBU5jSVcUy6oxicItOe0b
+                      ansi-terminal-0.6.2.3@ansit_BDlVdfJGo3VHCIHxPTNjH1
+                      ansi-wl-pprint-0.6.7.3@ansiw_KTAhiPa3RNI09mbeoAwSSX
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
+                      binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59 ghc-prim-0.4.0.0
+                      haskell-src-1.0.2.0@haske_L5FnTXYimTzE7JszPj0uf6
+                      hostname-1.0@hostn_3HfIQy11Ojb2in3623bzR3 integer-gmp-1.0.0.0
+                      pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      prfchk-0.9.0.0@prfch_3yIeWdQAfX8DVUb2gN9xHL
+                      random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL
+                      regex-base-0.93.2@regex_47KXx9dLqeO8MNJeizLKhP
+                      regex-posix-0.95.2@regex_ClFHQvfj6rtJ1Pxo4OAy89
+                      syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE
+                      test-framework-0.8.1.1@testf_B1MVPJUrcmB7HNAGf4Uv93
+                      test-framework-hunit-0.3.0.2@testf_EptgaRzrQ5a5FsSX1777nM
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      xml-1.3.14@xml_AyrkYt7P0aQDgNiMBs2bvw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         regex-base-0.93.2@regex_47KXx9dLqeO8MNJeizLKhP:Text.Regex.Base.Context
+         regex-posix-0.95.2@regex_ClFHQvfj6rtJ1Pxo4OAy89:Text.Regex.Posix.String
+         syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE:Data.Generics.Instances
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+import  -/  HUnit-1.3.1.2@HUnit_AzBU5jSVcUy6oxicItOe0b:Test.HUnit 66bcf89478e54cab0bc320939852d08e
+import  -/  HUnit-1.3.1.2@HUnit_AzBU5jSVcUy6oxicItOe0b:Test.HUnit.Base 338a93e2b392577430f4015808c86c09
+import  -/  HUnit-1.3.1.2@HUnit_AzBU5jSVcUy6oxicItOe0b:Test.HUnit.Lang 8bbaca88aed07436fffeb6b0c7217aa6
+import  -/  base-4.8.2.0:Control.Monad 480c5067477275068c9b98be08410df9
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Debug.Trace 6660afb6094d69397ea084364da8f950
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  haskell-src-1.0.2.0@haske_L5FnTXYimTzE7JszPj0uf6:Language.Haskell.ParseMonad 567fe24cb244802cdbaec658f9a43f33
+import  -/  prfchk-0.9.0.0@prfch_3yIeWdQAfX8DVUb2gN9xHL:AST 8a2c29d575e8bd3b64abf6366ce4d014
+import  -/  prfchk-0.9.0.0@prfch_3yIeWdQAfX8DVUb2gN9xHL:HParse e91c13938b17912a3852ba940530cc11
+import  -/  test-framework-0.8.1.1@testf_B1MVPJUrcmB7HNAGf4Uv93:Test.Framework f67b2d8241bfa35267aad2e4a4b76ee9
+import  -/  test-framework-0.8.1.1@testf_B1MVPJUrcmB7HNAGf4Uv93:Test.Framework.Core f433b65c2544657a20d68fe310c8026a
+import  -/  test-framework-0.8.1.1@testf_B1MVPJUrcmB7HNAGf4Uv93:Test.Framework.Runners.Console a28542c59ee3219b6b399e1f9a2c960c
+import  -/  test-framework-hunit-0.3.0.2@testf_EptgaRzrQ5a5FsSX1777nM:Test.Framework.Providers.HUnit 5a7012f0903213dc7b92550390342c68
+3f6828bc34ba34e7242ff12f8a619dfc
+  $s$fEq(,) :: GHC.Classes.Eq (GHC.Types.Int, [GHC.Types.Char])
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Types.Int, [GHC.Types.Char])
+                  (GHC.Classes.$fEq(,)_$c==
+                     @ GHC.Types.Int
+                     @ [GHC.Types.Char]
+                     GHC.Classes.$fEqInt
+                     Main.$s$fEq(,)1)
+                  (GHC.Classes.$fEq(,)_$c/=
+                     @ GHC.Types.Int
+                     @ [GHC.Types.Char]
+                     GHC.Classes.$fEqInt
+                     Main.$s$fEq(,)1) -}
+c93ab01f1c7aac24321deec3a9975aff
+  $s$fEq(,)1 :: GHC.Classes.Eq [GHC.Types.Char]
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.$fEq[]_$s$fEq[]1 -}
+d6cd78d3e69e38c74db6c9bafff76aa3
+  $s$fEq(,)2 :: GHC.Classes.Eq (AST.Expr, [HParse.Line])
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (AST.Expr, [HParse.Line])
+                  (GHC.Classes.$fEq(,)_$c==
+                     @ AST.Expr
+                     @ [HParse.Line]
+                     AST.$fEqExpr
+                     Main.$s$fEq(,)3)
+                  (GHC.Classes.$fEq(,)_$c/=
+                     @ AST.Expr
+                     @ [HParse.Line]
+                     AST.$fEqExpr
+                     Main.$s$fEq(,)3) -}
+40ac762e1b1289a3ebe96aaff80019d2
+  $s$fEq(,)3 :: GHC.Classes.Eq [HParse.Line]
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Main.$s$fEq(,)_$s$fEq[] -}
+0e217ce32d59ff6b6888936b3b9b5c6b
+  $s$fEq(,)4 :: GHC.Classes.Eq (GHC.Types.Int, GHC.Base.String)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Main.$s$fEq(,) -}
+6d27d684bd4328397031f21c60290765
+  $s$fEq(,)_$s$fEq[] ::
+    GHC.Classes.Eq [(GHC.Types.Int, GHC.Base.String)]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [(GHC.Types.Int, GHC.Base.String)]
+                  (GHC.Classes.$fEq[]_$c==
+                     @ (GHC.Types.Int, GHC.Base.String)
+                     Main.$s$fEq(,)4)
+                  Main.$s$fEq(,)_$s$fEq[]_$c/= -}
+d482d7717e951a2d41e59b72c0a37fd0
+  $s$fEq(,)_$s$fEq[]_$c/= ::
+    [(GHC.Types.Int, GHC.Base.String)]
+    -> [(GHC.Types.Int, GHC.Base.String)] -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ x :: [(GHC.Types.Int, GHC.Base.String)]
+                   y :: [(GHC.Types.Int, GHC.Base.String)] ->
+                 GHC.Classes.not
+                   (GHC.Classes.$fEq[]_$c==
+                      @ (GHC.Types.Int, GHC.Base.String)
+                      Main.$s$fEq(,)4
+                      x
+                      y)) -}
+927314cff7a7a6df810750b44dc35438
+  $s$fEqMaybe ::
+    GHC.Classes.Eq (GHC.Base.Maybe (AST.Expr, HParse.Lines))
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Base.Maybe (AST.Expr, HParse.Lines))
+                  Main.$s$fEqMaybe_$s$fEqMaybe_$c==
+                  (GHC.Base.$fEqMaybe_$c/=
+                     @ (AST.Expr, HParse.Lines)
+                     Main.$s$fEqMaybe1) -}
+baa390b8e8d7fe8245dd9e5cc315dc59
+  $s$fEqMaybe1 :: GHC.Classes.Eq (AST.Expr, HParse.Lines)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Main.$s$fEq(,)2 -}
+9ef3070b80c9a2187c4f504ee028dcd1
+  $s$fEqMaybe_$s$fEqMaybe_$c== ::
+    GHC.Base.Maybe (AST.Expr, HParse.Lines)
+    -> GHC.Base.Maybe (AST.Expr, HParse.Lines) -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: GHC.Base.Maybe (AST.Expr, HParse.Lines)
+                   ds1 :: GHC.Base.Maybe (AST.Expr, HParse.Lines) ->
+                 case ds of wild {
+                   GHC.Base.Nothing
+                   -> case ds1 of wild1 {
+                        GHC.Base.Nothing -> GHC.Types.True
+                        GHC.Base.Just ipv -> GHC.Types.False }
+                   GHC.Base.Just a1
+                   -> case ds1 of wild1 {
+                        GHC.Base.Nothing -> GHC.Types.False
+                        GHC.Base.Just b1
+                        -> GHC.Classes.$fEq(,)_$c==
+                             @ AST.Expr
+                             @ [HParse.Line]
+                             AST.$fEqExpr
+                             Main.$s$fEq(,)3
+                             a1
+                             b1 } }) -}
+394c25613888b04cc643417e5daac704
+  $s$fShow(,)1 :: GHC.Show.Show [GHC.Types.Char]
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Show.$fShow[]_$s$fShow[]1 -}
+a685f0323421bd4bddbd300f5a0d5945
+  $s$fShow(,)2 :: GHC.Show.Show (AST.Expr, [HParse.Line])
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (AST.Expr, [HParse.Line])
+                  (GHC.Show.$fShow(,)_$cshowsPrec
+                     @ AST.Expr
+                     @ [HParse.Line]
+                     AST.$fShowExpr
+                     Main.$s$fShow(,)3)
+                  Main.$s$fShow(,)_$s$fShow(,)_$cshow1
+                  Main.$s$fShow(,)_$s$fShow(,)_$cshowList1 -}
+b2c02db4822af8faf9f230c0f468cdf6
+  $s$fShow(,)3 :: GHC.Show.Show [HParse.Line]
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Main.$s$fShow(,)_$s$fShow[] -}
+8d7cdb1e9d2981b0902c0ac848fd2032
+  $s$fShow(,)_$s$fShow(,)_$cshow1 ::
+    (AST.Expr, [HParse.Line]) -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,U)>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: (AST.Expr, [HParse.Line]) ->
+                 GHC.Show.$fShow(,)_$cshowsPrec
+                   @ AST.Expr
+                   @ [HParse.Line]
+                   AST.$fShowExpr
+                   Main.$s$fShow(,)3
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+2ef616d8a83b7f8269089b907875518c
+  $s$fShow(,)_$s$fShow(,)_$cshowList ::
+    [(GHC.Types.Int, [GHC.Types.Char])] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [(GHC.Types.Int, [GHC.Types.Char])]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (GHC.Types.Int, [GHC.Types.Char])
+                   (GHC.Show.$fShow(,)_$cshowsPrec
+                      @ GHC.Types.Int
+                      @ [GHC.Types.Char]
+                      GHC.Show.$fShowInt
+                      Main.$s$fShow(,)1
+                      GHC.Show.shows18)
+                   eta
+                   eta1) -}
+a4f92168fa3cff727ea9c227c019ea0d
+  $s$fShow(,)_$s$fShow(,)_$cshowList1 ::
+    [(AST.Expr, [HParse.Line])] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [(AST.Expr, [HParse.Line])] eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (AST.Expr, [HParse.Line])
+                   (GHC.Show.$fShow(,)_$cshowsPrec
+                      @ AST.Expr
+                      @ [HParse.Line]
+                      AST.$fShowExpr
+                      Main.$s$fShow(,)3
+                      GHC.Show.shows18)
+                   eta
+                   eta1) -}
+8a08815267455227e3a29bfbc6b3b712
+  $s$fShow(,)_$s$fShow[] ::
+    GHC.Show.Show [(GHC.Types.Int, GHC.Base.String)]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [(GHC.Types.Int, GHC.Base.String)]
+                  Main.$s$fShow(,)_$s$fShow[]_$cshowsPrec
+                  Main.$s$fShow(,)_$s$fShow[]_$cshow
+                  Main.$s$fShow(,)_$s$fShow[]_$cshowList -}
+e83bf1f959acff72b30a3a419a07ee0b
+  $s$fShow(,)_$s$fShow[]_$cshow ::
+    [(GHC.Types.Int, GHC.Base.String)] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [(GHC.Types.Int, GHC.Base.String)] ->
+                 Main.$s$fShow(,)_$s$fShow(,)_$cshowList
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+0d1be447ef4c69225555f7fc9015f0f1
+  $s$fShow(,)_$s$fShow[]_$cshowList ::
+    [[(GHC.Types.Int, GHC.Base.String)]] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [[(GHC.Types.Int, GHC.Base.String)]]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ [(GHC.Types.Int, GHC.Base.String)]
+                   Main.$s$fShow(,)_$s$fShow(,)_$cshowList
+                   eta
+                   eta1) -}
+15c69a8978f9004ecb41797230efafe2
+  $s$fShow(,)_$s$fShow[]_$cshowsPrec ::
+    GHC.Types.Int
+    -> [(GHC.Types.Int, GHC.Base.String)] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: GHC.Types.Int
+                   eta :: [(GHC.Types.Int, [GHC.Types.Char])]
+                   eta1 :: GHC.Base.String ->
+                 Main.$s$fShow(,)_$s$fShow(,)_$cshowList eta eta1) -}
+0a106b0dfabde3389f5d9c27ab8e14bd
+  $s$fShowMaybe ::
+    GHC.Show.Show (GHC.Base.Maybe (AST.Expr, HParse.Lines))
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Base.Maybe (AST.Expr, HParse.Lines))
+                  (GHC.Show.$fShowMaybe_$cshowsPrec
+                     @ (AST.Expr, HParse.Lines)
+                     Main.$s$fShowMaybe1)
+                  (GHC.Show.$fShowMaybe_$cshow
+                     @ (AST.Expr, HParse.Lines)
+                     Main.$s$fShowMaybe1)
+                  Main.$s$fShowMaybe_$s$fShowMaybe_$cshowList -}
+e01a1800566fa1f9bc83cec7ed38cbc0
+  $s$fShowMaybe1 :: GHC.Show.Show (AST.Expr, HParse.Lines)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Main.$s$fShow(,)2 -}
+38413b9557ecc3b29269ed3a86e2d109
+  $s$fShowMaybe_$s$fShowMaybe_$cshowList ::
+    [GHC.Base.Maybe (AST.Expr, HParse.Lines)] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [GHC.Base.Maybe (AST.Expr, HParse.Lines)]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (GHC.Base.Maybe (AST.Expr, HParse.Lines))
+                   (GHC.Show.$fShowMaybe_$cshowsPrec
+                      @ (AST.Expr, HParse.Lines)
+                      Main.$s$fShowMaybe1
+                      GHC.Show.shows18)
+                   eta
+                   eta1) -}
+1939febf657b28421907165593b7447a
+  (@?/=) ::
+    (GHC.Classes.Eq a, GHC.Show.Show a) =>
+    a -> a -> Test.HUnit.Lang.Assertion
+  {- Arity: 5,
+     Strictness: <L,U(A,C(C1(U)))><L,U(A,C(U),A)><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.@?/=16
+                  `cast`
+                (forall a.
+                 <GHC.Classes.Eq a>_R
+                 ->_R <GHC.Show.Show a>_R
+                 ->_R <a>_R
+                 ->_R <a>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+07f67c7b1fe91e8e0f98d50571edc02c
+  @?/=10 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 32) -}
+df06f01d4f0ff413a0d27f371e21add7
+  @?/=11 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 25) -}
+e24eeb7c67175c972d9846d912219b57
+  @?/=12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test/Spec.hs"#) -}
+57da6d2e6b59a76dee17a9086a75bc53
+  @?/=13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Main"#) -}
+dbfac49070ae5b78d7f3b3d8f1e743a7
+  @?/=14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "main"#) -}
+51ac56d5ba02b5aed05591c3cccea57b
+  @?/=15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "assertFailure"#) -}
+53727be54c728ee3dffe755779addb4a
+  @?/=16 ::
+    (GHC.Classes.Eq a, GHC.Show.Show a) =>
+    a
+    -> a
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 5,
+     Strictness: <L,U(A,C(C1(U)))><L,U(A,C(U),A)><L,U><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ a
+                   $dEq :: GHC.Classes.Eq a
+                   $dShow :: GHC.Show.Show a
+                   actual :: a
+                   expected :: a
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 Main.@?/=2
+                   @ a
+                   $dEq
+                   $dShow
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   expected
+                   actual
+                   eta) -}
+c1d7cefd65030038becf5901b31ca39a
+  @?/=2 ::
+    (GHC.Classes.Eq a, GHC.Show.Show a) =>
+    GHC.Base.String
+    -> a
+    -> a
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 6,
+     Strictness: <S(LC(C(S))),1*U(A,1*C1(C1(U)))><L,1*U(A,1*C1(U),A)><L,1*U><L,U><L,U><L,U>,
+     Unfolding: (\ @ a
+                   $dEq :: GHC.Classes.Eq a
+                   $dShow :: GHC.Show.Show a
+                   preface :: GHC.Base.String
+                   expected :: a
+                   actual :: a
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.Classes./= @ a $dEq actual expected of wild {
+                   GHC.Types.False
+                   -> (Main.@?/=4
+                         (let {
+                            a1 :: [GHC.Types.Char]
+                            = GHC.CString.unpackAppendCString#
+                                "didn't want: "#
+                                (GHC.Base.++
+                                   @ GHC.Types.Char
+                                   (GHC.Show.show @ a $dShow expected)
+                                   Main.@?/=3)
+                          } in
+                          case preface of wild1 {
+                            [] -> a1
+                            : ds1 ds2
+                            -> GHC.Base.++
+                                 @ GHC.Types.Char
+                                 wild1
+                                 (GHC.CString.unpackAppendCString# "\n"# a1) }))
+                        `cast`
+                      (GHC.Types.NTCo:IO[0] <()>_R)
+                        eta
+                   GHC.Types.True -> (# eta, GHC.Tuple.() #) }) -}
+071b49cc50af81348880a6568b254188
+  @?/=3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "\n\
+                   \ but got it."#) -}
+829dce14cefe6afa08bd764c284481fc
+  @?/=4 :: GHC.Base.String -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertFailure
+                   Main.@?/=5
+                     `cast`
+                   (Sym (GHC.IP.NTCo:IP[0] <"loc">_N <GHC.Stack.CallStack>_N))) -}
+104910a9d8bb68acd3d57cc4db6aefdc
+  @?/=5 :: GHC.Stack.CallStack
+  {- Strictness: m, Unfolding: (GHC.Stack.CallStack Main.@?/=6) -}
+6865d50fb61e972ef708f6275299b3e4
+  @?/=6 :: [([GHC.Types.Char], GHC.SrcLoc.SrcLoc)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+                   Main.@?/=7
+                   (GHC.Types.[] @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc))) -}
+a36bf17818213804575b2c37a70050b0
+  @?/=7 :: ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+  {- Strictness: m, Unfolding: ((Main.@?/=15, Main.@?/=8)) -}
+6b9df5f829f11f044e737f4882d3f3b3
+  @?/=8 :: GHC.SrcLoc.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.SrcLoc.SrcLoc
+                   Main.@?/=14
+                   Main.@?/=13
+                   Main.@?/=12
+                   Main.@?/=11
+                   Main.@?/=10
+                   Main.@?/=11
+                   Main.@?/=9) -}
+aa2dedbe00bfec1f1b0af899bfb023e7
+  @?/=9 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 45) -}
+a294e603bbd7561c94f97226295c44d6
+  assertNotEqual ::
+    (GHC.Classes.Eq a, GHC.Show.Show a) =>
+    GHC.Base.String -> a -> a -> Test.HUnit.Lang.Assertion
+  {- Arity: 6,
+     Strictness: <S(LC(C(S))),1*U(A,1*C1(C1(U)))><L,1*U(A,1*C1(U),A)><L,1*U><L,U><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.@?/=2
+                  `cast`
+                (forall a.
+                 <GHC.Classes.Eq a>_R
+                 ->_R <GHC.Show.Show a>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R <a>_R
+                 ->_R <a>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+ab7be67edf238e2fb99dd395b4b7ca83
+  assertNotEqual2 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows8
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+15685c233f49b44eae67d7c3900995cc
+  dbg :: GHC.Show.Show a => [GHC.Types.Char] -> a -> a
+  {- Arity: 3, Strictness: <L,1*U(A,1*C1(U),A)><L,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a $dShow :: GHC.Show.Show a msg :: [GHC.Types.Char] x :: a ->
+                 Debug.Trace.trace
+                   @ a
+                   (GHC.Base.augment
+                      @ GHC.Types.Char
+                      (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                       GHC.Base.foldr @ GHC.Types.Char @ b c n msg)
+                      (GHC.Show.show @ a $dShow x))
+                   x) -}
+e69d6f9add3bfd4cae11b2dbceac8fd9
+  eparse ::
+    GHC.Base.String -> GHC.Base.Maybe (AST.Expr, HParse.Lines)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ estr :: GHC.Base.String ->
+                 case HParse.hParseE
+                        @ GHC.Base.Maybe
+                        GHC.Base.$fMonadMaybe
+                        Main.eparse2
+                        (GHC.Types.[] @ HParse.Line)
+                        (GHC.Types.:
+                           @ HParse.Line
+                           (Main.eparse1, estr)
+                           (GHC.Types.[] @ HParse.Line)) of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ (AST.Expr, HParse.Lines)
+                   GHC.Base.Just x
+                   -> case x of wild1 { (,) hsexp lns' ->
+                      GHC.Base.Just
+                        @ (AST.Expr, HParse.Lines)
+                        (AST.hsExp2Expr AST.preludeFixTab hsexp, lns') } }) -}
+15927e6618f97ba997f8b9102e7a0f84
+  eparse1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1) -}
+d8e955d8efbcad18fba8cf2b68343f1b
+  eparse2 :: Language.Haskell.ParseMonad.ParseMode
+  {- Strictness: m,
+     Unfolding: (Language.Haskell.ParseMonad.ParseMode Main.eparse3) -}
+fc94b16a39c57236eac42d930e05ea3c
+  eparse3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "<test>"#) -}
+99aa727aa4cbe9c440e5b1c81f660d1b
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+2e2d9bb9773e9d18207cdc9707878e84
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case System.Environment.getArgs1 eta of ds1 { (#,#) ipv ipv1 ->
+                 case Test.Framework.Runners.Console.defaultMain7
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case Test.Framework.Runners.Console.defaultMain4
+                        ipv3
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case ipv5 of ww { Test.Framework.Runners.Options.RunnerOptions ww1 ww2 ww3 ww4 ww5 ww6 ww7 ww8 ->
+                 Test.Framework.Runners.Console.$wa
+                   Main.tests
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   ww6
+                   ww7
+                   ww8
+                   ipv4 } } } }) -}
+cd3e002fe071694c123d5201e6c919c0
+  main2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+aa0a6c62e5e9d698b370f608b2e3a9cd
+  mdbg ::
+    (GHC.Base.Monad m, GHC.Show.Show a) => [GHC.Types.Char] -> a -> m a
+  {- Arity: 4,
+     Strictness: <S(LLLC(S)L),1*U(A,A,A,1*C1(U),A)><L,1*U(A,1*C1(U),A)><L,1*U><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ a
+                   $dMonad :: GHC.Base.Monad m
+                   $dShow :: GHC.Show.Show a
+                   msg :: [GHC.Types.Char]
+                   x :: a ->
+                 case Debug.Trace.trace
+                        @ a
+                        (GHC.Base.++ @ GHC.Types.Char msg (GHC.Show.show @ a $dShow x))
+                        x of vx { DEFAULT ->
+                 GHC.Base.return @ m $dMonad @ a vx }) -}
+022401e818e888408238c3cb2dcbd7f3
+  parseTests :: Test.Framework.Core.Test
+  {- Strictness: m2,
+     Unfolding: (Test.Framework.Core.TestGroup
+                   Main.parseTests66
+                   Main.parseTests1) -}
+a9b4db9378ac386867d66e50b42580af
+  parseTests1 :: [Test.Framework.Core.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.Framework.Core.Test
+                   Main.parseTests53
+                   Main.parseTests2) -}
+c2a748db08fd93a91e45a64ca2818630
+  parseTests10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "1+2+3"#) -}
+5e42954d5a87703fc4976a19aac4cac8
+  parseTests11 :: GHC.Base.Maybe (AST.Expr, HParse.Lines)
+  {- Unfolding: (Main.eparse Main.parseTests12) -}
+15134acbe4f00881baa70586157f8565
+  parseTests12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "1+(2+3)"#) -}
+49c5b2747f476eb977baae903a19cc3b
+  parseTests13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "'1+2+3' not same as '1+(2+3)' "#) -}
+72ecfa4b70e0912444cdce73ea37d58c
+  parseTests14 :: Test.Framework.Core.Test
+  {- Unfolding: (Test.Framework.Core.Test
+                   @ Test.Framework.Providers.HUnit.TestCaseRunning
+                   @ Test.Framework.Providers.HUnit.TestCaseResult
+                   @ Test.Framework.Providers.HUnit.TestCase
+                   Test.Framework.Providers.HUnit.$fTestlikeTestCaseRunningTestCaseResultTestCase
+                   Test.Framework.Providers.HUnit.testCase1
+                     `cast`
+                   (Sym (Data.Typeable.Internal.NTCo:Typeable[0]
+                             <*>_N <Test.Framework.Providers.HUnit.TestCase>_N))
+                   Main.parseTests26
+                   Main.parseTests15
+                     `cast`
+                   (Trans
+                        (Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                        (Sym (Test.Framework.Providers.HUnit.NTCo:TestCase[0])))) -}
+9bb5730c45991073776d8be8c20085f5
+  parseTests15 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta2 :: GHC.Prim.State#
+                             GHC.Prim.RealWorld[OneShot] ->
+                 Test.HUnit.Base.@=?7
+                   @ (GHC.Base.Maybe (AST.Expr, HParse.Lines))
+                   Main.parseTests18
+                     `cast`
+                   (Sym (GHC.IP.NTCo:IP[0] <"loc">_N <GHC.Stack.CallStack>_N))
+                   Main.$s$fEqMaybe
+                   Main.$s$fShowMaybe
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Main.parseTests16
+                   Main.parseTests9
+                   eta2) -}
+de2b02ea3be7f282d0124509e0276acd
+  parseTests16 :: GHC.Base.Maybe (AST.Expr, HParse.Lines)
+  {- Unfolding: (Main.eparse Main.parseTests17) -}
+61903ea7d1acac434522cdbe85e1631a
+  parseTests17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "(1+2)+3"#) -}
+472188458bf4bfdd098dbaffd463a3d7
+  parseTests18 :: GHC.Stack.CallStack
+  {- Unfolding: (GHC.Stack.CallStack Main.parseTests19) -}
+bf8ce485ca260c356548e45a0299df1d
+  parseTests19 :: [([GHC.Types.Char], GHC.SrcLoc.SrcLoc)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+                   Test.HUnit.Base.@?=2
+                   Main.parseTests20) -}
+62bb29cb73e4a548d47ec07352a6af92
+  parseTests2 :: [Test.Framework.Core.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.Framework.Core.Test
+                   Main.parseTests46
+                   Main.parseTests3) -}
+d4a5158e5522de82301da1d1ef54953a
+  parseTests20 :: [([GHC.Types.Char], GHC.SrcLoc.SrcLoc)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+                   Main.parseTests21
+                   (GHC.Types.[] @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc))) -}
+3724cb590b41756f31d95cffe449cb5b
+  parseTests21 :: ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+  {- Unfolding: ((Main.parseTests25, Main.parseTests22)) -}
+2f3522b24115097119576863f17b1969
+  parseTests22 :: GHC.SrcLoc.SrcLoc
+  {- Unfolding: (GHC.SrcLoc.SrcLoc
+                   Main.@?/=14
+                   Main.@?/=13
+                   Main.@?/=12
+                   Main.parseTests24
+                   Main.@?/=11
+                   Main.parseTests24
+                   Main.parseTests23) -}
+3663854f6377f6e4a0054b37243adcd4
+  parseTests23 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 28) -}
+17e17fd6eadfff4e7dc247ea8b563829
+  parseTests24 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 49) -}
+faf52976e4b39967960a332cb4ada6c7
+  parseTests25 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "@?="#) -}
+9a9d13c6d28ea37be429999f58cff965
+  parseTests26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "'1+2+3' parses  as '(1+2)+3' "#) -}
+f68e1b39b57af654f97b42a6f831d03f
+  parseTests27 :: Test.Framework.Core.Test
+  {- Unfolding: (Test.Framework.Core.Test
+                   @ Test.Framework.Providers.HUnit.TestCaseRunning
+                   @ Test.Framework.Providers.HUnit.TestCaseResult
+                   @ Test.Framework.Providers.HUnit.TestCase
+                   Test.Framework.Providers.HUnit.$fTestlikeTestCaseRunningTestCaseResultTestCase
+                   Test.Framework.Providers.HUnit.testCase1
+                     `cast`
+                   (Sym (Data.Typeable.Internal.NTCo:Typeable[0]
+                             <*>_N <Test.Framework.Providers.HUnit.TestCase>_N))
+                   Main.parseTests33
+                   Main.parseTests28
+                     `cast`
+                   (Trans
+                        (Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                        (Sym (Test.Framework.Providers.HUnit.NTCo:TestCase[0])))) -}
+937275ee946ca1e55ee10d1916ecdf8b
+  parseTests28 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Main.@?/=2
+                   @ (GHC.Base.Maybe (AST.Expr, HParse.Lines))
+                   Main.$s$fEqMaybe
+                   Main.$s$fShowMaybe
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Main.parseTests31
+                   Main.parseTests29) -}
+fa7b9501aa50255983f00d3daa18971c
+  parseTests29 :: GHC.Base.Maybe (AST.Expr, HParse.Lines)
+  {- Unfolding: (Main.eparse Main.parseTests30) -}
+d526da72fd45a4a7639588e1719ce30d
+  parseTests3 :: [Test.Framework.Core.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.Framework.Core.Test
+                   Main.parseTests34
+                   Main.parseTests4) -}
+60ae546d29d0d3dbbf7e824537882c66
+  parseTests30 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "[1]++[2]++[3]"#) -}
+482f186f7d19877eb2b23618fe244c64
+  parseTests31 :: GHC.Base.Maybe (AST.Expr, HParse.Lines)
+  {- Unfolding: (Main.eparse Main.parseTests32) -}
+63b077f3921020c6279e87618be7946b
+  parseTests32 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "[1]++([2]++[3])"#) -}
+8ac0fb1128765301bccdc23e4a53055a
+  parseTests33 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "'[1]++[2]++[3]' not same as '[1]++([2]++[3])' "#) -}
+6965f17e32e34ce53f3bfdd57332701d
+  parseTests34 :: Test.Framework.Core.Test
+  {- Unfolding: (Test.Framework.Core.Test
+                   @ Test.Framework.Providers.HUnit.TestCaseRunning
+                   @ Test.Framework.Providers.HUnit.TestCaseResult
+                   @ Test.Framework.Providers.HUnit.TestCase
+                   Test.Framework.Providers.HUnit.$fTestlikeTestCaseRunningTestCaseResultTestCase
+                   Test.Framework.Providers.HUnit.testCase1
+                     `cast`
+                   (Sym (Data.Typeable.Internal.NTCo:Typeable[0]
+                             <*>_N <Test.Framework.Providers.HUnit.TestCase>_N))
+                   Main.parseTests45
+                   Main.parseTests35
+                     `cast`
+                   (Trans
+                        (Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                        (Sym (Test.Framework.Providers.HUnit.NTCo:TestCase[0])))) -}
+f10603c138d6d10ddb4ff5813749a32e
+  parseTests35 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta2 :: GHC.Prim.State#
+                             GHC.Prim.RealWorld[OneShot] ->
+                 Test.HUnit.Base.@=?7
+                   @ (GHC.Base.Maybe (AST.Expr, HParse.Lines))
+                   Main.parseTests38
+                     `cast`
+                   (Sym (GHC.IP.NTCo:IP[0] <"loc">_N <GHC.Stack.CallStack>_N))
+                   Main.$s$fEqMaybe
+                   Main.$s$fShowMaybe
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Main.parseTests36
+                   Main.parseTests29
+                   eta2) -}
+8401605fdaabd519df59ad6d71a75600
+  parseTests36 :: GHC.Base.Maybe (AST.Expr, HParse.Lines)
+  {- Unfolding: (Main.eparse Main.parseTests37) -}
+caec9e4b316560c73e26f5dc595d07b2
+  parseTests37 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "([1]++[2])++[3]"#) -}
+a3c36a40452c5269c1d203e8f0ffbbfc
+  parseTests38 :: GHC.Stack.CallStack
+  {- Unfolding: (GHC.Stack.CallStack Main.parseTests39) -}
+f2f3527838218893d225e41c1f1f3550
+  parseTests39 :: [([GHC.Types.Char], GHC.SrcLoc.SrcLoc)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+                   Test.HUnit.Base.@?=2
+                   Main.parseTests40) -}
+557d87f07d67aa9477c39a54b8c41777
+  parseTests4 :: [Test.Framework.Core.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.Framework.Core.Test
+                   Main.parseTests27
+                   Main.parseTests5) -}
+099446e40a62e46896e6447a898c0714
+  parseTests40 :: [([GHC.Types.Char], GHC.SrcLoc.SrcLoc)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+                   Main.parseTests41
+                   (GHC.Types.[] @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc))) -}
+eb8cc19d19368bc046e388fea13ce033
+  parseTests41 :: ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+  {- Unfolding: ((Main.parseTests25, Main.parseTests42)) -}
+3a4d16ba7127435cce2aa2374771a3bd
+  parseTests42 :: GHC.SrcLoc.SrcLoc
+  {- Unfolding: (GHC.SrcLoc.SrcLoc
+                   Main.@?/=14
+                   Main.@?/=13
+                   Main.@?/=12
+                   Main.@?/=9
+                   Main.parseTests44
+                   Main.@?/=9
+                   Main.parseTests43) -}
+c457a0a70ccce39535a2bf263de239cf
+  parseTests43 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 36) -}
+19c568902f4efa636616e07a9c6287df
+  parseTests44 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 33) -}
+f15cd215f30b189d113538f45c2720c6
+  parseTests45 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "'[1]++[2]++[3]' parses  as '([1]++[2])++[3]' "#) -}
+1ea884ef4b49c7a8353d072ee0d8b760
+  parseTests46 :: Test.Framework.Core.Test
+  {- Unfolding: (Test.Framework.Core.Test
+                   @ Test.Framework.Providers.HUnit.TestCaseRunning
+                   @ Test.Framework.Providers.HUnit.TestCaseResult
+                   @ Test.Framework.Providers.HUnit.TestCase
+                   Test.Framework.Providers.HUnit.$fTestlikeTestCaseRunningTestCaseResultTestCase
+                   Test.Framework.Providers.HUnit.testCase1
+                     `cast`
+                   (Sym (Data.Typeable.Internal.NTCo:Typeable[0]
+                             <*>_N <Test.Framework.Providers.HUnit.TestCase>_N))
+                   Main.parseTests52
+                   Main.parseTests47
+                     `cast`
+                   (Trans
+                        (Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                        (Sym (Test.Framework.Providers.HUnit.NTCo:TestCase[0])))) -}
+e7fb033e4152e7c636e883fcb68ebed2
+  parseTests47 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Main.@?/=2
+                   @ (GHC.Base.Maybe (AST.Expr, HParse.Lines))
+                   Main.$s$fEqMaybe
+                   Main.$s$fShowMaybe
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Main.parseTests50
+                   Main.parseTests48) -}
+1ce486a35a94e202182c1fbeaf74886d
+  parseTests48 :: GHC.Base.Maybe (AST.Expr, HParse.Lines)
+  {- Unfolding: (Main.eparse Main.parseTests49) -}
+9a8af2feaddb50b0d0668cc2b2edfce0
+  parseTests49 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "1:2:[]"#) -}
+4c15cf3bf76e9cf2370cb06574c76606
+  parseTests5 :: [Test.Framework.Core.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.Framework.Core.Test
+                   Main.parseTests14
+                   Main.parseTests6) -}
+90c3e6d661b51d500ebc23923452c3dc
+  parseTests50 :: GHC.Base.Maybe (AST.Expr, HParse.Lines)
+  {- Unfolding: (Main.eparse Main.parseTests51) -}
+41b812ff21442a8dd46ca5dc398a78b0
+  parseTests51 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "(1:2):[]"#) -}
+2465deccb3e2084951c979023cf7373c
+  parseTests52 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "'1:2:[]' not same as '(1:2):[]' "#) -}
+a4455d0f3c955465642dafd157ba86d2
+  parseTests53 :: Test.Framework.Core.Test
+  {- Unfolding: (Test.Framework.Core.Test
+                   @ Test.Framework.Providers.HUnit.TestCaseRunning
+                   @ Test.Framework.Providers.HUnit.TestCaseResult
+                   @ Test.Framework.Providers.HUnit.TestCase
+                   Test.Framework.Providers.HUnit.$fTestlikeTestCaseRunningTestCaseResultTestCase
+                   Test.Framework.Providers.HUnit.testCase1
+                     `cast`
+                   (Sym (Data.Typeable.Internal.NTCo:Typeable[0]
+                             <*>_N <Test.Framework.Providers.HUnit.TestCase>_N))
+                   Main.parseTests65
+                   Main.parseTests54
+                     `cast`
+                   (Trans
+                        (Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                        (Sym (Test.Framework.Providers.HUnit.NTCo:TestCase[0])))) -}
+22598aebf337d78b46cf3157defa813c
+  parseTests54 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta2 :: GHC.Prim.State#
+                             GHC.Prim.RealWorld[OneShot] ->
+                 Test.HUnit.Base.@=?7
+                   @ (GHC.Base.Maybe (AST.Expr, HParse.Lines))
+                   Main.parseTests57
+                     `cast`
+                   (Sym (GHC.IP.NTCo:IP[0] <"loc">_N <GHC.Stack.CallStack>_N))
+                   Main.$s$fEqMaybe
+                   Main.$s$fShowMaybe
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Main.parseTests55
+                   Main.parseTests48
+                   eta2) -}
+305ab215dfe4840ecaa1eb0d94474b30
+  parseTests55 :: GHC.Base.Maybe (AST.Expr, HParse.Lines)
+  {- Unfolding: (Main.eparse Main.parseTests56) -}
+0439cf56cb0fcc68415a74b95c16b45e
+  parseTests56 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "1:(2:[])"#) -}
+3a511ec11e1fc1e04e14abf3cc984e28
+  parseTests57 :: GHC.Stack.CallStack
+  {- Unfolding: (GHC.Stack.CallStack Main.parseTests58) -}
+3fa7117ac08fd76bdaf74a2cea8ef9d3
+  parseTests58 :: [([GHC.Types.Char], GHC.SrcLoc.SrcLoc)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+                   Test.HUnit.Base.@?=2
+                   Main.parseTests59) -}
+0b32ee36700257ed303fa5c72347462e
+  parseTests59 :: [([GHC.Types.Char], GHC.SrcLoc.SrcLoc)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+                   Main.parseTests60
+                   (GHC.Types.[] @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc))) -}
+acc3827d94ee8555e7eff3652c2a90f8
+  parseTests6 :: [Test.Framework.Core.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.Framework.Core.Test
+                   Main.parseTests7
+                   (GHC.Types.[] @ Test.Framework.Core.Test)) -}
+de620d3724c261dc91e747ad81b15873
+  parseTests60 :: ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+  {- Unfolding: ((Main.parseTests25, Main.parseTests61)) -}
+ad3a8ce71f6aec7db547e24c8244ecd3
+  parseTests61 :: GHC.SrcLoc.SrcLoc
+  {- Unfolding: (GHC.SrcLoc.SrcLoc
+                   Main.@?/=14
+                   Main.@?/=13
+                   Main.@?/=12
+                   Main.parseTests64
+                   Main.parseTests63
+                   Main.parseTests64
+                   Main.parseTests62) -}
+c96cb4088fc2deab5b36d04bfb9ebede
+  parseTests62 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 30) -}
+d23fed49d9c6ed124801da62560d6bd1
+  parseTests63 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 27) -}
+513fdf10a1761ac795abb87a9c11c468
+  parseTests64 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 41) -}
+02786e1c9f26cae240517e11e2209e68
+  parseTests65 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "'1:2:[]' parses  as '1:(2:[])' "#) -}
+75ee619ce68618cb5f2b14e95085a457
+  parseTests66 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "\n\
+                   \Parsing Tests"#) -}
+6e197dd93deefa28c485f436d6dfe621
+  parseTests7 :: Test.Framework.Core.Test
+  {- Unfolding: (Test.Framework.Core.Test
+                   @ Test.Framework.Providers.HUnit.TestCaseRunning
+                   @ Test.Framework.Providers.HUnit.TestCaseResult
+                   @ Test.Framework.Providers.HUnit.TestCase
+                   Test.Framework.Providers.HUnit.$fTestlikeTestCaseRunningTestCaseResultTestCase
+                   Test.Framework.Providers.HUnit.testCase1
+                     `cast`
+                   (Sym (Data.Typeable.Internal.NTCo:Typeable[0]
+                             <*>_N <Test.Framework.Providers.HUnit.TestCase>_N))
+                   Main.parseTests13
+                   Main.parseTests8
+                     `cast`
+                   (Trans
+                        (Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                        (Sym (Test.Framework.Providers.HUnit.NTCo:TestCase[0])))) -}
+583ccf208354e2ec5bf06668ae02c496
+  parseTests8 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Main.@?/=2
+                   @ (GHC.Base.Maybe (AST.Expr, HParse.Lines))
+                   Main.$s$fEqMaybe
+                   Main.$s$fShowMaybe
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Main.parseTests11
+                   Main.parseTests9) -}
+0ffb61d092ce10456b54fba2929bbc0d
+  parseTests9 :: GHC.Base.Maybe (AST.Expr, HParse.Lines)
+  {- Unfolding: (Main.eparse Main.parseTests10) -}
+9e63ede4c550b6653ab55a64b8af81b4
+  tests :: [Test.Framework.Core.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.Framework.Core.Test
+                   Main.tests1
+                   (GHC.Types.[] @ Test.Framework.Core.Test)) -}
+a6a8095b9f24dc811686357d031d842a
+  tests1 :: Test.Framework.Core.Test
+  {- Strictness: m2,
+     Unfolding: (Test.Framework.Core.TestGroup
+                   Main.tests3
+                   Main.tests2) -}
+7fe9dacda088017b62db3ece9f6fa677
+  tests2 :: [Test.Framework.Core.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.Framework.Core.Test
+                   Main.parseTests
+                   (GHC.Types.[] @ Test.Framework.Core.Test)) -}
+58439c5120f347c8985d34fe9edacdeb
+  tests3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "\n\
+                   \reasonH tests"#) -}
+"SPEC/Main $fEq(,) @ Expr @ [Line]" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                              AST.Expr
+                                                    $dEq1 :: GHC.Classes.Eq [HParse.Line]
+  GHC.Classes.$fEq(,) @ AST.Expr @ [HParse.Line] $dEq $dEq1
+  = Main.$s$fEq(,)2
+"SPEC/Main $fEq(,) @ Int @ [Char]" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                             GHC.Types.Int
+                                                   $dEq1 :: GHC.Classes.Eq [GHC.Types.Char]
+  GHC.Classes.$fEq(,) @ GHC.Types.Int @ [GHC.Types.Char] $dEq $dEq1
+  = Main.$s$fEq(,)
+"SPEC/Main $fEqMaybe @ (Expr, Lines)" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                (AST.Expr, HParse.Lines)
+  GHC.Base.$fEqMaybe @ (AST.Expr, HParse.Lines) $dEq
+  = Main.$s$fEqMaybe
+"SPEC/Main $fEqMaybe_$c== @ (Expr, Lines)" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                     (AST.Expr, HParse.Lines)
+  GHC.Base.$fEqMaybe_$c== @ (AST.Expr, HParse.Lines) $dEq
+  = Main.$s$fEqMaybe_$s$fEqMaybe_$c==
+"SPEC/Main $fEq[] @ (Int, String)" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                             (GHC.Types.Int, GHC.Base.String)
+  GHC.Classes.$fEq[] @ (GHC.Types.Int, GHC.Base.String) $dEq
+  = Main.$s$fEq(,)_$s$fEq[]
+"SPEC/Main $fEq[]_$c/= @ (Int, String)" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                  (GHC.Types.Int, GHC.Base.String)
+  GHC.Classes.$fEq[]_$c/= @ (GHC.Types.Int, GHC.Base.String) $dEq
+  = Main.$s$fEq(,)_$s$fEq[]_$c/=
+"SPEC/Main $fShow(,) @ Expr @ [Line]" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                  AST.Expr
+                                                      $dShow1 :: GHC.Show.Show [HParse.Line]
+  GHC.Show.$fShow(,) @ AST.Expr @ [HParse.Line] $dShow $dShow1
+  = Main.$s$fShow(,)2
+"SPEC/Main $fShow(,)_$cshow @ Expr @ [Line]" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                         AST.Expr
+                                                             $dShow1 :: GHC.Show.Show [HParse.Line]
+  GHC.Show.$fShow(,)_$cshow @ AST.Expr @ [HParse.Line] $dShow $dShow1
+  = Main.$s$fShow(,)_$s$fShow(,)_$cshow1
+"SPEC/Main $fShow(,)_$cshowList @ Expr @ [Line]" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                             AST.Expr
+                                                                 $dShow1 :: GHC.Show.Show
+                                                                              [HParse.Line]
+  GHC.Show.$fShow(,)_$cshowList @ AST.Expr
+                                @ [HParse.Line]
+                                $dShow
+                                $dShow1
+  = Main.$s$fShow(,)_$s$fShow(,)_$cshowList1
+"SPEC/Main $fShow(,)_$cshowList @ Int @ [Char]" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                            GHC.Types.Int
+                                                                $dShow1 :: GHC.Show.Show
+                                                                             [GHC.Types.Char]
+  GHC.Show.$fShow(,)_$cshowList @ GHC.Types.Int
+                                @ [GHC.Types.Char]
+                                $dShow
+                                $dShow1
+  = Main.$s$fShow(,)_$s$fShow(,)_$cshowList
+"SPEC/Main $fShowMaybe @ (Expr, Lines)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                    (AST.Expr, HParse.Lines)
+  GHC.Show.$fShowMaybe @ (AST.Expr, HParse.Lines) $dShow
+  = Main.$s$fShowMaybe
+"SPEC/Main $fShowMaybe_$cshowList @ (Expr, Lines)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                               (AST.Expr,
+                                                                                HParse.Lines)
+  GHC.Show.$fShowMaybe_$cshowList @ (AST.Expr, HParse.Lines) $dShow
+  = Main.$s$fShowMaybe_$s$fShowMaybe_$cshowList
+"SPEC/Main $fShow[] @ (Int, String)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                 (GHC.Types.Int, GHC.Base.String)
+  GHC.Show.$fShow[] @ (GHC.Types.Int, GHC.Base.String) $dShow
+  = Main.$s$fShow(,)_$s$fShow[]
+"SPEC/Main $fShow[]_$cshow @ (Int, String)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                        (GHC.Types.Int,
+                                                                         GHC.Base.String)
+  GHC.Show.$fShow[]_$cshow @ (GHC.Types.Int, GHC.Base.String) $dShow
+  = Main.$s$fShow(,)_$s$fShow[]_$cshow
+"SPEC/Main $fShow[]_$cshowList @ (Int, String)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                            (GHC.Types.Int,
+                                                                             GHC.Base.String)
+  GHC.Show.$fShow[]_$cshowList @ (GHC.Types.Int, GHC.Base.String)
+                               $dShow
+  = Main.$s$fShow(,)_$s$fShow[]_$cshowList
+"SPEC/Main $fShow[]_$cshowsPrec @ (Int, String)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                             (GHC.Types.Int,
+                                                                              GHC.Base.String)
+  GHC.Show.$fShow[]_$cshowsPrec @ (GHC.Types.Int, GHC.Base.String)
+                                $dShow
+  = Main.$s$fShow(,)_$s$fShow[]_$cshowsPrec
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

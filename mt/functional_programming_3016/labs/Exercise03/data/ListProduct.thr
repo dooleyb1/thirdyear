@@ -1,0 +1,33 @@
+THEORY Simple
+
+IMPORT-THEORY Arithmetic
+IMPORT-HASKELL List
+
+
+THEOREM prods_mul_base
+
+            product ([]++ys)  ==  product [] * product ys
+
+STRATEGY ReduceLHS
+
+product ([]++ys)
+  = LAW prods_mul l2r
+product [] * product ys
+
+QED prods_mul_base
+
+-- what we are really proving
+-- need it here as inductive hypothesis
+LAW prods_mul
+             product (xs++ys)   ==   product xs * product ys
+
+THEOREM prods_mul_ind
+         product ((x:xs)++ys)  ==  product (x:xs) * product ys
+
+STRATEGY ReduceLHS
+
+product ((x:xs)++ys) 
+  = LAW prods_mul l2r
+product (x:xs) * product ys
+
+QED prods_mul_ind
