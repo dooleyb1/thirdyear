@@ -143,7 +143,7 @@ class Cache {
       if(bit_selector_bits == row[0]){
         // If only one data directory
         if(this.K == 1){
-          //return this.handleOneDataDirectory(tag_bits, row);
+          return this.handleOneDataDirectory(tag_bits, row);
         }
         // Otherwise, handle LRU replacement
         else{
@@ -154,34 +154,56 @@ class Cache {
   }
 }
 
-const cache = new Cache(16, 8, 1);
+const cache = new Cache(16, 1, 8);
 
-var input = ["0000","0004","000c","2200","00d0","00e0","1130","0028",
-        		 "113c","2204","0010","0020","0004","0040","2208","0008",
-        		 "00a0","0004","1104","0028","000c","0084","000c","3390",
-        		 "00b0","1100","0028","0064","0070","00d0","0008","3394"]
+var input = ["0x0000","0x0004","0x000c","0x2200","0x00d0","0x00e0","0x1130","0x0028",
+        		 "0x113c","0x2204","0x0010","0x0020","0x0004","0x0040","0x2208","0x0008",
+        		 "0x00a0","0x0004","0x1104","0x0028","0x000c","0x0084","0x000c","0x3390",
+        		 "0x00b0","0x1100","0x0028","0x0064","0x0070","0x00d0","0x0008","0x3394"]
 
 var hits = 0;
 var misses = 0;
 
-// Test all input hex addresses
-for(hex in input){
+console.log("\n|   HEX  |  TAG BITS | DATA | OFFSET | RESULT ");
+console.log("-----------------------------------------------");
 
+// Test all input hex addresses
+for(var i=0; i<input.length; i++){
+
+  var hex = input[i];
   // Generate binary for hex address
   binary = cache.hexToBinary(hex);
-  console.log("Binary of address -> " +binary);
 
   // Disect binary address
   disected_bits = cache.disectBinary(binary);
   bit_selector_bits = disected_bits[0];
   tag_bits = disected_bits[1];
 
+  result = cache.hitOrMiss(bit_selector_bits, tag_bits);
+
   // Check if hit or miss for address
-  if(cache.hitOrMiss(bit_selector_bits, tag_bits) == "HIT")
+  if(result == "HIT")
     hits += 1;
   else
     misses += 1;
+
+  console.log("| "+ hex + " | " + tag_bits + " | " + bit_selector_bits + "  |  " + disected_bits[2] + "  | " + result);
 }
 
-console.log("Total Hit Count = " + hits);
+// // Generate binary for hex address
+// binary = cache.hexToBinary(hex);
+// console.log("Binary of address -> " +binary);
+//
+// // Disect binary address
+// disected_bits = cache.disectBinary(binary);
+// bit_selector_bits = disected_bits[0];
+// tag_bits = disected_bits[1];
+//
+// // Check if hit or miss for address
+// if(cache.hitOrMiss(bit_selector_bits, tag_bits) == "HIT")
+//   hits += 1;
+// else
+//   misses += 1;
+
+console.log("\nTotal Hit Count = " + hits);
 console.log("Total Miss Count = " + misses);

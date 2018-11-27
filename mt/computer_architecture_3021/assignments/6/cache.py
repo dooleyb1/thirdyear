@@ -57,6 +57,7 @@ class Cache(object):
 		return index
 
 	def hit_or_miss(self, bit_selector_bits, tag_bits):
+
 		for row in self.cache_matrix:
 			if bit_selector_bits == row[0]:
 				if self.K is 1:
@@ -122,24 +123,31 @@ input = ["0000","0004","000c","2200","00d0","00e0","1130","0028",
 		 "00a0","0004","1104","0028","000c","0084","000c","3390",
 		 "00b0","1100","0028","0064","0070","00d0","0008","3394"]
 
-myCache = Cache(16,8,1)
+myCache = Cache(16,1,8)
 
 myCache.print_stats()
-print(myCache.disect_binary('0000000000001010'))
-# # hits = 0
-# # misses = 0
-# # for hex in input:
-# # 	binary = myCache.hex_to_binary(hex)
-# # 	print("Binary -> " + binary)
-# # 	disected_bits = myCache.disect_binary(binary)
-# # 	bit_selector_bits = disected_bits[0]
-# # 	tag_bits = disected_bits[1]
-# # 	hit_or_miss = myCache.hit_or_miss(bit_selector_bits, tag_bits)
-# # 	if hit_or_miss == "HIT":
-# # 		hits += 1
-# # 	else:
-# # 		misses += 1
-# # 	print("0x" + hex + " " + tag_bits + " " + bit_selector_bits + " " + disected_bits[2] + " was a " + str(hit_or_miss))
-# #
-# # print("HIT COUNT: " + str(hits))
-# # print("MISS COUNT: " + str(misses))
+
+hits = 0
+misses = 0
+for hex in input:
+	binary = myCache.hex_to_binary(hex)
+	print("Binary -> " + binary)
+	disected_bits = myCache.disect_binary(binary)
+	bit_selector_bits = disected_bits[0]
+	tag_bits = disected_bits[1]
+	hit_or_miss = myCache.hit_or_miss(bit_selector_bits, tag_bits)
+	if hit_or_miss == "HIT":
+		hits += 1
+	else:
+		misses += 1
+	print("0x" + hex + " " + tag_bits + " " + bit_selector_bits + " " + disected_bits[2] + " was a " + str(hit_or_miss))
+
+print("HIT COUNT: " + str(hits))
+print("MISS COUNT: " + str(misses))
+
+# binary = myCache.hex_to_binary('0000')
+# print("Binary -> " + binary)
+# disected_bits = myCache.disect_binary(binary)
+# bit_selector_bits = disected_bits[0]
+# tag_bits = disected_bits[1]
+# hit_or_miss = myCache.hit_or_miss(bit_selector_bits, tag_bits)
