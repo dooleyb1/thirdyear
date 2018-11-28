@@ -25,8 +25,8 @@ class Cache {
   initialiseCache(cache){
 
     // All sets will be invalid at start
-    var initial_invalid = 0;
-    var empty_data = "";
+    var empty_tag = "EMPTY_TAG";
+    var empty_data = "EMPTY_DATA"
 
     // For each cache set - down (N)
     for(var i=0; i<this.N; i++){
@@ -34,14 +34,16 @@ class Cache {
       // Generate binary for set number and set valid to 0
       var set_number = (i).toString(2).padStart(this.set_selector_bits_length, 0);
 
-      this.cache_matrix.push([set_number, initial_invalid])
+      this.cache_matrix.push([set_number])
 
-      // For each cache directory in set - across (K)
-      for(var j=0; j<this.K; j++) {
+      for(var j=0; j<this.K; j++){
+        this.cache_matrix[i].push(empty_tag)
+      }
 
+      // For each cache tag in set - across (K)
+      for(j=0; j<this.K; j++) {
         var last_updated = this.getTime()
-
-        this.cache_matrix[i].push([initial_invalid, empty_data, last_updated])
+        this.cache_matrix[i].push([empty_data, last_updated])
 
       }
     }
@@ -64,27 +66,10 @@ class Cache {
     console.log("-----------------------------------------");
     console.log("Cache Size                 -> " + this.size);
     console.log("Set Selector Length (Bits) -> " + this.set_selector_bits_length);
+    //console.log(this.cache_matrix)
+
   }
 
-  printCache(){
-    // For each cache set - down (N)
-    for(var i=0; i<this.N; i++){
-
-      // Generate binary for set number and set valid to 0
-      var set_number = (i).toString(2).padStart(this.set_selector_bits_length, 0);
-
-      this.cache_matrix.push([set_number, initial_invalid])
-
-      // For each cache directory in set - across (K)
-      for(var j=0; j<this.K; j++) {
-
-        var last_updated = this.getTime()
-
-        this.cache_matrix[i].push([initial_invalid, empty_data, last_updated])
-
-      }
-    }
-  }
 
   hexToBinary(hex){
     return (parseInt(hex)).toString(2).padStart(16, 0);
@@ -114,28 +99,30 @@ class Cache {
     return [bit_selector_bits, tag_bits, offset];
   }
 
-  find_lru(timestamps){
-    var oldest = new Date(Math.min.apply(null, timestamps));
+  findIndexOfLRUTag(timestamps){
+
+    var oldest = Math.min.apply(null, timestamps);
     var index = timestamps.indexOf(oldest)
     return index
   }
 
   handleOneDataDirectory(tag_bits, row){
-    // If hasData == 0 then miss
-    if(row[2][0] == 0){
+    // If EMPTY_TAG then miss
+    if(row[1] == "EMPTY_TAG"){
       // Return miss and pretend fetch from memory
-      row[2][1] = tag_bits;
-      row[2][0] = 1;
+      row[1] = tag_bits;
+      row[2][0] = "DATA_FOR_" + tag_bits
       return("MISS");
     }
-    // If hasData == 1
-    else if(row[2][0] == 1){
+    // Otherwise it has tag, verify tag
+    else{
       // && If tag_bits_match()
-      if(row[2][1] == tag_bits)
+      if(row[1] == tag_bits)
         return("HIT");
       else{
         // Return miss and pretend fetch from memory
-        row[2][1] = tag_bits;
+        row[1] = tag_bits;
+        row[2][0] = "DATA_FOR_" + tag_bits
         return("MISS")
       }
     }
@@ -144,33 +131,33 @@ class Cache {
   handleLRUReplacement(tag_bits, row){
     var timestamps = [];
 
-    // Loop over all possible data directories for the 1 set
-    for(var index=0; index<=this.K; index++){
-      timestamps.push(row[2+index][2]);
+    // Loop over all tags for cache set looking for match
+    for(var index=1; index<=this.K; index++){
+      timestamps.push(row[this.K+index][1]);
 
-      // If directory has data and matches tag_bits --> HIT
-      if(row[2+index][0] == 1 && row[2+index][1] == tag_bits){
+      // If tag match and data in cache, update LRU and return hit
+      if(row[index] == tag_bits && row[this.K+index] != "EMPTY_DATA"){
         // Update time for LRU
-        row[2+index][2] = this.getTime();
+        row[this.K+index][1] = this.getTime();
         return("HIT")
       }
     }
 
-    // If no HIT found, check LRU and replace
-    row[1] = this.find_lru(timestamps);
-    var lru = row[1]
+    // If no tag hit found, check LRU and replace
+    var lruIndex = this.findIndexOfLRUTag(timestamps);
 
     // If empty, simulate MISS and fetch
-    if(row[2+lru][0] == 0){
-      row[2+lru][0] = 1;
-      row[2+lru][1] = tag_bits;
-      row[2+lru][2] = this.getTime();
+    if(row[1+lruIndex] == "EMPTY_TAG"){
+      row[1+lruIndex] = tag_bits;
+      row[1+this.K+lruIndex][1] = this.getTime();
+      row[1+this.K+lruIndex][0] = "DATA_FOR_" + tag_bits
       return("MISS");
     }
     // Otherwise, replace entry and simulate MISS and fetch
-    else if(row[2+lru][0] == 1){
-      row[2+lru][1] = tag_bits;
-      row[2+lru][2] = this.getTime();
+    else{
+      row[1+lruIndex] = tag_bits;
+      row[1+this.K+lruIndex][1] = this.getTime();
+      row[1+this.K+lruIndex][0] = "DATA_FOR_" + tag_bits
       return("MISS");
     }
   }
@@ -194,7 +181,7 @@ class Cache {
   }
 }
 
-const cache = new Cache(16, 1, 8);
+const cache = new Cache(16, 2, 8);
 
 var input = ["0x0000","0x0004","0x000c","0x2200","0x00d0","0x00e0","0x1130","0x0028",
         		 "0x113c","0x2204","0x0010","0x0020","0x0004","0x0040","0x2208","0x0008",
@@ -207,13 +194,13 @@ var misses = 0;
 // console.log("\n|   HEX  |  TAG BITS | DATA | OFFSET | RESULT ");
 // console.log("-----------------------------------------------");
 
+console.log("\n\n-----------------------------------------");
+console.log("              CACHE BEFORE               ");
+console.log("-----------------------------------------");
+console.log(cache.cache_matrix)
+
 // Test all input hex addresses
 for(var i=0; i<input.length; i++){
-
-  console.log("\n\n-----------------------------------------");
-  console.log("              CACHE BEFORE               ");
-  console.log("-----------------------------------------");
-  console.log(cache.cache_matrix)
 
   var hex = input[i];
   // Generate binary for hex address
@@ -236,6 +223,11 @@ for(var i=0; i<input.length; i++){
   console.log("\n\n-----------------------------------------");
   console.log("       ***    RESULT = " + result +"       ***    ");
   console.log("-----------------------------------------");
+
+  console.log("\n\n-----------------------------------------");
+  console.log("              CACHE AFTER               ");
+  console.log("-----------------------------------------");
+  console.log(cache.cache_matrix)
 
   // Check if hit or miss for address
   if(result == "HIT")
