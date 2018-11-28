@@ -11,20 +11,38 @@ class Cache {
     this.N = N;
 
     // Set cache tag variables
-    this.offset = 4;
     this.set_selector_bits_length = Math.log2(N);
     this.size = L * K * N;
-    this.tag_bits_length = L - this.offset - this.set_selector_bits_length;
 
     // Cache matrix
     this.cache_matrix = [];
+    this.initialiseCache(this.cache_matrix)
 
-    // Initialise cache matrix
-    for(var i=0; i<=N; i++){
-      this.cache_matrix.push([(i).toString(2).padStart(this.set_selector_bits_length, 0), 0])
-      for(var j=0; j<=K; j++) {
-        var d = new Date()
-        this.cache_matrix[i].push([0,"",this.getTime()])
+    // Display initialised cache
+    this.printStats()
+  }
+
+  initialiseCache(cache){
+
+    // All sets will be invalid at start
+    var initial_invalid = 0;
+    var empty_data = "";
+
+    // For each cache set - down (N)
+    for(var i=0; i<this.N; i++){
+
+      // Generate binary for set number and set valid to 0
+      var set_number = (i).toString(2).padStart(this.set_selector_bits_length, 0);
+
+      this.cache_matrix.push([set_number, initial_invalid])
+
+      // For each cache directory in set - across (K)
+      for(var j=0; j<this.K; j++) {
+
+        var last_updated = this.getTime()
+
+        this.cache_matrix[i].push([initial_invalid, empty_data, last_updated])
+
       }
     }
   }
@@ -35,15 +53,37 @@ class Cache {
   }
 
   printStats(){
-    console.log("L -> " + this.L);
-    console.log("K -> " + this.K);
-    console.log("N -> " + this.N);
+    console.log("\n\n-----------------------------------------");
+    console.log("            CACHE PARAMETERS             ");
+    console.log("-----------------------------------------");
+    console.log("L (Bytes per cache line)   -> " + this.L);
+    console.log("K (Cache lines per set)    -> " + this.K);
+    console.log("N (Number of sets)         -> " + this.N);
+    console.log("\n\n-----------------------------------------");
+    console.log("            CACHE INFORMATION             ");
+    console.log("-----------------------------------------");
+    console.log("Cache Size                 -> " + this.size);
+    console.log("Set Selector Length (Bits) -> " + this.set_selector_bits_length);
+  }
 
-    console.log("Size -> " + this.size);
-    console.log("Offset -> " + this.offset);
-    console.log("Set selector length (Bits) -> " + this.set_selector_bits_length);
-    console.log("Tag length (Bits) -> " + this.tag_bits_length);
-    //console.log("Cache Matrix -> " + this.cache_matrix.toString())
+  printCache(){
+    // For each cache set - down (N)
+    for(var i=0; i<this.N; i++){
+
+      // Generate binary for set number and set valid to 0
+      var set_number = (i).toString(2).padStart(this.set_selector_bits_length, 0);
+
+      this.cache_matrix.push([set_number, initial_invalid])
+
+      // For each cache directory in set - across (K)
+      for(var j=0; j<this.K; j++) {
+
+        var last_updated = this.getTime()
+
+        this.cache_matrix[i].push([initial_invalid, empty_data, last_updated])
+
+      }
+    }
   }
 
   hexToBinary(hex){
@@ -164,11 +204,16 @@ var input = ["0x0000","0x0004","0x000c","0x2200","0x00d0","0x00e0","0x1130","0x0
 var hits = 0;
 var misses = 0;
 
-console.log("\n|   HEX  |  TAG BITS | DATA | OFFSET | RESULT ");
-console.log("-----------------------------------------------");
+// console.log("\n|   HEX  |  TAG BITS | DATA | OFFSET | RESULT ");
+// console.log("-----------------------------------------------");
 
 // Test all input hex addresses
 for(var i=0; i<input.length; i++){
+
+  console.log("\n\n-----------------------------------------");
+  console.log("              CACHE BEFORE               ");
+  console.log("-----------------------------------------");
+  console.log(cache.cache_matrix)
 
   var hex = input[i];
   // Generate binary for hex address
@@ -179,7 +224,18 @@ for(var i=0; i<input.length; i++){
   bit_selector_bits = disected_bits[0];
   tag_bits = disected_bits[1];
 
+  console.log("\n\n-----------------------------------------");
+  console.log("              SEARCHING FOR              ");
+  console.log("-----------------------------------------");
+  console.log("|   HEX  |  TAG BITS | DATA | OFFSET | ");
+  console.log("-----------------------------------------");
+  console.log("| "+ hex + " | " + tag_bits + " | " + bit_selector_bits + "  |  " + disected_bits[2] + "  | ");
+
   result = cache.hitOrMiss(bit_selector_bits, tag_bits);
+
+  console.log("\n\n-----------------------------------------");
+  console.log("       ***    RESULT = " + result +"       ***    ");
+  console.log("-----------------------------------------");
 
   // Check if hit or miss for address
   if(result == "HIT")
@@ -187,7 +243,8 @@ for(var i=0; i<input.length; i++){
   else
     misses += 1;
 
-  console.log("| "+ hex + " | " + tag_bits + " | " + bit_selector_bits + "  |  " + disected_bits[2] + "  | " + result);
+  //console.log(cache.cache_matrix)
+  //console.log("| "+ hex + " | " + tag_bits + " | " + bit_selector_bits + "  |  " + disected_bits[2] + "  | " + result);
 }
 
 // // Generate binary for hex address
