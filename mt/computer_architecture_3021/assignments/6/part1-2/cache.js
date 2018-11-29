@@ -19,7 +19,7 @@ class Cache {
     this.initialiseCache(this.cache_matrix)
 
     // Display initialised cache
-    this.printStats()
+    //this.printStats()
   }
 
   initialiseCache(cache){
@@ -225,62 +225,72 @@ class Cache {
   }
 }
 
-const cache = new Cache(16, 2, 8);
-cache.printCache()
+// Bytes of data per cache line
+const L = 16
+// Number of directories (across)
+const K = 1
+// Number of sets (down)
+const N = 4
 
-// var input = ["0x0000","0x0004","0x000c","0x2200","0x00d0","0x00e0","0x1130","0x0028",
-//         		 "0x113c","0x2204","0x0010","0x0020","0x0004","0x0040","0x2208","0x0008",
-//         		 "0x00a0","0x0004","0x1104","0x0028","0x000c","0x0084","0x000c","0x3390",
-//         		 "0x00b0","0x1100","0x0028","0x0064","0x0070","0x00d0","0x0008","0x3394"]
-//
-// var hits = 0;
-// var misses = 0;
-//
-// // console.log("\n|   HEX  |  TAG BITS | DATA | OFFSET | RESULT ");
-// // console.log("-----------------------------------------------");
-//
-// console.log("\n\n-----------------------------------------");
-// console.log("              CACHE BEFORE               ");
-// console.log("-----------------------------------------");
-// console.log(cache.cache_matrix)
-//
-// // Test all input hex addresses
-// for(var i=0; i<input.length; i++){
-//
-//   var hex = input[i];
-//   // Generate binary for hex address
-//   binary = cache.hexToBinary(hex);
-//
-//   // Disect binary address
-//   disected_bits = cache.disectBinary(binary);
-//   bit_selector_bits = disected_bits[0];
-//   tag_bits = disected_bits[1];
-//
-//   console.log("\n\n-----------------------------------------");
-//   console.log("              SEARCHING FOR              ");
-//   console.log("-----------------------------------------");
-//   console.log("|   HEX  |  TAG BITS | DATA | OFFSET | ");
-//   console.log("-----------------------------------------");
-//   console.log("| "+ hex + " | " + tag_bits + " | " + bit_selector_bits + "  |  " + disected_bits[2] + "  | ");
-//
-//   result = cache.hitOrMiss(bit_selector_bits, tag_bits);
-//
-//   console.log("\n\n-----------------------------------------");
-//   console.log("       ***    RESULT = " + result +"       ***    ");
-//   console.log("-----------------------------------------");
-//
-//   console.log("\n\n-----------------------------------------");
-//   console.log("              CACHE AFTER               ");
-//   console.log("-----------------------------------------");
-//   console.log(cache.cache_matrix)
-//
-//   // Check if hit or miss for address
-//   if(result == "HIT")
-//     hits += 1;
-//   else
-//     misses += 1;
-// }
-//
-//
-// console.log("\nTotal Hit Count = " + hits);
-// console.log("Total Miss Count = " + misses);
+const directMappedCache = new Cache(16, 1, 4);
+//directMappedCache.printCache()
+const fullyAssociativeCache = new Cache(16, 4, 1);
+//fullyAssociativeCache.printCache()
+
+var input1 = ["0x0000","0x0004","0x000c","0x2200","0x00d0","0x00e0","0x1130","0x0028",
+        		 "0x113c","0x2204","0x0010","0x0020","0x0004","0x0040","0x2208","0x0008",
+        		 "0x00a0","0x0004","0x1104","0x0028","0x000c","0x0084","0x000c","0x3390",
+        		 "0x00b0","0x1100","0x0028","0x0064","0x0070","0x00d0","0x0008","0x3394"]
+
+var input2 = ["0x0000","0x0010","0x0020","0x0030",
+              "0x0034","0x0020","0x0010","0x00c",
+              "0x0050","0x0040","0x002c","0x0008",
+              "0x0030","0x0020","0x0010","0x0000",]
+
+var hits = 0;
+var misses = 0;
+
+// Input variables
+var input = input2;
+var cache = directMappedCache;
+
+// Test all input hex addresses
+for(var i=0; i<16; i++){
+
+  var hex = input[i];
+  // Generate binary for hex address
+  binary = cache.hexToBinary(hex);
+
+  // Disect binary address
+  disected_bits = cache.disectBinary(binary);
+  bit_selector_bits = disected_bits[0];
+  tag_bits = disected_bits[1];
+
+  console.log("\n\n-----------------------------------------");
+  console.log("              SEARCHING FOR              ");
+  console.log("-----------------------------------------");
+  console.log("|   HEX  |  TAG BITS | SET | OFFSET | ");
+  console.log("-----------------------------------------");
+  console.log("| "+ hex + " | " + tag_bits + " | " + bit_selector_bits + "  |  " + disected_bits[2] + "  | ");
+
+  result = cache.hitOrMiss(bit_selector_bits, tag_bits);
+
+  console.log("\n\n-----------------------------------------");
+  console.log("       ***    RESULT = " + result +"       ***    ");
+  console.log("-----------------------------------------");
+
+  console.log("\n\n-----------------------------------------");
+  console.log("              CACHE AFTER               ");
+  console.log("-----------------------------------------");
+  console.log(cache.printCache())
+
+  // Check if hit or miss for address
+  if(result == "HIT")
+    hits += 1;
+  else
+    misses += 1;
+}
+
+
+console.log("\nTotal Hit Count = " + hits);
+console.log("Total Miss Count = " + misses);
