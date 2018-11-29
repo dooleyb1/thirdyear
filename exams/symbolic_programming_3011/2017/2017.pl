@@ -158,3 +158,45 @@ isNumberList([H|T]) :- number(H), isNumberList(T).
 
 isNumberList([]).
 isNumberList([H|T]) :- number(H), isNumberList(T).
+
+% d) Define a predicate median(List, Median) that holds precisely when
+%     - List is a list of odd length where List is a number that occurs occurance
+%     - Median is the median of the list - there are as many smaller & bigger members
+
+median(List, Median) :-
+  isNumberList(List),
+  length(List, L), 1 is mod(L, 2),
+  isUniqueList(List),
+  medianAcc(List, Median).
+
+medianAcc([H|T], Median) :-
+  (splitList(H, [H|T], Small, Big), length(Small, LeftSize), length(Big, RightSize), LeftSize == RightSize, Median = H);
+  (splitList(H, [H|T], Small, Big), length(Small, LeftSize), length(Big, RightSize), LeftSize \== RightSize, medianAcc(T, Median)).
+
+isUniqueList(List) :- isUniqueListAcc(List, []).
+
+isUniqueListAcc([H|T], Acc) :- \+member(H, Acc), append([H], Acc, NewAcc), isUniqueListAcc(T, NewAcc).
+isUniqueListAcc([], _).
+
+% e) Define a predicate remove(X, List, Rest) that is true exactly when X is a
+%   member of List and Rest is the list resulting from removing X from List
+
+remove(X, List, Rest) :-
+  member(X, List),
+  removeAcc(X, List, [], Rest).
+
+removeAcc(_, [], Acc, Acc).
+removeAcc(X, [H|T], Acc, Rest) :- H \== X, append([H], Acc, NewAcc), removeAcc(X, T, NewAcc, Rest).
+removeAcc(X, [_|T], Acc, Rest) :- removeAcc(X, T, Acc, Rest).
+
+% f) Use the predicate remove(X, List, Rest) to define a predicate permute(List1, List2)
+%   that is true exactly when List2 is a permutation of List1 (that is, List2 differs from
+%   List1 at most by a reordering of its members)
+
+insert(X, L1, L) :- remove(X, L, L1). % what do you remove from L to give L1
+
+permutation([X], [X]).
+
+permutation([H|T], L) :-
+  permutation(T, T1),
+  insert(H, T1, L).
