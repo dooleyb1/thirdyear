@@ -7,10 +7,17 @@ fly(X) :- bird(X), \+ penguin(X).
 % Define a binary predicate member(X,L) that is true when X is a member of the list L
 member(X, [H|T]) :- X == H; member(X, T).
 
+% Other implementation
+member(X, [X|_]) :- !.
+member(X, [H|T]) :- X \= H, member(X,T).
+
 % q2 b)
 % Define a binary predicate nonmember(X,L) that is true when X is not a member of the list L
 nonmember(_, []).
 nonmember(X, [H|T]) :- X \= H, nonmember(X, T).
+
+% Other implementation
+nonmember(X, L) :- \+ member(X,L).
 
 % q2 c)
 % Define the 3-ary predicate diff(X, L1, L2) that is true when X is a member of L1 but not L2
@@ -51,15 +58,6 @@ harmonic_acc(N, AccNum, AccTotal, H) :-
 
 
 % Write a DCG for the set of strings a^n b^n+m c^m
-s -> ap, bp.
-
-ap -> [].
-ap -> [a], ap, [b].
-
-bp -> [].
-bp -> [b], bp, [c].
-
-% Shaarpen the DCG to allow length
 s -> ap, bp.
 
 ap -> [].
