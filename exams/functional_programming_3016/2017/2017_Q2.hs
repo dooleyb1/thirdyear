@@ -3,7 +3,7 @@
 -- a)
 
 hof :: a -> (a -> a -> a)  -> [a] -> a
-hof x f []      = x
+hof x _ []      = x
 hof x f (y:ys)  = f y (hof x f ys)
 
 

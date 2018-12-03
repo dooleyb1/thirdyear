@@ -15,11 +15,30 @@ init' [] = error "empty list"
 init' (x:y:[]) = x:[]
 init' (x:xs) = x : (init' xs)
 
+-- Q1 c) Other implementation
+init [x]                =  []
+init (x:xs)             =  x : init xs
+init []                 =  errorEmptyList "init"
+
+-- Q1 c) Other implementation
+init []                 =  errorEmptyList "init"
+init (x:xs)             =  init' x xs
+  where init' _ []     = []
+        init' y (z:zs) = y : init' z zs
+
 -- Q1 d) Reverse a list argument (uses an accumulator)
 reverse' :: [a] -> [a]
-reverse' xs = reverse' xs [] where
-  reverse' (x:xs) acc = reverse' xs (x:acc)
-  reverse' []     acc = acc
+reverse' xs = reverse' xs []
+  where
+    reverse' []     acc = acc
+    reverse' (x:xs) acc = reverse' xs (x:acc)
+
+-- Q1 d) Other implementation
+reverse' :: [a] -> [a]
+reverse' l =  rev l []
+  where
+    rev []     a = a
+    rev (x:xs) a = rev xs (x:a)
 
 last' :: [a] -> a
 last' [] = error "empty list"
