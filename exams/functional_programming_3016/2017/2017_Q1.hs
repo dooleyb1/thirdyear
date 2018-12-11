@@ -40,6 +40,7 @@ replicate' n x  = x : replicate (n-1) x
 
 foldl1' :: (a -> a -> a) -> [a] -> a
 foldl1' f (x:xs) = foldl' f x xs
+foldl1' _ []     =  errorEmptyList "foldl1"
 
 foldl' :: (a -> a -> a) -> a -> [a] -> a
 foldl' _ z []     = z

@@ -33,12 +33,6 @@ reverse' xs = reverse' xs []
     reverse' []     acc = acc
     reverse' (x:xs) acc = reverse' xs (x:acc)
 
--- Q1 d) Other implementation
-reverse' :: [a] -> [a]
-reverse' l =  rev l []
-  where
-    rev []     a = a
-    rev (x:xs) a = rev xs (x:a)
 
 last' :: [a] -> a
 last' [] = error "empty list"
