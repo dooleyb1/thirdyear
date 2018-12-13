@@ -2,7 +2,7 @@
 
 -- Higher Order Functions
 
--- 2017 Q2 a) HOF
+-- 2017 Q2 a) HOF -- foldr
 
 hof :: a -> (a -> a -> a)  -> [a] -> a
 hof x _ []      = x
@@ -10,26 +10,26 @@ hof x f (y:ys)  = f y (hof x f ys)
 
 
 f1 :: (Num a) => [a] -> a
-f1 = hof 42 (*)
+f1 l = hof 42 (*) l
 
 f2 :: (Num a) => [a] -> a
-f2 = hof 0 g
+f2 l = hof 0 g l
   where g x y = (99*y)
 
 f3 :: (Num a) => [a] -> a
-f3 = hof 0 (+)
+f3 l = hof 0 (+) l
 
 f4 :: (Num a) => [a] -> [a]
-f4 = hof [] (++)
+f4 l = hof [] (++) l
 
 f5 :: (Num a) => [a] -> a
-f5 = hof 0 g
+f5 l = hof 0 g l
   where g x y = (x-42) + y
 
 f5' [] = 0
 f5' (x:xs) = (x-42) + f5' xs
 
--- 2016 Q2 a) HOF
+-- 2016 Q2 a) HOF -- foldr
 
 hof :: a -> (a -> a -> a)  -> [a] -> a
 hof x _ []      = x
