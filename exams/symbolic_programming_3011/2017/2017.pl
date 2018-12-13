@@ -59,6 +59,16 @@ isLessThan(X, [H|T]) :- X < H; isLessThan(X, T).
 hasLess(_, []) :- false.
 hasLess([H1|T1], L2) :- isLessThan(H1, L2); hasLess(T1, L2).
 
+% c) Better implementations
+
+lessSome(List1, List2):-
+  member(X, List1),
+  member(Y, List2),
+  number(X),
+  number(Y),
+  X<Y,
+  !.
+
 % d) Define a binary predicate lessAll(List1, List2) that is true exactly is List1
 % and List2 are lists of numbers, and every member of List1 is less than List2
 
@@ -72,6 +82,14 @@ isLessThan(X, [H|T]) :- X < H, isLessThan(X, T).
 
 allLess([], _).
 allLess([H1|T1], L2) :- isLessThan(H1, L2), allLess(T1, L2).
+
+% d) Better implementation
+
+lessAll([], _ ).
+lessAll([H|T], List2):- lessThanAll(H, List2), lessAll(T, List2).
+
+lessThanAll(_, []).
+lessThanAll(X, [H|T]):- X<H, lessThanAll(X,T).
 
 
 % e) i) Define append(List1, List2, List3) such that append([1,2,3], [2], L)
@@ -123,6 +141,10 @@ validList([H|T]) :- number(H), validList(T).
 sumOfList([], Acc, Acc).
 sumOfList([H|T], Acc, Sum) :- NewAcc is Acc + H, sumOfList(T, Acc, Sum).
 
+% a) Sum non-tail recursive
+sum([X], X).
+sum([X,Y|List], Sum):- sum([Y|List], PR), Sum is PR+X.
+
 % b) The predicate length(List, N) below computes the length of a list
 
 length([], 0).
@@ -147,7 +169,7 @@ split(Number, List, Small, Big) :-
   splitList(Number,List,[],[],Small,Big).
 
 splitList(_, [], Small, Big, Small, Big).
-splitList(Number, [H|T],SmallAcc, BigAcc, Small, Big) :-
+splitList(Number, [H|T], SmallAcc, BigAcc, Small, Big) :-
   (H < Number, append([H], SmallAcc, NewSmallAcc), splitList(Number, T, NewSmallAcc, BigAcc, Small, Big));
   (H > Number, append([H], BigAcc, NewBigAcc), splitList(Number, T, SmallAcc, NewBigAcc, Small, Big));
   splitList(Number, T, SmallAcc, BigAcc, Small, Big).
@@ -155,9 +177,6 @@ splitList(Number, [H|T],SmallAcc, BigAcc, Small, Big) :-
 isNumberList([]).
 isNumberList([H|T]) :- number(H), isNumberList(T).
 
-
-isNumberList([]).
-isNumberList([H|T]) :- number(H), isNumberList(T).
 
 % d) Define a predicate median(List, Median) that holds precisely when
 %     - List is a list of odd length where List is a number that occurs occurance
@@ -177,6 +196,14 @@ isUniqueList(List) :- isUniqueListAcc(List, []).
 
 isUniqueListAcc([H|T], Acc) :- \+member(H, Acc), append([H], Acc, NewAcc), isUniqueListAcc(T, NewAcc).
 isUniqueListAcc([], _).
+
+% d) Median optimised
+
+median(List, Median) :-
+  setof(X, member(X, List), List),
+  split(Median, List, Small, Big),
+  length1(Big, N),
+  length1(Small, N).
 
 % e) Define a predicate remove(X, List, Rest) that is true exactly when X is a
 %   member of List and Rest is the list resulting from removing X from List
