@@ -12,4 +12,9 @@ This repository contains files from Third Year **Integrated Computer Science**, 
 * CS3071 - Compiler Design (https://www.scss.tcd.ie/John.Waldron/3071/3071.html)
 
 ### Hilary Term (HT):
-
+* CS3013 - Software Engineering Group Project (https://bit.ly/2BaWg8h)
+* CS3014 - Concurrent Systems (https://www.scss.tcd.ie/David.Gregg/cs3014/)
+* CS3031 - Advanced Telecommunications ()
+* CS3061 - Atrificial Intelligence (https://www.scss.tcd.ie/Tim.Fernando/AI/)
+* CS3081 - Computational Mathematics (https://bit.ly/2SaQkFZ)
+* ST3009 - Statistical Methods (https://www.scss.tcd.ie/doug.leith/ST3009/)
