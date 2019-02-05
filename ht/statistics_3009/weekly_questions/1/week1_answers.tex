@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{fixltx2e}
+\title{ST3009: Statistical Methods for Computer Science Assignment 1}
+\author{Brandon Dooley - 16327446}
+
+\newcommand*{\Perm}[2]{{}^{#1}\!P_{#2}}%
+\newcommand*{\Comb}[2]{{}^{#1}C_{#2}}%
+
+\begin{document}
+\maketitle
+\begin{itemize}
+
+  \item Question 1
+  \begin{itemize}
+  	\item a)
+  	(a)	With no other restrictions and given that each letter can appear exactly once the first letter can be chosen from an option of 10 letters, the second from the remaining 9, third from remaining 8 etc… As a result we are calculating all of the possible permutations of 10 letters.
+
+  	$\Perm{n}{k}=\frac{n!}{(n-k)!}$
+
+  	$\Perm{10}{10}=\frac{10!}{(10-10)!}=\frac{10!}{1}=10*9*8*7*6*5*4*3*2*1=3628800$\\
+    
+  	We multiply the choices available each time because of the product rule of counting which states that the total number of outcomes for any number of experiments together is the product of the possible outcomes of each experiment.\\
+
+  	\item b.
+  	When as in this case two of the letters, E and F, must be beside each other there are two cases to consider.
+  	\begin{itemize}
+  	\item One of the letters is at the beginning or end of the list of letter. i.e. there is only one space the other letter could possibly occupy. e.g. \{E,F,C,D,B,A,G,H,I,J\}
+  	\item Or one of the letters is in the middle 8 spaces in the list and the other letter could occupy the space either side of this letter.e.g. \{A,B,C,D,E,F,G,H,I,J\}
+  	\end{itemize}
+  	In the first case which happens 4 times (E at the beginning and end and F at the beginning and end) the remaining 8 spaces are filled by the remaining letters and there are 8! different orderings for these. This gives $4*8!$ orderings.
+
+  	In the second case we have six spaces where the letters could go on either side of each other leaving 8 spaces for the remaining letters each time. This gives us 6 (for spaces) times 2 (for either side of the letter) times 8! (for the remaining choices) $6*2*8!$
+
+  	The sum of orderings if the two cases is the total number of orderings.
+  	$4*8!+6*2*8!=18(8!)=725760$\\
+
+  	\item c.
+  	There are 3 A's and 2 N's labelled below.
+  	\[ B A_1 N_1 A_2 N_2 A_3\]
+  	A\textsubscript{1}, A\textsubscript{2} and A\textsubscript{3} can be arranged in 3! ways
+  	and N\textsubscript{1} and N\textsubscript{2} can be arranged 2! ways. This gives $2!*3!=12$ ways to write Banana or any other permutation of the letters.
+
+  	And there are 6! ways to arrange BA\textsubscript{1}N\textsubscript{1}A\textsubscript{2}N\textsubscript{2}A\textsubscript{3}. So the total letter arrangements that can be formed is $\frac{6!}{3!*2!}=60$\\
+
+  	\item d. The question ask how many different arrangements (not permutations) can be made by choosing a combinations of 3 letters from \{A,B,C,D,E\}
+
+  	Similar to part a. there are 5 choices for the first letter then 4 for the second and 3 for the third. Giving $5*4*3=60$ arrangements when the order matters. But when we don't care about the order. There are still groups containing the same letters e.g. A, B, C  but in different orders counted in the 60. There
+are 6 of these groups because $3!=6$ for permutations: ABC, ACB, BAC, BCA, CAB and CBA.
+We need to divide the 60 by 6 to get number of Combinations that can be made by choosing 3 of the 5 letters. $60/6=10$ or $\frac{5*4*3}{3!}=10$
+
+
+	There is also a formula for combinations that follows from this logic.\\
+  	Combination - $\binom nk=\Comb{n}{k}=\frac{n!}{k!(n-k)!}$\\
+  	So $\binom 53=\Comb{5}{3}=\frac{5!}{3!(5-3)!}=10$\\
+  \end{itemize}
+  \newpage
+
+  \item Question 2
+  \begin{itemize}
+  	\item a. The number of possible outcomes of one dice roll is 6. The number of possible outcomes for the subsequent 3 dice rolls is also 6. So by the product rule of counting the total number of outcomes for these for rolls is the product of the number of outcomes for each roll.\\
+  	$6*6*6*6=6^4=1296$\\
+  	\item b. When two of the dice must be 3 then our number of outcomes reduces dramatically. First of all $\Comb{4}{2}=6$ is the combinations of the dice rolls that will have exactly 2 3's. Then we multiply this number by the amount of possibly outcomes of the remaining 2 dice rolls. Because the question specifies exactly 2 3's these rolls cannot be 3's so there are only 5 possible outcomes for each roll and there are 2 rolls to be made so by the product rule again the number of outcomes for these 2 rolls is $5*5=25$\\
+  	The total number of outcomes is $\binom 42 *5*5=150$\\
+  	\item c. When \textbf{at least} two of the dice must be 3 we can break the problem down into different parts \begin{itemize}
+  	\item 2 3's which we calculated above to be 150 possible outcomes
+  	\item 3 3's which is $\Comb{4}{3} * 5$ because 3 of the 4 rolls must be 3 and the remaining roll cannot be a 3 this equates to $\Comb{4}{3} * 5=20$
+  	\item 4 3's which is $\Comb{4}{4}$ is only one possible outcome for so 1
+  	\end{itemize}
+  	By the sum rule of counting we can get the total number of outcomes by adding the outcomes of these 3 scenarios together giving $150+20+1=171$\\
+  \end{itemize}
+  \newpage
+  \item Question 3
+  \begin{itemize}
+  	\item a. 8 distinct cards can be arranged in 40320 distinct orders this is calculated by finding the total numbers  permutations of the cards. $\Perm 88=8!=40320$.\\
+  	However in this case we don't have 8 distinct cards there are 4 pairs of identical cards so we must divide this number by the permutations of the 4 pairs. Each pair has 2! permutations and by the product rule we can multiply these values to find their total number of permutations. We can then divide the number of permutations of 8 distinct cards by the total permutations of the pairs to find the number of distinct arrangements that can be made with 4 pairs of identical cards.\\
+  	Distinct orders of the 8 cards = $\frac{\Perm88}{\Perm22 *\Perm22 * \Perm22 * \Perm22}=\frac{8!}{2!*2!*2!*2!}=2520$
+
+  	\item b. There are 4 distinct cards we can choose from in this case and when the ordering does not matter we only need to consider the different combinations that can make up the pair. To calculate this we can use $\Comb42$ as we are choosing 2 cards from the 4 different types.\\
+  	$\Comb42=\frac{4!}{2!(4-2)!}=6$ distinct pairs\\
+  	\item c. If only hearts and diamonds are considered "good cards" then the pool of cards we can choose from that will give us a "good" outcome is reduced by half. This gives us $\Comb42 / 2.$\\
+  	$\Comb42=\frac{4!}{2!(4-2)!}=6$\\$\frac{6}{2}=3$
+  \end{itemize}
+\end{itemize}
+\end{document}
