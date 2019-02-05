@@ -29,3 +29,7 @@ KB = [[i,p,q],[i,r],[p],[r]]
 
 % arc(Node, Next, KnowledgeBase)
 arc([H|T],N,KB) :- member([H|B],KB), append(B,T,N).
+
+prove(Node, KB) :-
+  goal(Node) ;
+  arc(Node, Next, KB) , prove(Next, KB).
