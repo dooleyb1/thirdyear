@@ -33,3 +33,11 @@ arc([H|T],N,KB) :- member([H|B],KB), append(B,T,N).
 prove(Node, KB) :-
   goal(Node) ;
   arc(Node, Next, KB) , prove(Next, KB).
+
+% ------------------------------------------------------------
+%                  Non-terminating search
+% ------------------------------------------------------------
+
+prove([], ).
+prove([H|T],KB) :- member([H|B],KB), append(B,T,Next),
+prove(Next,KB).
