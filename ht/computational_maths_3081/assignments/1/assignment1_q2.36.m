@@ -9,38 +9,69 @@
 %
 % Use Determinant to calculate the determinant of the following two matrices:
 
-% https://uk.mathworks.com/matlabcentral/answers/172984-help-with-nxn-matrices
+a = [6 1 1;
+     4 -2 5;
+     2 8 7];
 
-a = [1 2 3;
-     4 5 6;
-     7 8 10];
+b = [4 6;
+     3 8];
 
-% Get number of rows and columns
-[rows,columns] = size(a);
+c = [7 19 2 4;
+     2 12 3 0;
+     1 9 18 6;
+     4 5 3 1];
 
-if rows == columns && (rows >= 2 && rows <= 4)
+d = [1 2 3;
+     4 5 6];
 
-end
+disp(Determinant(c));
 
 function D = Determinant(A)
 
   % Get number of rows and columns
-  [rows,columns] = size(a);
+  [rows,columns] = size(A);
 
   % Verify square matrix & n inRange 2:4
   if rows == columns && (rows >= 2 && rows <= 4)
-
-    % Switch based on rows
-    if rows == 2
-      D = det2x2(A);
-    elseif rows == 3
-      D = det3x3(A);
-    else if rows == 4
-      D = det4x4(A);
-    end
-
+      if rows == 2
+          D = det2x2(A);
+      elseif rows == 3
+          D = det3x3(A);
+      else
+          D = det4x4(A);
+      end
   else
-    D = 'Matrix must be square.';
+      D = 'Matrix must be square with 2 =< n <= 4';
   end
+
+end
+
+% 2x2 determinants
+function D = det2x2(A)
+
+  D = (A(1,1)*A(2,2)) - (A(1,2)*A(2,1))
+
+end
+
+% 3x3 determinants
+function D = det3x3(A)
+
+  aPart = A(1,1)*det2x2(A([2 3], 2:3));
+  bPart = A(2,1)*det2x2(A([1 3], 2:3));
+  cPart = A(3,1)*det2x2(A([1 2], 2:3));
+
+  D = aPart - bPart + cPart;
+
+end
+
+% 4x4 determinants
+function D = det4x4(A)
+
+  aPart = A(1,1)*det3x3(A([2 3 4], 2:4));
+  bPart = A(2,1)*det3x3(A([1 3 4], 2:4));
+  cPart = A(3,1)*det3x3(A([1 2 4], 2:4));
+  dPart = A(4,1)*det3x3(A([1 2 3], 2:4));
+
+  D = aPart - bPart + cPart - dPart;
 
 end
