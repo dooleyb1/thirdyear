@@ -9,22 +9,23 @@
 %
 % Use Determinant to calculate the determinant of the following two matrices:
 
-a = [6 1 1;
-     4 -2 5;
-     2 8 7];
+a = [1 5 4;
+     2 3 6;
+     1 1 1];
 
 b = [4 6;
      3 8];
 
-c = [7 19 2 4;
-     2 12 3 0;
-     1 9 18 6;
-     4 5 3 1];
+c = [1 2 3 4;
+     5 6 7 8;
+     9 10 11 12;
+     13 14 15 16];
 
 d = [1 2 3;
      4 5 6];
 
 disp(Determinant(c));
+
 
 function D = Determinant(A)
 
