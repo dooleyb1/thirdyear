@@ -65,9 +65,9 @@ heuristic(Node, H) :- length(Node, H).
 add-to-frontier(Frontier, [], Frontier).
 
 % Add a new [PathCostHead|Rest] into Frontier
-add-to-frontier(Frontier, [PathCostHead|Rest], NewFrontier) :-
+add-to-frontier(Frontier, [PathCostHead|PathCostRest], NewFrontier) :-
 	insert(PathCostHead, Frontier, FrontierResult),
-	add-to-frontier(FrontierResult, Rest, NewFrontier).
+	add-to-frontier(FrontierResult, PathCostRest, NewFrontier).
 
 % Insert base case, empty frontier
 insert(PathCost, [], [PathCost]).
