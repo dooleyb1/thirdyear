@@ -6,7 +6,7 @@ L*U
 function [L, U] = LUdecompGauss(A)
 
 rows = size(A, 1);
-L = eye(n);                                                     % Initialise L to identity matrix
+L = eye(n);                                                   
 
 for k = 1 : n
     % For each row k, access columns from k+1 to the end and divide by
