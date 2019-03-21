@@ -273,7 +273,7 @@ void team_conv(int16_t *** image, int16_t **** kernels, float *** output, int wi
   // Generate empty kernel matrix
   int16_t **** new_kernels = new_empty_4d_matrix_int16(nkernels, kernel_order, kernel_order, nchannels);
 
-  // Use parallelization to copy over array
+  // Use parallelization extract array
   #pragma omp parallel for private(i, k, j, l) collapse(4)
   for( i = 0; i < nkernels; i++){
     for( j = 0; j < nchannels; j++){
@@ -301,6 +301,7 @@ void team_conv(int16_t *** image, int16_t **** kernels, float *** output, int wi
           for ( x = 0; x < kernel_order; x++){
             for ( y = 0; y < kernel_order; y++ ){
 
+              // Load 128-bits of image_vector and kernel_vector
               __m128i image_vector = _mm_loadu_si128 ((__m128i const*)&image[w+x][h+y][c]);
               __m128i kernel_vector = _mm_loadu_si128 ((__m128i const*)&new_kernels[m][x][y][c]);
 
@@ -310,9 +311,10 @@ void team_conv(int16_t *** image, int16_t **** kernels, float *** output, int wi
               // Perform vector multiplication
               mul_high_low(&res_high, &res_low, image_vector, kernel_vector);
 
-      			  __m128i sumeroni = _mm_hadd_epi32(res_low, res_high);
-      			  sumeroni =  _mm_hadd_epi32(sumeroni, sumeroni);
-      			  sumeroni =  _mm_hadd_epi32(sumeroni, sumeroni);
+              // Horizontally add adjacent pairs of 32-bit integers in a and b sum 3 times
+      			  __m128i horisum = _mm_hadd_epi32(res_low, res_high);
+      			  horisum =  _mm_hadd_epi32(horisum, horisum);
+      			  horisum =  _mm_hadd_epi32(horisum, horisum);
 
       			  sum += _mm_cvtsi128_si32 (sumeroni);
 
