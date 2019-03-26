@@ -270,7 +270,7 @@ void team_conv(int16_t *** image, int16_t **** kernels, float *** output, int wi
   // Declare variables for first set of loops
   int i,j,k,l;
 
-  // Generate empty kernel matrix
+  // Generate empty kernel matrix of 16 bit signed integers
   int16_t **** new_kernels = new_empty_4d_matrix_int16(nkernels, kernel_order, kernel_order, nchannels);
 
   // Use parallelization extract array
@@ -316,7 +316,7 @@ void team_conv(int16_t *** image, int16_t **** kernels, float *** output, int wi
       			  horisum =  _mm_hadd_epi32(horisum, horisum);
       			  horisum =  _mm_hadd_epi32(horisum, horisum);
 
-      			  sum += _mm_cvtsi128_si32 (sumeroni);
+      			  sum += _mm_cvtsi128_si32 (horisum);
 
             }
           }
