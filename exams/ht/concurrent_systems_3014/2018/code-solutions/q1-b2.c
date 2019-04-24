@@ -7,9 +7,6 @@ void compute(float *array, int SIZE, float multiplier){
   }
 }
 
-// Vectorised code
-#include <xmmintrin.h>
-
 void compute(float *array, int SIZE, float multiplier){
   // Decrease i by 4 every time (performing 4 x 32-bit float operations per loop)
   for(int i = SIZE-1; i>=0; i-=4){
