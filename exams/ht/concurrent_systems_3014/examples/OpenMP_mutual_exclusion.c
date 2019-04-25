@@ -34,6 +34,7 @@ int local_sum = 0;
 	#pragma omp critical
 	sum += local_sum;
 }
+
 /* example of requiring all variables be declared shared or non-shared */
 #pragma omp parallel default(none) shared(n,x,y) private(i)
 {
