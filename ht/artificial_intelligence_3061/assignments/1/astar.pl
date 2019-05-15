@@ -73,9 +73,9 @@ add-to-frontier(Frontier, [PathCostHead|PathCostRest], NewFrontier) :-
 insert(PathCost, [], [PathCost]).
 
 % Insert
-insert(PathCostPair, [PathCostH|PathCostT1], FrontierResult) :-
-	(less-than(PathCostPair, PathCostH), FrontierResult = [PathCostPair, PathCostH|PathCostT1] ;
-	FrontierResult = [PathCostH|PathCostT2], insert(PathCostPair, PathCostT1, PathCostT2)).
+insert(NewPathCostPair, [PathCostH|PathCostT1], FrontierResult) :-
+	(less-than(NewPathCostPair, PathCostH), FrontierResult = [NewPathCostPair, PathCostH|PathCostT1] ;   % If less than explore first, add to Frontier and explore
+	insert(NewPathCostPair, PathCostT1, PathCostT2)), FrontierResult = [PathCostH|PathCostT2].        % If more than, explore last
 
 % Compare two frontiers based on heuristics
 less-than([[Node1|_],Cost1], [[Node2|_],Cost2]) :-

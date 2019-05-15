@@ -59,7 +59,7 @@ def gamma_adjusted_reward(n, gamma, state):
   else:
     return relax_q_val
 
-# Calculate Vn(s) = max(qn(s,'exercise'), qn(s,relax))
+
 def q(n, gamma, state, action):
 
   # Base case q0
